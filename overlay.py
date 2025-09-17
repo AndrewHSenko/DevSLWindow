@@ -79,7 +79,6 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     WS.add_chart(c1, 'F1') # Changed
     WORKBOOK.save(filename=wbook)
 
-
 def test():
     # TERMINAL #
     # dir_name = f'G:/Window Data Dev Testing/{time.strftime('%m_%Y')}/'

@@ -62,7 +62,6 @@ def make_daily_prod(wbook, prods, sheet_name):
     WS.add_chart(c1, 'D1')
     WORKBOOK.save(filename=wbook)
 
-
 # Tester Code #
 # make_daily_prod(clean_prods.get_cleaned_prods())
 '''
