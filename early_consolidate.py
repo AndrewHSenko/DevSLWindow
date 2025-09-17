@@ -1,27 +1,29 @@
 import ReadQSRSoS as qsr
 import ReadSquirrelSoS as squirrel
 from os import mkdir
-import overlay
+import early_overlay as overlay
 import early_get_pu_window as pu
-import early_make_sheet
-import early_make_graph
+import early_make_sheet as make_sheet
+import early_make_graph as make_graph
 import time
 
 # HEADERS #
-MONTH_H = time.strftime('%m_%d_%Y')
-M_NAME_H = time.strftime('%b_%d_%Y')
-NO_DAY = time.strftime('%b_%Y')
+MONTH_H = '09_13_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Sep_13_2025' # time.strftime('%b_%d_%Y')
+NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 2
 SHEET_NUM = 5
 DATE = '20250913'
 # DATE = time.strftime('%Y%m%d')
 
-# TERMINAL #
+# PROD TERMINAL #
 # DIR_NAME = "G:/Window Data/" + time.strftime('%m_%Y')
+# DEV TERMINAL #
+DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
 # OFFICE #
 # DIR_NAME = "/Users/andrew.senkowski/Documents/DevSLWindow"
 # LAPTOP #
-DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
+# DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
 
 DEST_PATH = DIR_NAME + '/' + MONTH_H + '/'
 
@@ -140,19 +142,19 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name)
+        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, MONTH_H)
     # Finish Data #
     if fsums:
         make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
         make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, finish_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, finish_name)
+        make_graph.make_daily_prod(daily_window_wb_name, sums, finish_name, MONTH_H)
     # PV Data #
     if pvsums:
         make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, pv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, pv_name)
+        make_graph.make_daily_prod(daily_window_wb_name, sums, pv_name, MONTH_H)
     # FoH Data #
     # Checks (retired) #
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
@@ -170,10 +172,10 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         # make_sheet.generate_daily_sheet(monthly_foh_wb_name, foh_items, monthly_wb, foh_items_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_foh_wb_name, foh_items, foh_items_name)
         make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name)
+        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, MONTH_H)
     if sums and foh_items and pu_window and pu_actual:
         print('On Overlay')
-        overlay.create_overlay(daily_window_wb_name, sums, foh_items, pu_window, pu_actual, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_window_wb_name, sums, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
     # Will add return statement with try/catch blocks #
 
 # To update window

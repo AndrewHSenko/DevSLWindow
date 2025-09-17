@@ -25,8 +25,8 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     for i in range(10):
         foh_a.append(0)
     WS.insert_cols(idx = 1, amount=4)
-    hr_start = 10
-    hr_end = 10
+    hr_start = 9
+    hr_end = 9
     min_start = 0
     min_end = 5
     WS.insert_rows(idx = 1, amount = len(sl_data) + 10)

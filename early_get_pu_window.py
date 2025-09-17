@@ -18,22 +18,27 @@ DEFAULT = 'M1'
 DEFAULT_VAL = '18'
 
 # LAPTOP #
-TOKE_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/token.json'
+# TOKE_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/token.json'
 # OFFICE #
 # TOKE_PATH = '/Users/andrew.senkowski/Documents/DevSLWindow/token.json'
 # TERMINAL #
-# TOKE_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/token.json'
+TOKE_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/token.json'
+
+# LAPTOP #
+# OFFICE #
+# TERMINAL #
+CREDS_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/credentials.json'
 
 def login(creds):
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
     else:
       flow = InstalledAppFlow.from_client_secrets_file(
-          'credentials.json', SCOPES
+          CREDS_PATH, SCOPES
       )
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open('token.json', 'w') as token:
+    with open(TOKE_PATH, 'w') as token:
       token.write(creds.to_json())
 
 def aggregate(spreadsheet, spreadsheet_id, range_name): # Will need to modify to separate out instructions for different data
@@ -63,7 +68,7 @@ def aggregate(spreadsheet, spreadsheet_id, range_name): # Will need to modify to
 def get_weekly_sheet_id(week):
     creds = None
     if os.path.exists(TOKE_PATH):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        creds = Credentials.from_authorized_user_file(TOKE_PATH, SCOPES)
     if not creds or not creds.valid:
         login(creds)
     try:
@@ -106,7 +111,7 @@ def get_weekly_sheet_id(week):
                 fields="nextPageToken, files(id, name)",
                 pageToken=page_token
             ).execute()
-            pattern = re.compile('[\W_]+')
+            pattern = re.compile(r'[\W_]+')
             all_sheets = [(x['id'], pattern.sub('', x['name'])) for x in spreadsheet_id_result.get('files', [])]
             weekly_sheet_id = all_sheets[week - 1][0]
             return weekly_sheet_id
@@ -130,7 +135,7 @@ def get_data(week_num, sheet_num):
     ]
     creds = None
     if os.path.exists(TOKE_PATH):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        creds = Credentials.from_authorized_user_file(TOKE_PATH, SCOPES)
     if not creds or not creds.valid:
         login(creds)
     try:

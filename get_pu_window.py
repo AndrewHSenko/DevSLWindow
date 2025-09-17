@@ -38,7 +38,7 @@ def login(creds):
       )
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open('token.json', 'w') as token:
+    with open(TOKE_PATH, 'w') as token:
       token.write(creds.to_json())
 
 def aggregate(spreadsheet, spreadsheet_id, range_name): # Will need to modify to separate out instructions for different data

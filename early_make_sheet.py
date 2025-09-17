@@ -45,8 +45,8 @@ def create_sheet(workbook_name, s_name, data):
             else:
                 row[i].value = PRODS[prods_i]
                 prods_i += 1
-    SHEET['A12'] = 'Total'
-    SHEET['B12'] = f'=SUM(B2:B{NUM_ROWS - 1})' # Last row of data
+    SHEET['A13'] = 'Total' # Changed for 9am start #
+    SHEET['B13'] = f'=SUM(B2:B{NUM_ROWS - 1})' # Last row of data # Changed for 9am start #
     SHEET.freeze_panes = 'C13'
     # To autoformat column widths and centering
     for col in SHEET.columns:
@@ -61,7 +61,7 @@ def create_sheet(workbook_name, s_name, data):
                 continue
         adj_width = (max_len + 4) # Based on font size 16
         SHEET.column_dimensions[col_letter].width = adj_width
-    SHEET['B12'].font = Font(name = 'Arial', size = 16, bold = True)
+    SHEET['B13'].font = Font(name = 'Arial', size = 16, bold = True)
     if 'Button_Data' not in workbook_name: # daily output file
         if 'Summary' in WORKBOOK.sheetnames:
             WORKBOOK.remove(WORKBOOK['Summary'])

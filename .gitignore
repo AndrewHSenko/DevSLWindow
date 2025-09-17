@@ -3,6 +3,7 @@
 credentials.json
 token.json
 pu_errors.txt
+__pycache__
 
 # Generic Node.js gitignore #
 
