@@ -31,7 +31,7 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     min_end = 5
     WS.insert_rows(idx = 1, amount = len(sl_data) + 10)
     for row in WS.iter_rows(min_row = 2):
-        if (hr_start == 8 and min_start == 0) or fives_index == len(sl_data):
+        if (hr_start == 20 and min_start == 0) or fives_index == len(sl_data):
             break
         header = row[0]
         if min_end == 60:

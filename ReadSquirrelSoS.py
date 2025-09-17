@@ -6,8 +6,12 @@ from datetime import datetime
 load_dotenv()
 
 finish_ids = {
+<<<<<<< HEAD
+    "SOM AUG" : 9981,
+=======
     "SOM SEPT" : 10012,
     # "SOM AUG" : 9981,
+>>>>>>> c5329308622192f81c89babe2a7c7de8f5022bd6
     # "SOM JULY" : 9950,
     # "SOM JUNE" : 9921,
     # "SOM MAY" : 9887,
@@ -169,4 +173,8 @@ def get_check_data(start, end):
         sale_time = check.strftime('%Y%m%d%H%M%S')
         checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, (has_finish, has_PV)]
     # checks_data is now filled with the qty for each check (including empty checks)
+<<<<<<< HEAD
+    conn.close()
+=======
+>>>>>>> c5329308622192f81c89babe2a7c7de8f5022bd6
     return checks_data
