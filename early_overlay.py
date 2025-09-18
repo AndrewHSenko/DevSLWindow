@@ -23,7 +23,7 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         foh_w.append(0)
     foh_a = [int(float(foh_actual[prod])) for prod in foh_actual]
     for i in range(10):
-        foh_a.append(0)
+        foh_a.append(0) 
     WS.insert_cols(idx = 1, amount=4)
     hr_start = 9
     hr_end = 9
@@ -64,7 +64,7 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     c1.style = 13
     c1.height = 15
     c1.width = 30
-    data = Reference(WS, min_row = 1, min_col = 2, max_row = len(sl_data), max_col = 5) # Changed
+    data = Reference(WS, min_row = 1, min_col = 2, max_row = len(sl_data), max_col = 3) # Changed
     cats = Reference(WS, min_row = 2, min_col = 1, max_row = len(sl_data), max_col = 1)
     c1.add_data(data, titles_from_data=True)
     c1.set_categories(cats)
@@ -73,9 +73,18 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     c1.x_axis.majorGridlines = ChartLines()
     c1.x_axis.minorGridlines = ChartLines()
     c1.y_axis.scaling.min = 0
-    c1.y_axis.scaling.max = 45
+    c1.y_axis.scaling.max = 40
     line = c1.series[0]
     line.smooth = True
+    # For the FoH Window and FoH Actual from Google Sheets
+    c2 = BarChart()
+    w_data = Reference(WS, min_row = 1, min_col = 4, max_row = len(sl_data))
+    c2.add_data(w_data, titles_from_data=True)
+    c3 = BarChart()
+    a_data = Reference(WS, min_row = 1, min_col = 5, max_row = len(sl_data))
+    c3.add_data(a_data, titles_from_data=True)
+    c1 += c2
+    c1 += c3
     WS.add_chart(c1, 'F1') # Changed
     WORKBOOK.save(filename=wbook)
 

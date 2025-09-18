@@ -1,5 +1,5 @@
 from openpyxl import Workbook, load_workbook
-from openpyxl.chart import (LineChart, Reference)
+from openpyxl.chart import (LineChart, BarChart, Reference)
 from openpyxl.chart.axis import ChartLines
 import get_pu_window as pu
 from os import mkdir
@@ -59,12 +59,13 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     WS['C1'] = 'FoH Entries (Squirrel)'
     WS['D1'] = 'FoH Window (Google Sheets)'
     WS['E1'] = 'FoH Actual (Google Sheets)'
+    # For the SL production from the KDS and FoH entries in Squirrel
     c1 = LineChart()
     c1.title = graph_name + ' 5 Min Window'
     c1.style = 13
     c1.height = 15
     c1.width = 30
-    data = Reference(WS, min_row = 1, min_col = 2, max_row = len(sl_data), max_col = 5) # Changed
+    data = Reference(WS, min_row = 1, min_col = 2, max_row = len(sl_data), max_col = 3) # Removed columns 4 and 5 for bar chart
     cats = Reference(WS, min_row = 2, min_col = 1, max_row = len(sl_data), max_col = 1)
     c1.add_data(data, titles_from_data=True)
     c1.set_categories(cats)
@@ -73,10 +74,19 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
     c1.x_axis.majorGridlines = ChartLines()
     c1.x_axis.minorGridlines = ChartLines()
     c1.y_axis.scaling.min = 0
-    c1.y_axis.scaling.max = 45
+    c1.y_axis.scaling.max = 40
     line = c1.series[0]
     line.smooth = True
-    WS.add_chart(c1, 'F1') # Changed
+    # For the FoH Window and FoH Actual from Google Sheets
+    c2 = BarChart()
+    w_data = Reference(WS, min_row = 1, min_col = 4, max_row = len(sl_data))
+    c2.add_data(w_data, titles_from_data=True)
+    c3 = BarChart()
+    a_data = Reference(WS, min_row = 1, min_col = 5, max_row = len(sl_data))
+    c3.add_data(a_data, titles_from_data=True)
+    c1 += c2
+    c1 += c3
+    WS.add_chart(c1, 'F1')
     WORKBOOK.save(filename=wbook)
 
 def test():
@@ -93,14 +103,14 @@ def test():
     foh_prod = {}
     foh_window = {}
     foh_actual = {}
-    for j in range(7):
+    for j in range(4, 7):
         window, actual = pu.get_data(2, j)
         for i in range(120): # 12 * 8
             sl_prod[i] = i + 3
             foh_prod[i] = i + 7
             foh_window[i] = window[i]
             foh_actual[i] = actual[i]
-        create_overlay(dir_name + 'Overlay.xlsx', sl_prod, foh_prod, foh_window, foh_actual, f'Test | {j} | ')
+        create_overlay(dir_name + 'Overlay.xlsx', sl_prod, foh_prod, foh_window, foh_actual, f'Test | {j} | ', 'Overlay Test')
 
 if __name__ == '__main__':
     test()
