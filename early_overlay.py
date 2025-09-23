@@ -1,5 +1,5 @@
 from openpyxl import Workbook, load_workbook
-from openpyxl.chart import (LineChart, Reference)
+from openpyxl.chart import (LineChart, BarChart, Reference)
 from openpyxl.chart.axis import ChartLines
 import get_pu_window as pu
 from os import mkdir

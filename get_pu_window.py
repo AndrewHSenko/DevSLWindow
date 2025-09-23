@@ -18,17 +18,17 @@ DEFAULT = 'M1'
 DEFAULT_VAL = '18'
 
 # LAPTOP #
-TOKE_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/token.json'
+# TOKE_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/token.json'
 # OFFICE #
 # TOKE_PATH = '/Users/andrew.senkowski/Documents/DevSLWindow/token.json'
 # TERMINAL #
-# TOKE_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/token.json'
+TOKE_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/token.json'
 
 # LAPTOP #
-CREDS_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/credentials.json'
+# CREDS_PATH = '/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/credentials.json'
 # OFFICE #
 # TERMINAL #
-# CREDS_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/credentials.json'
+CREDS_PATH = 'C:/Users/Squirrel/Documents/VSCode Scripts/DevSLWindow/credentials.json'
 
 def login(creds):
     if creds and creds.expired and creds.refresh_token:
