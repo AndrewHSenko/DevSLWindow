@@ -96,8 +96,6 @@ pv_ids = {
     # End defunct knishes #
 }
 
-checks = {}
-
 def get_check(start, end):
     query = f'''
     SELECT ch.CheckNo, ct.Name, ci.SaleTime, ci.MenuID, ci.Quantity
@@ -113,6 +111,7 @@ def get_check_data(start, end):
     SERVER = os.getenv('SERVER')
     DATABASE = os.getenv('DB')
     connectionString = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;TrustServerCertificate=yes;'
+    checks = {}
     with pyodbc.connect(connectionString) as conn:
         cursor = conn.cursor()
         start_time = datetime.strptime(start, '%Y%m%d%H%M%S')

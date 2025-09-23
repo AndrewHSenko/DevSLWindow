@@ -5,6 +5,18 @@ import get_pu_window as pu
 from os import mkdir
 import time
 
+def ratio(sl_prods, foh_prods): # assumes sl_prods and foh_prods have the same intervals
+    ratios = {}
+    running_count = 0
+    for i in range(len(sl_prods)):
+        if i == 0:
+            ratios[i] = foh_prods[i] - sl_prods[i]
+            running_count = foh_prods[i] - sl_prods[i]
+        else:
+            running_count = running_count + foh_prods[i] - sl_prods[i]
+            ratios[i] = running_count
+    return ratios
+
 def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name):
     WORKBOOK = load_workbook(filename=wbook)
 #    WS = WORKBOOK[time.strftime('%m_%d_%Y')]

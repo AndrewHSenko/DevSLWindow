@@ -127,7 +127,7 @@ def create_foh_entries_text(entered):
     return qtys
 
 def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsums=None, pvsums=None):
-    monthly_wb = False # Change to false
+    monthly_wb = False
     if time.strftime('%d') == '01': # Dev Change #
         monthly_wb = True
     # monthly_window_wb_name = f'{DIR_NAME}/{NO_DAY}_Window_Data.xlsx'
@@ -136,6 +136,10 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     finish_name = MONTH_H + '_Finish_Items'
     pv_name = MONTH_H + '_PV_Items'
     # Window Data #
+    if sums and foh_items:
+        ratio = overlay.ratio(sums, foh_items)
+        make_sheet.generate_daily_sheet(daily_window_wb_name, ratio, True, f'{MONTH_H} Pending Sandwiches')
+        make_graph.generate_daily_sheet(daily_window_wb_name, sums, window_name, f'{MONTH_H} Pending Sandwiches')
     if sums:
         print('On Sums')
         start = time.time()
