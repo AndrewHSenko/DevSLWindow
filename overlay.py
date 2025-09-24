@@ -14,7 +14,7 @@ def ratio(sl_prods, foh_prods): # assumes sl_prods and foh_prods have the same i
             ratios[i] = int(foh_prods[sh]) - int(float(sp))
             running_count = int(foh_prods[sh]) - int(float(sp))
         else:
-            running_count = running_count + int(foh_prods[sh]) - int(float(sp))
+            running_count = running_count + (int(foh_prods[sh]) - int(float(sp)))
             ratios[i] = running_count
         i += 1
     return ratios
