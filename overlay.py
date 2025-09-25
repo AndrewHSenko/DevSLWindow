@@ -89,8 +89,8 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
             fives_index += 1
         WS['B1'] = 'SL Production (QSR/Squirrel)'
         WS['C1'] = 'FoH Entries (Squirrel)'
-        WS['D1'] = 'FoH Window (Google Sheets)'
-        WS['E1'] = 'FoH Actual (Google Sheets)'
+        WS['D1'] = 'FoH Planned (Window)'
+        WS['E1'] = 'FoH Actual (Window)'
         # For the SL production from the KDS and FoH entries in Squirrel
         c1 = LineChart()
         c1.title = graph_name + ' 5 Min Window'

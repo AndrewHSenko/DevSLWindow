@@ -206,6 +206,12 @@ def tabulate(active_checks):
         entered[intvl] = []
         for check in active_checks:
             anchor = active_checks[check]['ANCHOR']
+            if not anchor: 
+                if active_checks[check] not in missing_anchor_bumps:
+                    missing_anchor_bumps.append(active_checks[check])
+                    with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
+                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
+                continue
             '''
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
@@ -218,12 +224,6 @@ def tabulate(active_checks):
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
             '''
-            if not anchor: 
-                if active_checks[check] not in missing_anchor_bumps:
-                    missing_anchor_bumps.append(active_checks[check])
-                    with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
-                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
-                continue
             if int(window_start) < int(check) < int(window_end): # FoH Entries
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']])
