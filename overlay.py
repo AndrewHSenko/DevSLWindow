@@ -19,47 +19,44 @@ def ratio(sl_prods, foh_prods): # assumes sl_prods and foh_prods have the same i
         i += 1
     return ratios
 
-def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name):
+def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name, ylimit=40):
     try:
         WORKBOOK = load_workbook(filename=wbook)
     #    WS = WORKBOOK[time.strftime('%m_%d_%Y')]
         day = sheet_name + ' Overlay Graph'
-        print(day)
         WORKBOOK.create_sheet(day)
         WS = WORKBOOK[day]
         fives_index = 0
         if sl_prods:
+            LENGTH = len(sl_prods)
+        elif foh_prods:
+            LENGTH = len(foh_prods)
+        else:
+            LENGTH = len(foh_window)
+        if sl_prods:
             sl_data = [int(float(sl_prods[prod])) for prod in sl_prods]
             for i in range(10):
                 sl_data.append(0)
-            print(sl_data)
-            print('---')
         if foh_prods:
             foh_data = [int(float(foh_prods[prod])) for prod in foh_prods]
             for i in range(10):
                 foh_data.append(0)
-            print(foh_data)
-            print('---')
         if foh_window:
             foh_w = [int(float(foh_window[prod])) for prod in foh_window]
             for i in range(10):
                 foh_w.append(0)
-            print(foh_w)
-            print('---')
         if foh_actual:
             foh_a = [int(float(foh_actual[prod])) for prod in foh_actual]
             for i in range(10):
                 foh_a.append(0)
-            print(foh_a)
-            print('---')
         WS.insert_cols(idx = 1, amount=4)
         hr_start = 10
         hr_end = 10
         min_start = 0
         min_end = 5
-        WS.insert_rows(idx = 1, amount = len(sl_data) + 10)
+        WS.insert_rows(idx = 1, amount = LENGTH + 10)
         for row in WS.iter_rows(min_row = 2):
-            if (hr_start == 20 and min_start == 0) or fives_index == len(sl_data):
+            if (hr_start == 20 and min_start == 0) or fives_index == LENGTH:
                 break
             header = row[0]
             if min_end == 60:
@@ -97,8 +94,8 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         c1.style = 13
         c1.height = 15
         c1.width = 30
-        data = Reference(WS, min_row = 1, min_col = 2, max_row = len(sl_data), max_col = 3) # Removed columns 4 and 5 for bar chart
-        cats = Reference(WS, min_row = 2, min_col = 1, max_row = len(sl_data), max_col = 1)
+        data = Reference(WS, min_row = 1, min_col = 2, max_row = LENGTH, max_col = 3) # Removed 5 for bar chart
+        cats = Reference(WS, min_row = 2, min_col = 1, max_row = LENGTH, max_col = 1)
         c1.add_data(data, titles_from_data=True)
         c1.set_categories(cats)
         c1.x_axis.tickLblSkip = 6
@@ -106,15 +103,15 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         c1.x_axis.majorGridlines = ChartLines()
         c1.x_axis.minorGridlines = ChartLines()
         c1.y_axis.scaling.min = 0
-        c1.y_axis.scaling.max = 40
+        c1.y_axis.scaling.max = ylimit
         line = c1.series[0]
         line.smooth = True
         # For the FoH Window and FoH Actual from Google Sheets
         c2 = BarChart()
-        w_data = Reference(WS, min_row = 1, min_col = 4, max_row = len(sl_data))
+        w_data = Reference(WS, min_row = 1, min_col = 4, max_row = LENGTH)
         c2.add_data(w_data, titles_from_data=True)
         c3 = BarChart()
-        a_data = Reference(WS, min_row = 1, min_col = 5, max_row = len(sl_data))
+        a_data = Reference(WS, min_row = 1, min_col = 5, max_row = LENGTH)
         c3.add_data(a_data, titles_from_data=True)
         c1 += c2
         c1 += c3

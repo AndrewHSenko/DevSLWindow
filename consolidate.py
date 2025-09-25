@@ -160,7 +160,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
     daily_foh_wb_name = f'{DEST_PATH}{MONTH_H}_FoH.xlsx'
     # foh_checks_name = MONTH_H + '_Checks'
-    foh_items_name = MONTH_H + '_Items'
+    foh_items_name = MONTH_H + '_FOH_Items'
     # if foh_checks:
     #     make_sheet.generate_daily_sheet(monthly_foh_wb_name, foh_checks, monthly_wb, foh_checks_name) # To add to monthly workbook
     #     make_graph.make_daily_prod(monthly_foh_wb_name, foh_checks, foh_checks_name)
@@ -173,14 +173,16 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         # make_graph.make_daily_prod(monthly_foh_wb_name, foh_items, foh_items_name)
         make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, MONTH_H)
+    daily_pending_wb_name = f'{DEST_PATH}{MONTH_H}_Pending.xlsx'
+    pending_items_name = f'{MONTH_H}_Pending'
     if sums and foh_items and pu_window and pu_actual:
-        print('On Overlay')
+        print('On Overlays')
         ratio = overlay.ratio(sums, foh_items)
-        print(ratio)
-        make_sheet.generate_daily_sheet(daily_window_wb_name, ratio, False, f'{MONTH_H} Pending')
-        make_graph.make_daily_prod(daily_window_wb_name, ratio, window_name, f'{MONTH_H} Pending')
-        overlay.create_overlay(daily_window_wb_name, ratio, None, pu_window, pu_actual, 'Pending', f'{MONTH_H} Pending')
-        overlay.create_overlay(daily_window_wb_name, sums, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
+        make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
+        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
+        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H)
     # Will add return statement with try/catch blocks #
 
 # To update window
