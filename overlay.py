@@ -94,7 +94,7 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         c1.style = 13
         c1.height = 15
         c1.width = 30
-        data = Reference(WS, min_row = 1, min_col = 2, max_row = LENGTH, max_col = 4) # Removed 5 for bar chart
+        data = Reference(WS, min_row = 1, min_col = 2, max_row = LENGTH, max_col = 3) # Removed 5 for bar chart
         cats = Reference(WS, min_row = 2, min_col = 1, max_row = LENGTH, max_col = 1)
         c1.add_data(data, titles_from_data=True)
         c1.set_categories(cats)
@@ -107,13 +107,13 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         line = c1.series[0]
         line.smooth = True
         # For the FoH Window and FoH Actual from Google Sheets
-        # c2 = BarChart()
-        # w_data = Reference(WS, min_row = 1, min_col = 4, max_row = LENGTH)
-        # c2.add_data(w_data, titles_from_data=True)
+        c2 = BarChart()
+        w_data = Reference(WS, min_row = 1, min_col = 4, max_row = LENGTH)
+        c2.add_data(w_data, titles_from_data=True)
         c3 = BarChart()
         a_data = Reference(WS, min_row = 1, min_col = 5, max_row = LENGTH)
         c3.add_data(a_data, titles_from_data=True)
-        # c1 += c2
+        c1 += c2
         c1 += c3
         WS.add_chart(c1, 'F1')
         WORKBOOK.save(filename=wbook)
