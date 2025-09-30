@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '09_21_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Sep_21_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '09_27_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Sep_27_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 3
-SHEET_NUM = 6
-DATE = '20250921'
+WEEK_NUM = 4
+SHEET_NUM = 5
+DATE = '20250927'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
