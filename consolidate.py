@@ -5,6 +5,7 @@ import get_pu_window as pu
 import make_sheet
 import make_graph
 import time
+import numpy as np
 from os import mkdir
 
 # HEADERS #
@@ -137,6 +138,17 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     pv_name = MONTH_H + '_PV_Items'
     # Window Data #
     if sums:
+        # DO SOMETHING HERE WITH SUMS #
+        # DO IT  #
+        # DO #
+        smoothed_sums = {}
+        # i = 0
+        # desired_intvls = [q + 0.5 for i in range(len(sums))][:-1] # To remove the very last len+0.5 result
+        desired_intvls = np.linspace(0.5, 120, 119)
+        smoothed = np.interp(desired_intvls, sums.keys(), sums.values())
+        for i in range(len(smoothed)):
+            smoothed_sums[i] = smoothed[i]
+        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, window_name, MONTH_H, smooth_it=True)
         print('On Sums')
         start = time.time()
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
