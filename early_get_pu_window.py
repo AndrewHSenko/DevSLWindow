@@ -1,7 +1,7 @@
 # https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit?gid=SHEET_ID#gid=SHEET_ID #
 import os.path
-import re
 import time
+import re
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials

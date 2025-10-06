@@ -66,7 +66,7 @@ def aggregate(spreadsheet, spreadsheet_id, range_name): # Will need to modify to
         with open('pu_errors.txt', 'a') as puf:
             puf.write(str(time.time()) + ':' + str(e) + '\n')
 
-def get_weekly_sheet_id(week, ):
+def get_weekly_sheet_id(week):
     creds = None
     if os.path.exists(TOKE_PATH):
         creds = Credentials.from_authorized_user_file(TOKE_PATH, SCOPES)

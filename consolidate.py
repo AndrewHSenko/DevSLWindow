@@ -138,12 +138,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     pv_name = MONTH_H + '_PV_Items'
     # Window Data #
     if sums:
-        # DO SOMETHING HERE WITH SUMS #
-        # DO IT  #
-        # DO #
         smoothed_sums = {}
-        # i = 0
-        # desired_intvls = [q + 0.5 for i in range(len(sums))][:-1] # To remove the very last len+0.5 result
         desired_intvls = np.linspace(0.5, 109.5, 110, endpoint=True)
         smoothed = np.interp(desired_intvls, np.linspace(0, 110, 111, endpoint=True), [int(float(x)) for x in sums.values()])
         for i in range(len(smoothed)):

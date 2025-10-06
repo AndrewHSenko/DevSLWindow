@@ -20,7 +20,7 @@ def make_daily_prod(wbook, prods, sheet_name, graph_name, ylimit=40, smooth_it=F
     min_end = 5 if not smooth_it else 10 # intervals of 10 mins for smoothed
     WS.insert_rows(idx = 1, amount = len(fives_data) + 10)
     for row in WS.iter_rows(min_row = 2):
-        if (hr_start == 8 and min_start == 0) or fives_index == len(fives_data):
+        if (hr_start == 20 and min_start == 0) or fives_index == len(fives_data):
             break
         header = row[0]
         if min_end == 60:

@@ -1,11 +1,12 @@
 import ReadQSRSoS as qsr
 import ReadSquirrelSoS as squirrel
-from os import mkdir
 import early_overlay as overlay
 import early_get_pu_window as pu
 import early_make_sheet as make_sheet
 import early_make_graph as make_graph
 import time
+import numpy as np
+from os import mkdir
 
 # HEADERS #
 MONTH_H = '09_13_2025' # time.strftime('%m_%d_%Y')
@@ -25,7 +26,7 @@ DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
 # LAPTOP #
 # DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
 
-DEST_PATH = DIR_NAME + '/' + MONTH_H + '/'
+DEST_PATH = f'{DIR_NAME}/{MONTH_H}/'
 
 # Finds bad checks (missing a station bump) #
 def find_bad_checks(active_checks):
@@ -137,12 +138,18 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     pv_name = MONTH_H + '_PV_Items'
     # Window Data #
     if sums:
+        smoothed_sums = {}
+        desired_intvls = np.linspace(0.5, 109.5, 110, endpoint=True)
+        smoothed = np.interp(desired_intvls, np.linspace(0, 110, 111, endpoint=True), [int(float(x)) for x in sums.values()])
+        for i in range(len(smoothed)):
+            smoothed_sums[i] = smoothed[i]
         print('On Sums')
         start = time.time()
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, MONTH_H)
+        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', MONTH_H, smooth_it=True)
     # Finish Data #
     if fsums:
         make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
@@ -160,7 +167,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
     daily_foh_wb_name = f'{DEST_PATH}{MONTH_H}_FoH.xlsx'
     # foh_checks_name = MONTH_H + '_Checks'
-    foh_items_name = MONTH_H + '_Items'
+    foh_items_name = MONTH_H + '_FOH_Items'
     # if foh_checks:
     #     make_sheet.generate_daily_sheet(monthly_foh_wb_name, foh_checks, monthly_wb, foh_checks_name) # To add to monthly workbook
     #     make_graph.make_daily_prod(monthly_foh_wb_name, foh_checks, foh_checks_name)
@@ -173,9 +180,17 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         # make_graph.make_daily_prod(monthly_foh_wb_name, foh_items, foh_items_name)
         make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, MONTH_H)
+    daily_pending_wb_name = f'{DEST_PATH}{MONTH_H}_Pending.xlsx'
+    pending_items_name = f'{MONTH_H}_Pending'
     if sums and foh_items and pu_window and pu_actual:
         print('On Overlay')
-        overlay.create_overlay(daily_window_wb_name, sums, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        ratio = overlay.ratio(sums, foh_items)
+        make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
+        make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
+        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
+        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed')
+        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H)
     # Will add return statement with try/catch blocks #
 
 # To update window
@@ -201,6 +216,12 @@ def tabulate(active_checks):
         entered[intvl] = []
         for check in active_checks:
             anchor = active_checks[check]['ANCHOR']
+            if not anchor: 
+                if active_checks[check] not in missing_anchor_bumps:
+                    missing_anchor_bumps.append(active_checks[check])
+                    with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
+                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
+                continue
             '''
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
@@ -213,12 +234,6 @@ def tabulate(active_checks):
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
             '''
-            if not anchor: 
-                if active_checks[check] not in missing_anchor_bumps:
-                    missing_anchor_bumps.append(active_checks[check])
-                    with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
-                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
-                continue
             if int(window_start) < int(check) < int(window_end): # FoH Entries
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']])
