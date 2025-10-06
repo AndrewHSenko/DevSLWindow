@@ -66,7 +66,7 @@ def aggregate(spreadsheet, spreadsheet_id, range_name): # Will need to modify to
         with open('pu_errors.txt', 'a') as puf:
             puf.write(str(time.time()) + ':' + str(e) + '\n')
 
-def get_weekly_sheet_id(week):
+def get_weekly_sheet_id(week, ):
     creds = None
     if os.path.exists(TOKE_PATH):
         creds = Credentials.from_authorized_user_file(TOKE_PATH, SCOPES)
@@ -78,7 +78,7 @@ def get_weekly_sheet_id(week):
         # First, get the folder ID by querying by mimeType and name
         while True: # Will change to not be a loop
             page_token = None
-            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"{time.strftime("%B")} {time.strftime("%Y")[-2:]}\"'
+            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"September 25\"' # \"{time.strftime("%B")} {time.strftime("%Y")[-2:]}\"'
             month_folder_result = drive.files().list(
                 q = month_folder_req,
                 spaces="drive",

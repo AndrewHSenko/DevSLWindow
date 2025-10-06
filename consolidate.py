@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '09_27_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Sep_27_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '09_28_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Sep_28_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 4
-SHEET_NUM = 5
-DATE = '20250927'
+SHEET_NUM = 6
+DATE = '20250928'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -144,17 +144,17 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         smoothed_sums = {}
         # i = 0
         # desired_intvls = [q + 0.5 for i in range(len(sums))][:-1] # To remove the very last len+0.5 result
-        desired_intvls = np.linspace(0.5, 120, 119)
-        smoothed = np.interp(desired_intvls, sums.keys(), sums.values())
+        desired_intvls = np.linspace(0.5, 109.5, 110, endpoint=True)
+        smoothed = np.interp(desired_intvls, np.linspace(0, 110, 111, endpoint=True), [int(float(x)) for x in sums.values()])
         for i in range(len(smoothed)):
             smoothed_sums[i] = smoothed[i]
-        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, window_name, MONTH_H, smooth_it=True)
         print('On Sums')
         start = time.time()
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, MONTH_H)
+        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', MONTH_H, smooth_it=True)
     # Finish Data #
     if fsums:
         make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
@@ -194,6 +194,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
         overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
         overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed')
         overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H)
     # Will add return statement with try/catch blocks #
 

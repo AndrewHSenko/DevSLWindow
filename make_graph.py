@@ -11,13 +11,13 @@ def make_daily_prod(wbook, prods, sheet_name, graph_name, ylimit=40, smooth_it=F
     WS = WORKBOOK[day]
     fives_index = 0
     fives_data = [int(float(prods[prod])) for prod in prods]
-    for i in range(10):
+    for _ in range(10):
         fives_data.append(0)
     WS.insert_cols(idx = 1)
     hr_start = 10
     hr_end = 10
     min_start = 0
-    min_end = 5
+    min_end = 5 if not smooth_it else 10 # intervals of 10 mins for smoothed
     WS.insert_rows(idx = 1, amount = len(fives_data) + 10)
     for row in WS.iter_rows(min_row = 2):
         if (hr_start == 8 and min_start == 0) or fives_index == len(fives_data):
