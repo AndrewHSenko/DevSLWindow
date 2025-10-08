@@ -5,8 +5,9 @@ from datetime import datetime
 
 load_dotenv()
 
-finish_ids = {
-    "SOM SEPT" : 10012,
+backline_ids = {
+    "SOM OCT" : 10065,
+    # "SOM SEPT" : 10012,
     # "SOM AUG" : 9981,
     # "SOM JULY" : 9950,
     # "SOM JUNE" : 9921,
@@ -141,11 +142,12 @@ def get_check_data(start, end):
         knish = 0 # Every 4 knishes are rung in as one item
         check_qty = 0
         for menu_id, qty in check_data['menu_ids'].items():
-            if menu_id in finish_ids.values():
+            if menu_id in backline_ids.values():
                 if menu_id == 1638: # Latke
                     latke += qty
                     continue
                 check_qty += qty
+                has_start = True
                 has_finish = True
             elif menu_id in pv_ids.values():
                 if menu_id == 4444: # Ht'd Knish
@@ -169,6 +171,6 @@ def get_check_data(start, end):
         if check_qty == 0: # Skip checks that don't have SL items
             continue
         sale_time = check.strftime('%Y%m%d%H%M%S')
-        checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, (has_finish, has_PV)]
+        checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, (has_start, has_finish, has_PV)]
     # checks_data is now filled with the qty for each check (including empty checks)
     return checks_data

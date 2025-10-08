@@ -196,6 +196,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
 # To update window
 def tabulate(active_checks):
     window = {}
+    s_window = {}
     f_window = {}
     p_window = {}
     fpv_window = {}
@@ -210,9 +211,10 @@ def tabulate(active_checks):
         easier_win_end = end_time if end_time < 1300 else end_time - 1200
         intvl = str(easier_win_start)[:-2]+ ':' + str(easier_win_start)[-2:] + ' - ' + str(easier_win_end)[:-2] + ':' + str(easier_win_end)[-2:]
         window[intvl] = []
-        f_window[intvl] = []
-        p_window[intvl] = []
-        fpv_window[intvl] = []
+        s_window[intvl] = [] # Start
+        f_window[intvl] = [] # Finish
+        pv_window[intvl] = [] # Platesville
+        fpv_window[intvl] = [] # Start & Finish
         entered[intvl] = []
         for check in active_checks:
             anchor = active_checks[check]['ANCHOR']
@@ -222,39 +224,59 @@ def tabulate(active_checks):
                     with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
                         badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
                 continue
-            '''
-            if active_checks[check]['has_finish']:
-                finish = active_checks[check]['HOT FINISH']
-                if active_checks[check]['has_pv']:
-                    pv = active_checks[check]['PLATESVILLE']
-                    if finish > pv:
-                        fpv = finish
-                    else:
-                        fpv = pv
-            if active_checks[check]['has_pv']:
-                pv = active_checks[check]['PLATESVILLE']
-            '''
+            check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
             if int(window_start) < int(check) < int(window_end): # FoH Entries
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']])
             if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-            # Figure this out #
-            '''
-            if int(window_start) < int(finish) < int(window_end): # Finish/PV Bumps
-                check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
-                fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-            '''
+            if active_checks[check]['has_start']:
+                start = active_checks[check]['HOT START']
+                if int(window_start) < int(start) < int(window_end): # Start Bumps
+                    s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+            if active_checks[check]['has_finish']:
+                finish = active_checks[check]['HOT FINISH']
+                if int(window_start) < int(finish) < int(window_end): # Finish Bumps
+                    f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                if active_checks[check]['has_pv']: # So Finish & PV
+                    pv = active_checks[check]['PLATESVILLE']
+                    if finish < pv: # Bumped at Finish first, then PV
+                        fpv = pv
+                    else:
+                        fpv = finish
+                    if int(window_start) < int(fpv) < int(window_end): # Start Bumps
+                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+            if active_checks[check]['has_pv']:
+                pv = active_checks[check]['PLATESVILLE']
+                if int(window_start) < int(start) < int(window_end): # Start Bumps
+                    pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
         window[intvl].append(sum)
+        sum = 0
+        for entry in s_window[intvl]:
+            sum += entry[-1]
+        s_window[intvl].append(sum)
+        sum = 0
+        for entry in f_window[intvl]:
+            sum += entry[-1]
+        f_window[intvl].append(sum)
+        sum = 0
+        for entry in pv_window[intvl]:
+            sum += entry[-1]
+        pv_window[intvl].append(sum)
+        sum = 0
+        for entry in fpv_window[intvl]:
+            sum += entry[-1]
+        fpv_window[intvl].append(sum)
         print('Testing:', start_time)
         start_time += 5
         if str(start_time)[-2:] == '60':
             start_time += 40
-    # Tabulate data #
+    # Tabulate data # 
+    # THIS IS WHERE WE LEFT OFF #
     raw_data = create_raw_text(window, 'Window')
     sums = raw_data[0]
     stotal = raw_data[1]
@@ -294,7 +316,7 @@ def find_production():
         if sq_checks:
             for sq_check in sq_checks:
                 if sq_check not in active_checks : # Add check from Squirrel to active_checks
-                    active_checks[sq_check] = {'Name': sq_checks[sq_check][1], 'Qty': sq_checks[sq_check][2], 'has_finish': sq_checks[sq_check][3][0], 'has_pv': sq_checks[sq_check][3][1], 'HOT START' : '', 'HOT FINISH' : '', 'PLATESVILLE': '', 'ANCHOR' : ''}
+                    active_checks[sq_check] = {'Name': sq_checks[sq_check][1], 'Qty': sq_checks[sq_check][2], 'has_start': sq_checks[sq_check][3][0], 'has_finish': sq_checks[sq_check][3][1], 'has_pv': sq_checks[sq_check][3][2], 'HOT START' : '', 'HOT FINISH' : '', 'PLATESVILLE': '', 'ANCHOR' : ''}
         # Set up bump times in active_checks #
         for sale_time in active_checks:
             check_name = active_checks[sale_time]['Name']
