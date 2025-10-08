@@ -12,8 +12,8 @@ from googleapiclient.errors import HttpError
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/drive']
 # SPREADSHEET_ID = '11RDkPuupd7lq8TnkAagahZSBuOfzXGGLOhZGvdroOp4' # Should be dynamic # Dev Change #
 # RAW_RANGE = 'D5:L126' # Trims surrounding empty rows
-TOTAL_RANGE = 'M6:M135' # Should be 9:00am - 8:00pm, 130 total entries
-WINDOW_RANGE = 'O6:O135'
+TOTAL_RANGE = 'M5:M135' # Should be 9:15am - 8:00pm, 130 total entries
+WINDOW_RANGE = 'O5:O135'
 DEFAULT = 'M1'
 DEFAULT_VAL = '18'
 
@@ -88,7 +88,7 @@ def get_weekly_sheet_id(week):
             if month_folder_result == []: # No results found
                 with open('pu_errors.txt', 'a') as puf:
                     puf.write(f'Could not find {time.strftime("%B")} {time.strftime("%Y")[-2:]}. Double check the folder name is correct.\n')
-                month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name contains \"{time.strftime("%b")}\"' # Backup request
+                month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name contains \"{time.strftime("%b")}\" or name contains \"{time.strftime("%b").upper()}\"' # Backup request
                 month_folder_result = drive.files().list(
                     q = month_folder_req,
                     spaces="drive",

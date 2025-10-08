@@ -6,7 +6,8 @@ from datetime import datetime
 load_dotenv()
 
 finish_ids = {
-    "SOM SEPT" : 10012,
+    "SOM OCT" : 10065,
+    # "SOM SEPT" : 10012,
     # "SOM AUG" : 9981,
     # "SOM JULY" : 9950,
     # "SOM JUNE" : 9921,

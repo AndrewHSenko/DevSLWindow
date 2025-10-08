@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '09_28_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Sep_28_2025' # time.strftime('%b_%d_%Y')
-NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 4
+MONTH_H = '10_05_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Oct_05_2025' # time.strftime('%b_%d_%Y')
+NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
+WEEK_NUM = 1
 SHEET_NUM = 6
-DATE = '20250928'
+DATE = '20251005'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -319,7 +319,7 @@ def find_production():
     return True
 
 if __name__ == '__main__':
-    if time.strftime('%d') == '01': # Dev Change #
+    if time.strftime('%d') == '07': # Dev Change #
         # Create the monthly directory
         try:
             mkdir(DIR_NAME)
