@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '09_13_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Sep_13_2025' # time.strftime('%b_%d_%Y')
-NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 2
+MONTH_H = '10_04_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Oct_04_2025' # time.strftime('%b_%d_%Y')
+NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
+WEEK_NUM = 1
 SHEET_NUM = 5
-DATE = '20250913'
+DATE = '20251004'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -127,7 +127,7 @@ def create_foh_entries_text(entered):
             entry_file.write(f'|{ivl}| TOTAL CHECKS: {entry_qty[0]} / TOTAL QTY: {entry_qty[1]}\n')
     return qtys
 
-def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsums=None, pvsums=None):
+def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssums=None, fsums=None, pvsums=None, fpvsums=None):
     monthly_wb = False # Change to false
     if time.strftime('%d') == '01': # Dev Change #
         monthly_wb = True
@@ -139,8 +139,8 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
     # Window Data #
     if sums:
         smoothed_sums = {}
-        desired_intvls = np.linspace(0.5, 109.5, 110, endpoint=True)
-        smoothed = np.interp(desired_intvls, np.linspace(0, 110, 111, endpoint=True), [int(float(x)) for x in sums.values()])
+        desired_intvls = np.linspace(0.5, 121.5, 122, endpoint=True)
+        smoothed = np.interp(desired_intvls, np.linspace(0, 122, 123, endpoint=True), [int(float(x)) for x in sums.values()])
         for i in range(len(smoothed)):
             smoothed_sums[i] = smoothed[i]
         print('On Sums')
@@ -205,9 +205,14 @@ def tabulate(active_checks):
     start_time = 900 # Changed for 9am start #
     while start_time != 1915:
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
-        window_start, window_end = f'{DATE}{start_time}00', f'{DATE}{end_time}00'
+        window_start = f'{DATE}0{start_time}00' if start_time < 1000 else f'{DATE}{start_time}00'
+        window_end = f'{DATE}0{end_time}00' if end_time < 1000 else f'{DATE}{end_time}00'
         easier_win_start = start_time if start_time < 1300 else start_time - 1200
+        if start_time < 1000:
+            easier_win_start = f'0{easier_win_start}'
         easier_win_end = end_time if end_time < 1300 else end_time - 1200
+        if end_time < 1000:
+            easier_win_end = f'0{easier_win_end}'
         intvl = str(easier_win_start)[:-2]+ ':' + str(easier_win_start)[-2:] + ' - ' + str(easier_win_end)[:-2] + ':' + str(easier_win_end)[-2:]
         window[intvl] = []
         f_window[intvl] = []
@@ -276,6 +281,7 @@ def tabulate(active_checks):
         check_qtys[ivl] = qty[0]
         item_qtys[ivl] = qty[1]
     pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
+    i = 0
     create_sheets(sums, item_qtys, pu_window, pu_actual)
 
 def find_production():
@@ -314,7 +320,7 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
-    find_bad_checks(active_checks)
+    i = 0
     tabulate(active_checks)
     return True
 

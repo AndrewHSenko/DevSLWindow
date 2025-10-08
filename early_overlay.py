@@ -28,27 +28,29 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
         WS = WORKBOOK[day]
         fives_index = 0
         if sl_prods:
-                LENGTH = len(sl_prods)
-            elif foh_prods:
-                LENGTH = len(foh_prods)
-            else:
-                LENGTH = len(foh_window)
-            if sl_prods:
-                sl_data = [int(float(sl_prods[prod])) for prod in sl_prods]
-                for i in range(10):
-                    sl_data.append(0)
-            if foh_prods:
-                foh_data = [int(float(foh_prods[prod])) for prod in foh_prods]
-                for i in range(10):
-                    foh_data.append(0)
-            if foh_window:
-                foh_w = [int(float(foh_window[prod])) for prod in foh_window]
-                for i in range(10):
-                    foh_w.append(0)
-            if foh_actual:
-                foh_a = [int(float(foh_actual[prod])) for prod in foh_actual]
-                for i in range(10):
-                    foh_a.append(0)
+            LENGTH = len(sl_prods)
+        elif foh_prods:
+            LENGTH = len(foh_prods)
+        else:
+            LENGTH = len(foh_window)
+        if sl_prods:
+            sl_data = [int(float(sl_prods[prod])) for prod in sl_prods]
+            for i in range(10):
+                sl_data.append(0)
+        if foh_prods:
+            foh_data = [int(float(foh_prods[prod])) for prod in foh_prods]
+            for i in range(10):
+                foh_data.append(0)
+        if foh_window:
+            foh_w = [0, 0, 0]
+            foh_w += [int(float(foh_window[prod])) for prod in foh_window]
+            for i in range(10):
+                foh_w.append(0)
+        if foh_actual:
+            foh_a = [0, 0, 0]
+            foh_a += [int(float(foh_actual[prod])) for prod in foh_actual]
+            for i in range(10):
+                foh_a.append(0)
         WS.insert_cols(idx = 1, amount=4)
         hr_start = 9
         hr_end = 9

@@ -5,7 +5,7 @@ from datetime import datetime
 
 load_dotenv()
 
-backline_ids = {
+finish_ids = {
     "SOM OCT" : 10065,
     # "SOM SEPT" : 10012,
     # "SOM AUG" : 9981,

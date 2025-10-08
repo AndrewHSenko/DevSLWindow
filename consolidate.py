@@ -127,15 +127,17 @@ def create_foh_entries_text(entered):
             entry_file.write(f'|{ivl}| TOTAL CHECKS: {entry_qty[0]} / TOTAL QTY: {entry_qty[1]}\n')
     return qtys
 
-def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsums=None, pvsums=None):
+def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssums=None, fsums=None, pvsums=None, fpvsums=None):
     monthly_wb = False
     if time.strftime('%d') == '01': # Dev Change #
         monthly_wb = True
     # monthly_window_wb_name = f'{DIR_NAME}/{NO_DAY}_Window_Data.xlsx'
     daily_window_wb_name = f'{DEST_PATH}{MONTH_H}_Window.xlsx'
+    daily_station_wb_name = f'{DEST_PATH}{MONTH_H}_Stations.xlsx'
     window_name = MONTH_H + '_Window_Items'
     finish_name = MONTH_H + '_Finish_Items'
     pv_name = MONTH_H + '_PV_Items'
+    fpv_name = MONTH_H + '_FPV_Items'
     # Window Data #
     if sums:
         smoothed_sums = {}
@@ -150,18 +152,30 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, fsu
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, MONTH_H)
         make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', MONTH_H, smooth_it=True)
+    # Start Data #
+    if ssums:
+        # make_sheet.generate_daily_sheet(monthly_window_wb_name, ssums, monthly_wb, finish_name) # To add to monthly workbook
+        # make_graph.make_daily_prod(monthly_window_wb_name, ssums, finish_name)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, ssums, True, start_name) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, ssums, start_name, MONTH_H)
     # Finish Data #
     if fsums:
-        make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
-        make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
-        make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, finish_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, finish_name, MONTH_H)
+        # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
+        # make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, True, finish_name) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, MONTH_H)
     # PV Data #
     if pvsums:
-        make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
-        make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
-        make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, pv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, pv_name, MONTH_H)
+        # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
+        # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, True, pv_name) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, MONTH_H)
+    # FPV Data #
+    if fpvsums:
+        # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
+        # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, True, fpv_name) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, MONTH_H)
     # FoH Data #
     # Checks (retired) #
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
@@ -281,16 +295,22 @@ def tabulate(active_checks):
     sums = raw_data[0]
     stotal = raw_data[1]
     create_window_text(sums, stotal, 'Window')
-    '''
-    finish_data = create_raw_text(window, 'Finish')
-    fsums = finish_data[0]
-    ftotal = finish_data[1]
-    create_window_text(fsums, ftotal, 'Finish')
-    pv_data = create_raw_text(window, 'PV')
-    pvsums = pv_data[0]
-    pvtotal = pv_data[1]
-    create_window_text(pvsums, pvtotal, 'PV')
-    '''
+    raw_data = create_raw_text(s_window, 'Start Window')
+    sums = raw_data[0]
+    stotal = raw_data[1]
+    create_window_text(sums, stotal, 'Start Window')
+    raw_data = create_raw_text(f_window, 'Finish Window')
+    sums = raw_data[0]
+    stotal = raw_data[1]
+    create_window_text(sums, stotal, 'Finish Window')
+    raw_data = create_raw_text(pv_window, 'PV Window')
+    sums = raw_data[0]
+    stotal = raw_data[1]
+    create_window_text(sums, stotal, 'PV Window')
+    raw_data = create_raw_text(fpv_window, 'FPV Window')
+    sums = raw_data[0]
+    stotal = raw_data[1]
+    create_window_text(sums, stotal, 'FPV Window')
     qtys = create_foh_entries_text(entered)
     check_qtys = {}
     item_qtys = {}
