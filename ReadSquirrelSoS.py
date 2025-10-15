@@ -5,96 +5,89 @@ from datetime import datetime
 
 load_dotenv()
 
-finish_ids = {
-    "SOM OCT" : 10065,
-    # "SOM SEPT" : 10012,
-    # "SOM AUG" : 9981,
-    # "SOM JULY" : 9950,
-    # "SOM JUNE" : 9921,
-    # "SOM MAY" : 9887,
-    # "SOM MARCH" : 9798,
-    # "SOM APRIL" : 9849
-    "CUSTOM" : 1146,
-    "#1" : 353,
-    "#2" : 379,
-    "#4" : 350,
-    "#5" : 662,
-    "#13" : 346,
-    "#14" : 407,
-    "#18" : 430,
-    "#22" : 345,
-    "#23" : 424,
-    "#26" : 632,
-    "#27" : 375,
-    "#34" : 426,
-    "#36" : 656,
-    "#40" : 387,
-    "#48" : 374,
-    "#51" : 612,
-    "#54" : 614,
-    "#55" : 652,
-    "#64" : 5382,
-    "#66" : 634,
-    "#73" : 366,
-    "#74" : 618,
-    "#75" : 654,
-    "#79" : 4006,
-    "#81" : 365,
-    "#81.5" : 4439,
-    "#82" : 413,
-    "#84" : 616,
-    "#85" : 610,
-    "#88" : 377,
-    "#97" : 384,
-    "#123" : 398,
-    "#234" : 5104,
-    "#236" : 3828,
-    "#246" : 7572,
-    "#272" : 4792,
-    "#1000" : 4856,
-    "Adult PB&J" : 3089,
-    "Latke" : 1638,
-    "KG" : 977,
-    "KG MD" : 978,
-    "Kid Brst" : 965,
-    "Kid Brst MD" : 966,
-    "Kid CB" : 963,
-    "Kid CB MD" : 964,
-    "Kid Chix" : 969,
-    "Kid Chix MD" : 970,
-    "Kid Ham" : 971,
-    "Kid Ham MD" : 972,
-    "Kid Sal" : 975,
-    "Kid Sal MD" : 976,
-    "Kid Tuna" : 967,
-    "Kid Tuna MD" : 968,
-    "Kid Turk" : 961,
-    "Kid Turk MD" : 962,
-    "Zing Taters" : 905
-    }
+backline_ids = {
+    10065 : 'SOM OCT',
+    1146 : 'CUSTOM',
+    353 : '#1',
+    379 : '#2',
+    350 : '#4',
+    662 : '#5',
+    346 : '#13',
+    407 : '#14',
+    430 : '#18',
+    345 : '#22',
+    424 : '#23',
+    632 : '#26',
+    375 : '#27',
+    426 : '#34',
+    656 : '#36',
+    387 : '#40',
+    374 : '#48',
+    612 : '#51',
+    614 : '#54',
+    652 : '#55',
+    5382 : '#64',
+    634 : '#66',
+    366 : '#73',
+    618 : '#74',
+    654 : '#75',
+    4006 : '#79',
+    365 : '#81',
+    4439 : '#81.5',
+    413 : '#82',
+    616 : '#84',
+    610 : '#85',
+    377 : '#88',
+    384 : '#97',
+    398 : '#123',
+    5104 : '#234',
+    3828 : '#236',
+    7572 : '#246',
+    4792 : '#272',
+    4856 : '#1000',
+    3089 : 'Adult PB&J',
+    1638 : 'Latke',
+    977 : 'KG',
+    978 : 'KG MD',
+    965 : 'Kid Brst',
+    966 : 'Kid Brst MD',
+    963 : 'Kid CB',
+    964 : 'Kid CB MD',
+    969 : 'Kid Chix',
+    970 : 'Kid Chix MD',
+    971 : 'Kid Ham',
+    972 : 'Kid Ham MD',
+    975 : 'Kid Sal',
+    976 : 'Kid Sal MD',
+    967 : 'Kid Tuna',
+    968 : 'Kid Tuna MD',
+    961 : 'Kid Turk',
+    962 : 'Kid Turk MD',
+    905 : 'Zing Taters'
+}
 pv_ids = {
-    "#30" : 393,
-    "#100" : 648,
-    "#420" : 584,
-    "#422" : 8622,
-    "#600" : 673,
-    "#606" : 675,
-    "#607" : 687,
-    "#608" : 680,
-    "#616" : 677,
-    "#623" : 688,
-    "KD" : 981,
-    "KD MD" : 982,
-    "Kid PB&J" : 979,
-    "Kid PB&J MD" : 980,
-    "Knish Heated" : 4444,
-    "Knish 3 Pack" : 4443
-    # Specific Knishes should be defunct #
-    # "Knish Chix" : 4089,
-    # "Knish Kasha" : 4090,
-    # "Knish Pastrami" : 4435,
-    # "Knish Potato" : 2129,
-    # End defunct knishes #
+    393 : '#30',
+    648 : '#100',
+    584 : '#420',
+    8622 : '#422',
+    673 : '#600',
+    675 : '#606',
+    687 : '#607',
+    680 : '#608',
+    677 : '#616',
+    688 : '#623',
+    981 : 'KD',
+    982 : 'KD MD',
+    979 : 'Kid PB&J',
+    980 : 'Kid PB&J MD',
+    4444 : 'Knish Heated',
+    4443 : 'Knish 3 Pack',
+    # Begin defunct knish ids #
+    # 4089 : 'Knish Chix',
+    # 4090 : 'Knish Kasha',
+    # 4435 : 'Knish Pastrami',
+    # 2129 : 'Knish Potato'
+    # End defunct knish ids #
 }
 
 def get_check(start, end):
@@ -119,11 +112,11 @@ def get_check_data(start, end):
         end_time = datetime.strptime(end, '%Y%m%d%H%M%S')
         cursor.execute(get_check(start_time, end_time))
         rows = cursor.fetchall() # Could iterate using fetchone, but # of rows should never be too large
-        if rows == []:
+        if rows == []: # Empty row
             return
         for check in rows:
             sale_time = check[2]
-            if not check[1]:
+            if not check[1]: # No name
                 print(check[0])
                 continue
             if sale_time not in checks: 
@@ -136,20 +129,30 @@ def get_check_data(start, end):
     # Now checks is filled with every check entered between start and end #
     checks_data = {}
     for check, check_data in checks.items():
+        has_start = False
         has_finish = False
         has_PV = False
         latke = 0 # Every 4 latkes are rung in as one item
         knish = 0 # Every 4 knishes are rung in as one item
         check_qty = 0
+        bl_items = [] # Backline items
+        bl_qty = 0
+        pv_items = [] # PV items
+        pv_qty = 0
         for menu_id, qty in check_data['menu_ids'].items():
-            if menu_id in backline_ids.values():
+            if menu_id in backline_ids:
+                for i in range(qty):
+                    bl_items.append(backline_ids[menu_id])
                 if menu_id == 1638: # Latke
                     latke += qty
                     continue
                 check_qty += qty
+                bl_qty += qty
                 has_start = True
                 has_finish = True
             elif menu_id in pv_ids.values():
+                for i in range(qty):
+                    pv_items.append(pv_ids[menu_id])
                 if menu_id == 4444: # Ht'd Knish
                     knish += qty
                     continue
@@ -157,20 +160,26 @@ def get_check_data(start, end):
                     knish += qty * 3
                     continue
                 check_qty += qty
+                pv_qty += qty
                 has_PV = True
         if latke:
             while latke > 4:
                 latke -= 4
                 check_qty += 1
+                bl_qty += 1
             check_qty += 1
+            bl_qty += 1
         if knish:
             while knish > 4:
                 knish -= 4
                 check_qty += 1
+                pv_qty += 1
             check_qty += 1
+            pv_qty += 1
         if check_qty == 0: # Skip checks that don't have SL items
             continue
         sale_time = check.strftime('%Y%m%d%H%M%S')
-        checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, (has_start, has_finish, has_PV)]
+        # Check No, Check Name, Check Qty, Has___, BLitems / PVitems #
+        checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, (has_start, has_finish, has_PV), (bl_qty, pv_qty), (bl_items, pv_items)]
     # checks_data is now filled with the qty for each check (including empty checks)
     return checks_data

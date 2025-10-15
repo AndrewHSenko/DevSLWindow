@@ -135,6 +135,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
     daily_window_wb_name = f'{DEST_PATH}{MONTH_H}_Window.xlsx'
     daily_station_wb_name = f'{DEST_PATH}{MONTH_H}_Stations.xlsx'
     window_name = MONTH_H + '_Window_Items'
+    start_name = MONTH_H + '_Start_Items'
     finish_name = MONTH_H + '_Finish_Items'
     pv_name = MONTH_H + '_PV_Items'
     fpv_name = MONTH_H + '_FPV_Items'
@@ -201,6 +202,10 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         ratio = overlay.ratio(sums, foh_items)
         make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
         make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
+        if ssums and fsums and pvsums:
+            overlay.create_overlay(daily_station_wb_name, ssums, fsums, pvsums, None, f'{MONTH_H} Stations', f'{MONTH_H} Stations')
+        if sums and fpvsums:
+            overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo')
         overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
         overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
         overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed')
@@ -245,26 +250,29 @@ def tabulate(active_checks):
             if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+            # HERE HERE HERE HERE #
+            # FILTER OUT TICKETS WITH ONLY PV ITEMS #
             if active_checks[check]['has_start']:
                 start = active_checks[check]['HOT START']
                 if int(window_start) < int(start) < int(window_end): # Start Bumps
-                    s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                    s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
                 if int(window_start) < int(finish) < int(window_end): # Finish Bumps
-                    f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                    f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
                 if active_checks[check]['has_pv']: # So Finish & PV
                     pv = active_checks[check]['PLATESVILLE']
                     if finish < pv: # Bumped at Finish first, then PV
                         fpv = pv
                     else:
                         fpv = finish
-                    if int(window_start) < int(fpv) < int(window_end): # Start Bumps
+                    if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+            # FILTER OUT TICKETS WITH ONLY BACKLINE ITEMS #
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
-                if int(window_start) < int(start) < int(window_end): # Start Bumps
-                    pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                if int(window_start) < int(pv) < int(window_end): # PV Bumps
+                    pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
@@ -290,7 +298,6 @@ def tabulate(active_checks):
         if str(start_time)[-2:] == '60':
             start_time += 40
     # Tabulate data # 
-    # THIS IS WHERE WE LEFT OFF #
     raw_data = create_raw_text(window, 'Window')
     sums = raw_data[0]
     stotal = raw_data[1]
@@ -336,7 +343,19 @@ def find_production():
         if sq_checks:
             for sq_check in sq_checks:
                 if sq_check not in active_checks : # Add check from Squirrel to active_checks
-                    active_checks[sq_check] = {'Name': sq_checks[sq_check][1], 'Qty': sq_checks[sq_check][2], 'has_start': sq_checks[sq_check][3][0], 'has_finish': sq_checks[sq_check][3][1], 'has_pv': sq_checks[sq_check][3][2], 'HOT START' : '', 'HOT FINISH' : '', 'PLATESVILLE': '', 'ANCHOR' : ''}
+                    active_checks[sq_check] = {
+                        'Name': sq_checks[sq_check][1],
+                        'Qty': sq_checks[sq_check][2],
+                        'has_start': sq_checks[sq_check][3][0],
+                        'has_finish': sq_checks[sq_check][3][1],
+                        'has_pv': sq_checks[sq_check][3][2],
+                        'bl_qty': sq_checks[sq_check][4][0],
+                        'pv_qty': sq_checks[sq_check][4][1],
+                        'HOT START' : '',
+                        'HOT FINISH' : '',
+                        'PLATESVILLE': '',
+                        'ANCHOR' : ''
+                    }
         # Set up bump times in active_checks #
         for sale_time in active_checks:
             check_name = active_checks[sale_time]['Name']
