@@ -258,9 +258,7 @@ def tabulate(active_checks):
                     s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
-                if int(window_start) < int(finish) < int(window_end): # Finish Bumps
-                    f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
-                if active_checks[check]['has_pv']: # So Finish & PV
+                if int(window_start) < int(finish) < int(window_end) and active_checks[check]['has_pv']: # So Finish & PV
                     pv = active_checks[check]['PLATESVILLE']
                     if finish < pv: # Bumped at Finish first, then PV
                         fpv = pv
@@ -268,11 +266,26 @@ def tabulate(active_checks):
                         fpv = finish
                     if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                else:
+                    if int(window_start) < int(finish) < int(window_end): # Finish Bumps
+                        f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
+                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+
             # FILTER OUT TICKETS WITH ONLY BACKLINE ITEMS #
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
                 if int(window_start) < int(pv) < int(window_end): # PV Bumps
-                    pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
+                    finish = active_checks[check]['HOT FINISH']
+                    if finish < pv: # Bumped at Finish first, then PV
+                        fpv = pv
+                    else:
+                        fpv = finish
+                    if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
+                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                else:
+                    if int(window_start) < int(finish) < int(window_end): # Finish Bumps
+                        pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
+                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
