@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '09_28_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Sep_28_2025' # time.strftime('%b_%d_%Y')
-NO_DAY = 'Sep_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 4
+MONTH_H = '10_12_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Oct_12_2025' # time.strftime('%b_%d_%Y')
+NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
+WEEK_NUM = 2
 SHEET_NUM = 6
-DATE = '20250928'
+DATE = '20251012'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -163,19 +163,19 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
     if fsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, True, finish_name) # To add to daily workbook
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, False, finish_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, MONTH_H)
     # PV Data #
     if pvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, True, pv_name) # To add to daily workbook
+        make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, False, pv_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, MONTH_H)
     # FPV Data #
     if fpvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, True, fpv_name) # To add to daily workbook
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, False, fpv_name) # To add to daily workbook
         make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, MONTH_H)
     # FoH Data #
     # Checks (retired) #
@@ -217,7 +217,7 @@ def tabulate(active_checks):
     window = {}
     s_window = {}
     f_window = {}
-    p_window = {}
+    pv_window = {}
     fpv_window = {}
     entered = {}
     missing_anchor_bumps = []
@@ -272,6 +272,7 @@ def tabulate(active_checks):
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
                 if int(window_start) < int(pv) < int(window_end): # PV Bumps
+                    print('Bump met')
                     pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
         sum = 0
         for entry in window[intvl]:
@@ -303,21 +304,21 @@ def tabulate(active_checks):
     stotal = raw_data[1]
     create_window_text(sums, stotal, 'Window')
     raw_data = create_raw_text(s_window, 'Start Window')
-    sums = raw_data[0]
-    stotal = raw_data[1]
-    create_window_text(sums, stotal, 'Start Window')
+    ssums = raw_data[0]
+    sstotal = raw_data[1]
+    create_window_text(ssums, sstotal, 'Start Window')
     raw_data = create_raw_text(f_window, 'Finish Window')
-    sums = raw_data[0]
-    stotal = raw_data[1]
-    create_window_text(sums, stotal, 'Finish Window')
+    fsums = raw_data[0]
+    fstotal = raw_data[1]
+    create_window_text(fsums, fstotal, 'Finish Window')
     raw_data = create_raw_text(pv_window, 'PV Window')
-    sums = raw_data[0]
-    stotal = raw_data[1]
-    create_window_text(sums, stotal, 'PV Window')
+    pvsums = raw_data[0]
+    pvstotal = raw_data[1]
+    create_window_text(pvsums, pvstotal, 'PV Window')
     raw_data = create_raw_text(fpv_window, 'FPV Window')
-    sums = raw_data[0]
-    stotal = raw_data[1]
-    create_window_text(sums, stotal, 'FPV Window')
+    fpvsums = raw_data[0]
+    fpvstotal = raw_data[1]
+    create_window_text(fpvsums, fpvstotal, 'FPV Window')
     qtys = create_foh_entries_text(entered)
     check_qtys = {}
     item_qtys = {}
@@ -325,7 +326,7 @@ def tabulate(active_checks):
         check_qtys[ivl] = qty[0]
         item_qtys[ivl] = qty[1]
     pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
-    create_sheets(sums, item_qtys, pu_window, pu_actual)
+    create_sheets(sums, item_qtys, pu_window, pu_actual, ssums, fsums, pvsums, fpvsums)
 
 def find_production():
     qsr_data = qsr.get_QSR_data() #'20250602162500'

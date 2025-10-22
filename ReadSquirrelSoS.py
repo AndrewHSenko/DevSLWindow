@@ -141,7 +141,7 @@ def get_check_data(start, end):
         pv_qty = 0
         for menu_id, qty in check_data['menu_ids'].items():
             if menu_id in backline_ids:
-                for i in range(qty):
+                for i in range(int(qty)):
                     bl_items.append(backline_ids[menu_id])
                 if menu_id == 1638: # Latke
                     latke += qty
@@ -150,8 +150,8 @@ def get_check_data(start, end):
                 bl_qty += qty
                 has_start = True
                 has_finish = True
-            elif menu_id in pv_ids.values():
-                for i in range(qty):
+            elif menu_id in pv_ids:
+                for i in range(int(qty)):
                     pv_items.append(pv_ids[menu_id])
                 if menu_id == 4444: # Ht'd Knish
                     knish += qty
