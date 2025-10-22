@@ -9,12 +9,12 @@ import numpy as np
 from os import mkdir
 
 # HEADERS #
-MONTH_H = '10_12_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Oct_12_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '10_17_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Oct_17_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 2
-SHEET_NUM = 6
-DATE = '20251012'
+WEEK_NUM = 3
+SHEET_NUM = 4
+DATE = '20251017'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -245,10 +245,8 @@ def tabulate(active_checks):
                 continue
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
             if int(window_start) < int(check) < int(window_end): # FoH Entries
-                check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']])
             if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
-                check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
             if active_checks[check]['has_start']:
                 start = active_checks[check]['HOT START']
@@ -256,32 +254,24 @@ def tabulate(active_checks):
                     s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
-                if int(window_start) < int(finish) < int(window_end) and active_checks[check]['has_pv']: # So Finish & PV
-                    pv = active_checks[check]['PLATESVILLE']
-                    if finish < pv: # Bumped at Finish first, then PV
-                        fpv = pv
-                    else:
-                        fpv = finish
-                    if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
+                if int(window_start) < int(finish) < int(window_end):
+                    f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
+                    if active_checks[check]['has_pv']: # So Finish & PV
+                        pv = active_checks[check]['PLATESVILLE']
+                        if finish < pv: # Bumped at Finish first, then PV
+                            fpv = pv
+                        else:
+                            fpv = finish
+                        if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
+                            fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                    else: # Just Finish bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-                else:
-                    if int(window_start) < int(finish) < int(window_end): # Finish Bumps
-                        f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
-                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-            if active_checks[check]['has_pv']:
+            elif active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
+                # CAREFUL: You are not checking for Finish items here for FPV #
                 if int(window_start) < int(pv) < int(window_end): # PV Bumps
-                    finish = active_checks[check]['HOT FINISH']
-                    if finish < pv: # Bumped at Finish first, then PV
-                        fpv = pv
-                    else:
-                        fpv = finish
-                    if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
-                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-                else:
-                    if int(window_start) < int(finish) < int(window_end): # Finish Bumps
-                        pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
-                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                    pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
+                    fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
@@ -363,7 +353,9 @@ def find_production():
                         'HOT START' : '',
                         'HOT FINISH' : '',
                         'PLATESVILLE': '',
-                        'ANCHOR' : ''
+                        'ANCHOR' : '',
+                        'BL Items' : sq_checks[sq_check][5][0],
+                        'PV Items' : sq_checks[sq_check][5][1]
                     }
         # Set up bump times in active_checks #
         for sale_time in active_checks:

@@ -45,7 +45,6 @@ backline_ids = {
     7572 : '#246',
     4792 : '#272',
     4856 : '#1000',
-    3089 : 'Adult PB&J',
     1638 : 'Latke',
     977 : 'KG',
     978 : 'KG MD',
@@ -80,6 +79,7 @@ pv_ids = {
     982 : 'KD MD',
     979 : 'Kid PB&J',
     980 : 'Kid PB&J MD',
+    3089 : 'Adult PB&J',
     4444 : 'Knish Heated',
     4443 : 'Knish 3 Pack',
     # Begin defunct knish ids #
