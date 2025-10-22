@@ -250,8 +250,6 @@ def tabulate(active_checks):
             if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
                 check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-            # HERE HERE HERE HERE #
-            # FILTER OUT TICKETS WITH ONLY PV ITEMS #
             if active_checks[check]['has_start']:
                 start = active_checks[check]['HOT START']
                 if int(window_start) < int(start) < int(window_end): # Start Bumps
@@ -270,8 +268,6 @@ def tabulate(active_checks):
                     if int(window_start) < int(finish) < int(window_end): # Finish Bumps
                         f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
-
-            # FILTER OUT TICKETS WITH ONLY BACKLINE ITEMS #
             if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
                 if int(window_start) < int(pv) < int(window_end): # PV Bumps
