@@ -248,16 +248,24 @@ def tabulate(active_checks):
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
             if int(window_start) < int(check) < int(window_end): # FoH Entries
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']])
+                if active_checks[check]['Name'] == 'JONATHAN B':
+                    print('FoH hit')
             if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                if active_checks[check]['Name'] == 'JONATHAN B':
+                    print('Expo hit')
             if active_checks[check]['has_start']:
                 start = active_checks[check]['HOT START']
                 if int(window_start) < int(start) < int(window_end): # Start Bumps
                     s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
+                    if active_checks[check]['Name'] == 'JONATHAN B':
+                        print('Start hit')
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
                 if int(window_start) < int(finish) < int(window_end):
                     f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['bl_qty']))
+                    if active_checks[check]['Name'] == 'JONATHAN B':
+                        print('Finish hit')
                     if active_checks[check]['has_pv']: # So Finish & PV
                         pv = active_checks[check]['PLATESVILLE']
                         if finish < pv: # Bumped at Finish first, then PV
@@ -266,33 +274,49 @@ def tabulate(active_checks):
                             fpv = finish
                         if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
                             fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                            if active_checks[check]['Name'] == 'JONATHAN B':
+                                print('FPV hit')
                     else: # Just Finish bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                        if active_checks[check]['Name'] == 'JONATHAN B':
+                            print('Second Finish hit')
             elif active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
                 # CAREFUL: You are not checking for Finish items here for FPV #
                 if int(window_start) < int(pv) < int(window_end): # PV Bumps
                     pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['pv_qty']))
                     fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['Qty']))
+                    if active_checks[check]['Name'] == 'JONATHAN B':
+                        print('PV hit')
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
+            if entry[1] == 'JONATHAN B':
+                print(f'Jon B qty {entry[2]} added to expo')
         window[intvl].append(sum)
         sum = 0
         for entry in s_window[intvl]:
             sum += entry[-1]
+            if entry[1] == 'JONATHAN B':
+                print(f'Jon B qty {entry[2]} added to start')
         s_window[intvl].append(sum)
         sum = 0
         for entry in f_window[intvl]:
             sum += entry[-1]
+            if entry[1] == 'JONATHAN B':
+                print(f'Jon B qty {entry[2]} added to finish')
         f_window[intvl].append(sum)
         sum = 0
         for entry in pv_window[intvl]:
             sum += entry[-1]
+            if entry[1] == 'JONATHAN B':
+                print(f'Jon B qty {entry[2]} added to PV')
         pv_window[intvl].append(sum)
         sum = 0
         for entry in fpv_window[intvl]:
             sum += entry[-1]
+            if entry[1] == 'JONATHAN B':
+                print(f'Jon B qty {entry[2]} added to FPV')
         fpv_window[intvl].append(sum)
         print('Testing:', start_time)
         start_time += 5
