@@ -243,11 +243,10 @@ def tabulate(active_checks):
         pv_window[intvl] = [] # Platesville
         fpv_window[intvl] = [] # Start & Finish
         entered[intvl] = []
+        
         for check in active_checks:
-            if active_checks[check]['Name'] == 'JONATHAN B':
-                print(active_checks[check])
             anchor = active_checks[check]['ANCHOR']
-            if not anchor: 
+            if not anchor:
                 if active_checks[check] not in missing_anchor_bumps:
                     missing_anchor_bumps.append(active_checks[check])
                     with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
