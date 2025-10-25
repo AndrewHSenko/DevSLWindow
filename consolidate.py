@@ -5,6 +5,7 @@ import get_pu_window as pu
 import make_sheet
 import make_graph
 import time
+import json
 import numpy as np
 from os import mkdir
 
@@ -410,6 +411,9 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
+    with open('oct_17_data.txt', 'w') as the_file:
+        the_file.write(json.dumps(active_checks))
+    return True
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True
