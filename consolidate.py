@@ -244,7 +244,6 @@ def tabulate(active_checks):
         pv_window[intvl] = [] # Platesville
         fpv_window[intvl] = [] # Start & Finish
         entered[intvl] = []
-        
         for check in active_checks:
             anchor = active_checks[check]['ANCHOR']
             if not anchor:
@@ -360,6 +359,23 @@ def tabulate(active_checks):
     pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
     create_sheets(sums, item_qtys, pu_window, pu_actual, ssums, fsums, pvsums, fpvsums)
 
+# def encrypt(activechecks):
+#     ac = activechecks
+#     for st in ac:
+#         ac[st]['Qty'] = str(ac[st]['Qty'])
+#         ac[st]['has_start'] = str(ac[st]['has_start'])
+#         ac[st]['has_finish'] = str(ac[st]['has_finish'])
+#         ac[st]['has_pv'] = str(ac[st]['has_pv'])
+#         ac[st]['bl_qty'] = str(ac[st]['bl_qty'])
+#         ac[st]['pv_qty'] = str(ac[st]['pv_qty'])
+#         ac[st]['BL Items'] = str(ac[st]['BL Items'])
+#         ac[st]['PV Items'] = str(ac[st]['PV Items'])
+#     with open('oct_17_data.txt', 'w') as the_file:
+#         the_file.write(json.dump(ac, the_file))
+
+# def decrypt(ac):
+#     return
+
 def find_production():
     qsr_data = qsr.get_QSR_data() #'20250602162500'
     active_checks = {}
@@ -410,9 +426,8 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
-    with open('oct_17_data.txt', 'w') as the_file:
-        the_file.write(json.dumps(active_checks))
-    return True
+    # encrypt(active_checks)
+    # return True
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True
