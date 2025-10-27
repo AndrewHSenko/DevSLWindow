@@ -1,5 +1,5 @@
-import ReadQSRSoS as qsr
-import ReadSquirrelSoS as squirrel
+# import ReadQSRSoS as qsr
+# import ReadSquirrelSoS as squirrel
 import overlay
 import get_pu_window as pu
 import make_sheet
@@ -8,6 +8,9 @@ import time
 import json
 import numpy as np
 from os import mkdir
+
+from decimal import Decimal
+import ast
 
 # HEADERS #
 MONTH_H = '10_17_2025' # time.strftime('%m_%d_%Y')
@@ -21,11 +24,11 @@ DATE = '20251017'
 # PROD TERMINAL #
 # DIR_NAME = "G:/Window Data/" + time.strftime('%m_%Y')
 # DEV TERMINAL #
-DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
+# DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
 # OFFICE #
 # DIR_NAME = "/Users/andrew.senkowski/Documents/DevSLWindow"
 # LAPTOP #
-# DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
+DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
 
 DEST_PATH = f'{DIR_NAME}/{MONTH_H}/'
 
@@ -221,6 +224,29 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H)
     # Will add return statement with try/catch blocks #
 
+def decode():
+    rawchecks = None
+    with open('oct_17_data.txt', 'r') as wfile:
+        rawchecks = json.load(wfile)
+        for saletime in rawchecks:
+            curr_check = rawchecks[saletime]
+            curr_check['Qty'] = Decimal(curr_check['Qty'])
+            curr_check['has_start'] = True if curr_check['has_start'] == 'True' else False
+            curr_check['has_finish'] = True if curr_check['has_finish'] == 'True' else False
+            curr_check['has_pv'] = True if curr_check['has_pv'] == 'True' else False
+            curr_check['bl_qty'] = Decimal(curr_check['bl_qty'])
+            curr_check['pv_qty'] = Decimal(curr_check['pv_qty'])
+            curr_check['BL Items'] = ast.literal_eval(curr_check['BL Items'])
+            curr_check['PV Items'] = ast.literal_eval(curr_check['PV Items'])
+    return rawchecks
+
+def create_text(window, w_name):
+    raw_data = create_raw_text(window, f'{w_name} Window')
+    sums = raw_data[0]
+    stotal = raw_data[1]
+    create_window_text(sums, stotal, f'{w_name} Window')
+    return sums
+
 # To update window
 def tabulate(active_checks):
     window = {}
@@ -246,11 +272,13 @@ def tabulate(active_checks):
         entered[intvl] = []
         for check in active_checks:
             anchor = active_checks[check]['ANCHOR']
-            if not anchor:
+            if not anchor: 
                 if active_checks[check] not in missing_anchor_bumps:
                     missing_anchor_bumps.append(active_checks[check])
                     with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
-                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
+                        print(active_checks[check])
+                        print(active_checks[check]['Name'], active_checks[check]['Qty'])
+                        # badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
                 continue
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
             if int(window_start) < int(check) <= int(window_end): # FoH Entries
@@ -267,20 +295,20 @@ def tabulate(active_checks):
                     f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['bl_qty']))
                     if active_checks[check]['has_pv']: # So Finish & PV
                         pv = active_checks[check]['PLATESVILLE']
-                        if finish < pv: # Bumped at Finish first, then PV
-                            fpv = pv
-                        else:
-                            fpv = finish
-                        if int(window_start) < int(fpv) <= int(window_end): # Finish and PV Bumps
-                            fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
+                        if finish > pv: # Bumped at Finish last
+                            fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty'])) 
                     else: # Just Finish bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
-            elif active_checks[check]['has_pv']:
+            if active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
-                # CAREFUL: You are not checking for Finish items here for FPV #
                 if int(window_start) < int(pv) <= int(window_end): # PV Bumps
                     pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['pv_qty']))
-                    fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
+                    if active_checks[check]['has_finish']: # So Finish & PV
+                        finish = active_checks[check]['HOT FINISH']
+                        if pv > finish: # Bumped at PV last
+                            fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))           
+                    else: # Just PV bumps
+                        fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
@@ -301,33 +329,17 @@ def tabulate(active_checks):
         for entry in fpv_window[intvl]:
             sum += entry[-1]
         fpv_window[intvl].append(sum)
-        if int(intvl[-2:]) % 20 == 0:
-            print('On:', start_time)
-        print('Filling windows:', start_time)
+        print('Testing:', start_time)
         start_time += 5
         if str(start_time)[-2:] == '60':
             start_time += 40
-    # Tabulate data # 
-    raw_data = create_raw_text(window, 'Window')
-    sums = raw_data[0]
-    stotal = raw_data[1]
-    create_window_text(sums, stotal, 'Window')
-    raw_data = create_raw_text(s_window, 'Start Window')
-    ssums = raw_data[0]
-    sstotal = raw_data[1]
-    create_window_text(ssums, sstotal, 'Start Window')
-    raw_data = create_raw_text(f_window, 'Finish Window')
-    fsums = raw_data[0]
-    fstotal = raw_data[1]
-    create_window_text(fsums, fstotal, 'Finish Window')
-    raw_data = create_raw_text(pv_window, 'PV Window')
-    pvsums = raw_data[0]
-    pvstotal = raw_data[1]
-    create_window_text(pvsums, pvstotal, 'PV Window')
-    raw_data = create_raw_text(fpv_window, 'FPV Window')
-    fpvsums = raw_data[0]
-    fpvstotal = raw_data[1]
-    create_window_text(fpvsums, fpvstotal, 'FPV Window')
+    # Tabulate data #
+    station_sums = []
+    station_sums.append(create_text(window, 'Expo'))
+    station_sums.append(create_text(s_window, 'Start'))
+    station_sums.append(create_text(f_window, 'Finish'))
+    station_sums.append(create_text(pv_window, 'PV'))
+    station_sums.append(create_text(fpv_window, 'FPV'))
     qtys = create_foh_entries_text(entered)
     check_qtys = {}
     item_qtys = {}
@@ -335,78 +347,59 @@ def tabulate(active_checks):
         check_qtys[ivl] = qty[0]
         item_qtys[ivl] = qty[1]
     pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
-    create_sheets(sums, item_qtys, pu_window, pu_actual, ssums, fsums, pvsums, fpvsums)
-
-# def encrypt(activechecks):
-#     ac = activechecks
-#     for st in ac:
-#         ac[st]['Qty'] = str(ac[st]['Qty'])
-#         ac[st]['has_start'] = str(ac[st]['has_start'])
-#         ac[st]['has_finish'] = str(ac[st]['has_finish'])
-#         ac[st]['has_pv'] = str(ac[st]['has_pv'])
-#         ac[st]['bl_qty'] = str(ac[st]['bl_qty'])
-#         ac[st]['pv_qty'] = str(ac[st]['pv_qty'])
-#         ac[st]['BL Items'] = str(ac[st]['BL Items'])
-#         ac[st]['PV Items'] = str(ac[st]['PV Items'])
-#     with open('oct_17_data.txt', 'w') as the_file:
-#         the_file.write(json.dump(ac, the_file))
-
-# def decrypt(ac):
-#     return
+    create_sheets(station_sums[0], item_qtys, pu_window, pu_actual, station_sums[1], station_sums[2], station_sums[3], station_sums[4])
 
 def find_production():
-    qsr_data = qsr.get_QSR_data() #'20250602162500'
-    active_checks = {}
-    # Collect data #
-    start = time.time()
-    start_time = 1000 # Not using %I to make it easier to handle AM to PM hour change
-    while start_time != 1915:
-        if int(str(start_time)[-2:]) % 20 == 0:
-            print('On:', start_time)
-        end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
-        sq_checks = squirrel.get_check_data(f'{DATE}{start_time}00', f'{DATE}{end_time}00')
-        # sq_checks now has all checks within 5 minute window that have SL items
-        # sq_checks key: saletime
-        # sq_checks values: check_no, check_name, qty #
-        if sq_checks:
-            for sq_check in sq_checks:
-                if sq_check not in active_checks : # Add check from Squirrel to active_checks
-                    active_checks[sq_check] = {
-                        'Name': sq_checks[sq_check][1],
-                        'Qty': sq_checks[sq_check][2],
-                        'has_start': sq_checks[sq_check][3][0],
-                        'has_finish': sq_checks[sq_check][3][1],
-                        'has_pv': sq_checks[sq_check][3][2],
-                        'bl_qty': sq_checks[sq_check][4][0],
-                        'pv_qty': sq_checks[sq_check][4][1],
-                        'HOT START' : '',
-                        'HOT FINISH' : '',
-                        'PLATESVILLE': '',
-                        'ANCHOR' : '',
-                        'BL Items' : sq_checks[sq_check][5][0],
-                        'PV Items' : sq_checks[sq_check][5][1]
-                    }
-        # Set up bump times in active_checks #
-        for sale_time in active_checks:
-            check_name = active_checks[sale_time]['Name']
-            st = sale_time
-            if not (sale_time, 'ANCHOR') in qsr_data:
-                st = qsr.find_entry(qsr_data, sale_time, check_name)
-            if (st, 'HOT START') in qsr_data:
-                active_checks[sale_time]['HOT START'] = qsr_data[(st, 'HOT START')]['bumped']
-            if (st, 'HOT FINISH') in qsr_data:
-                active_checks[sale_time]['HOT FINISH'] = qsr_data[(st, 'HOT FINISH')]['bumped']
-            if (st, 'PLATESVILLE') in qsr_data:
-                active_checks[sale_time]['PLATESVILLE'] = qsr_data[(st, 'PLATESVILLE')]['bumped']
-            if (st, 'ANCHOR') in qsr_data:
-                active_checks[sale_time]['ANCHOR'] = qsr_data[(st, 'ANCHOR')]['bumped']
-        start_time += 5
-        if str(start_time)[-2:] == '60':
-            start_time += 40
-    end = time.time()
-    print('Time taken:', end, '-', start, '=', end - start)
-    # encrypt(active_checks)
-    # return True
+    # qsr_data = qsr.get_QSR_data() #'20250602162500'
+    # active_checks = {}
+    # # Collect data #
+    # start = time.time()
+    # start_time = 1000 # Not using %I to make it easier to handle AM to PM hour change
+    # while start_time != 1915:
+    #     print('On:', start_time)
+    #     end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
+    #     sq_checks = squirrel.get_check_data(f'{DATE}{start_time}00', f'{DATE}{end_time}00')
+    #     # sq_checks now has all checks within 5 minute window that have SL items
+    #     # sq_checks key: saletime
+    #     # sq_checks values: check_no, check_name, qty #
+    #     if sq_checks:
+    #         for sq_check in sq_checks:
+    #             if sq_check not in active_checks : # Add check from Squirrel to active_checks
+    #                 active_checks[sq_check] = {
+    #                     'Name': sq_checks[sq_check][1],
+    #                     'Qty': sq_checks[sq_check][2],
+    #                     'has_start': sq_checks[sq_check][3][0],
+    #                     'has_finish': sq_checks[sq_check][3][1],
+    #                     'has_pv': sq_checks[sq_check][3][2],
+    #                     'bl_qty': sq_checks[sq_check][4][0],
+    #                     'pv_qty': sq_checks[sq_check][4][1],
+    #                     'HOT START' : '',
+    #                     'HOT FINISH' : '',
+    #                     'PLATESVILLE': '',
+    #                     'ANCHOR' : '',
+    #                     'BL Items' : sq_checks[sq_check][5][0],
+    #                     'PV Items' : sq_checks[sq_check][5][1]
+    #                 }
+    #     # Set up bump times in active_checks #
+    #     for sale_time in active_checks:
+    #         check_name = active_checks[sale_time]['Name']
+    #         st = sale_time
+    #         if not (sale_time, 'ANCHOR') in qsr_data:
+    #             st = qsr.find_entry(qsr_data, sale_time, check_name)
+    #         if (st, 'HOT START') in qsr_data:
+    #             active_checks[sale_time]['HOT START'] = qsr_data[(st, 'HOT START')]['bumped']
+    #         if (st, 'HOT FINISH') in qsr_data:
+    #             active_checks[sale_time]['HOT FINISH'] = qsr_data[(st, 'HOT FINISH')]['bumped']
+    #         if (st, 'PLATESVILLE') in qsr_data:
+    #             active_checks[sale_time]['PLATESVILLE'] = qsr_data[(st, 'PLATESVILLE')]['bumped']
+    #         if (st, 'ANCHOR') in qsr_data:
+    #             active_checks[sale_time]['ANCHOR'] = qsr_data[(st, 'ANCHOR')]['bumped']
+    #     start_time += 5
+    #     if str(start_time)[-2:] == '60':
+    #         start_time += 40
+    # end = time.time()
+    # print('Time taken:', end, '-', start, '=', end - start)
+    active_checks = decode()
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True
