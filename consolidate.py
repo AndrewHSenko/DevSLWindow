@@ -253,79 +253,57 @@ def tabulate(active_checks):
                         badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
                 continue
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
-            if int(window_start) < int(check) < int(window_end): # FoH Entries
+            if int(window_start) < int(check) <= int(window_end): # FoH Entries
                 entered[intvl].append([check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']])
-                if active_checks[check]['Name'] == 'JONATHAN B':
-                    print('FoH hit')
-            if int(window_start) < int(anchor) < int(window_end): # Anchor Bumps
+            if int(window_start) < int(anchor) <= int(window_end): # Anchor Bumps
                 window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
-                if active_checks[check]['Name'] == 'JONATHAN B':
-                    print('Expo hit')
             if active_checks[check]['has_start']:
                 start = active_checks[check]['HOT START']
-                if int(window_start) < int(start) < int(window_end): # Start Bumps
+                if int(window_start) < int(start) <= int(window_end): # Start Bumps
                     s_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['bl_qty']))
-                    if active_checks[check]['Name'] == 'JONATHAN B':
-                        print('Start hit')
             if active_checks[check]['has_finish']:
                 finish = active_checks[check]['HOT FINISH']
-                if int(window_start) < int(finish) < int(window_end):
+                if int(window_start) < int(finish) <= int(window_end):
                     f_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['bl_qty']))
-                    if active_checks[check]['Name'] == 'JONATHAN B':
-                        print('Finish hit')
                     if active_checks[check]['has_pv']: # So Finish & PV
                         pv = active_checks[check]['PLATESVILLE']
                         if finish < pv: # Bumped at Finish first, then PV
                             fpv = pv
                         else:
                             fpv = finish
-                        if int(window_start) < int(fpv) < int(window_end): # Finish and PV Bumps
+                        if int(window_start) < int(fpv) <= int(window_end): # Finish and PV Bumps
                             fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
-                            if active_checks[check]['Name'] == 'JONATHAN B':
-                                print('FPV hit')
                     else: # Just Finish bumps
                         fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
-                        if active_checks[check]['Name'] == 'JONATHAN B':
-                            print('Second Finish hit')
             elif active_checks[check]['has_pv']:
                 pv = active_checks[check]['PLATESVILLE']
                 # CAREFUL: You are not checking for Finish items here for FPV #
-                if int(window_start) < int(pv) < int(window_end): # PV Bumps
+                if int(window_start) < int(pv) <= int(window_end): # PV Bumps
                     pv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['pv_qty']))
                     fpv_window[intvl].append((check_saletime, active_checks[check]['Name'], active_checks[check]['BL Items'], active_checks[check]['PV Items'], active_checks[check]['Qty']))
-                    if active_checks[check]['Name'] == 'JONATHAN B':
-                        print('PV hit')
         sum = 0
         for entry in window[intvl]:
             sum += entry[-1]
-            if entry[1] == 'JONATHAN B':
-                print(f'Jon B qty {entry[-1]} added to expo')
         window[intvl].append(sum)
         sum = 0
         for entry in s_window[intvl]:
             sum += entry[-1]
-            if entry[1] == 'JONATHAN B':
-                print(f'Jon B qty {entry[-1]} added to start')
         s_window[intvl].append(sum)
         sum = 0
         for entry in f_window[intvl]:
             sum += entry[-1]
-            if entry[1] == 'JONATHAN B':
-                print(f'Jon B qty {entry[-1]} added to finish')
         f_window[intvl].append(sum)
         sum = 0
         for entry in pv_window[intvl]:
             sum += entry[-1]
-            if entry[1] == 'JONATHAN B':
-                print(f'Jon B qty {entry[-1]} added to PV')
         pv_window[intvl].append(sum)
         sum = 0
         for entry in fpv_window[intvl]:
             sum += entry[-1]
-            if entry[1] == 'JONATHAN B':
-                print(f'Jon B qty {entry[1]} added to FPV')
         fpv_window[intvl].append(sum)
-        print('Testing:', start_time)
+        if int(intvl[-2:]) % 20 == 0:
+            print('On:', start_time)
+        print('Filling windows:', start_time)
         start_time += 5
         if str(start_time)[-2:] == '60':
             start_time += 40
@@ -383,7 +361,8 @@ def find_production():
     start = time.time()
     start_time = 1000 # Not using %I to make it easier to handle AM to PM hour change
     while start_time != 1915:
-        print('On:', start_time)
+        if int(str(start_time)[-2:]) % 20 == 0:
+            print('On:', start_time)
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
         sq_checks = squirrel.get_check_data(f'{DATE}{start_time}00', f'{DATE}{end_time}00')
         # sq_checks now has all checks within 5 minute window that have SL items
