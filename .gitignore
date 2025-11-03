@@ -5,7 +5,6 @@ token.json
 pu_errors.txt
 __pycache__
 Results
-*.txt
 
 # Generic Node.js gitignore #
 
