@@ -8,7 +8,6 @@ with open('start_10.txt', 'r') as start:
             sl_checks = {}
             fl_checks = {}
             el_checks = {}
-            bad_checks = {}
             for i in range(max(lensl, lenfl, lenel)):
                 if not i >= lensl:
                     sl = start_lines[i].replace('(', '?').replace(')', '?')
@@ -17,7 +16,7 @@ with open('start_10.txt', 'r') as start:
                         time = raw_str[0].split()[-1]
                         name = raw_str[1]
                         qty = raw_str[2].split()[-1]
-                        sl_checks[name] = (time, qty)
+                        sl_checks[f'{time}'] = (time, name, qty)
                 if not i >= lenfl:
                     fl = finish_lines[i].replace('(', '?').replace(')', '?')
                     if fl[0] == '+':
@@ -25,7 +24,7 @@ with open('start_10.txt', 'r') as start:
                         time = raw_str[0].split()[-1]
                         name = raw_str[1]
                         qty = raw_str[2].split()[-1]
-                        fl_checks[name] = (time, qty)
+                        fl_checks[f'{time}'] = (time, name, qty)
                 if not i >= lenel:
                     el = expo_lines[i].replace('(', '?').replace(')', '?')
                     if el[0] == '+':
@@ -33,30 +32,23 @@ with open('start_10.txt', 'r') as start:
                         time = raw_str[0].split()[-1]
                         name = raw_str[1]
                         qty = raw_str[2].split()[-1]
-                        el_checks[name] = (time, qty)
-            for check in sl_checks:
-                if check not in fl_checks:
-                    if check not in el_checks:
-                        bad_checks[check] = (sl_checks[check], 'finish', 'expo')
-                    else:
-                        bad_checks[check] = (sl_checks[check], 'finish')
-                elif check not in el_checks:
-                    bad_checks[check] = (sl_checks[check], 'expo')
-            for check, info in bad_checks.items():
-                print(f'{check} : {str(info)}')
-            print('---')
-            bad_checks = {}
-            for check in fl_checks:
-                if check not in sl_checks:
-                    if check not in el_checks:
-                        bad_checks[check] = (fl_checks[check], 'start', 'expo')
-                    else:
-                        bad_checks[check] = (fl_checks[check], 'start')
-                elif check not in el_checks:
-                    bad_checks[check] = (fl_checks[check], 'expo')
-            for check, info in bad_checks.items():
-                print(f'{check} : {str(info)}')
-            # Check lists are now all filled
+                        el_checks[f'{time}'] = (time, name, qty)
+            with open('pv_checks.txt', 'w') as pv:
+                for check in sl_checks:
+                    pv.write(f'{str(sl_checks[check])}\n')
+            with open('finish_checks.txt', 'w') as pv:
+                for check in fl_checks:
+                    pv.write(f'{str(fl_checks[check])}\n')
+            with open('fpv_checks.txt', 'w') as pv:
+                for check in el_checks:
+                    pv.write(f'{str(el_checks[check])}\n')
+            for el_check in el_checks:
+                if el_check not in sl_checks and el_check not in fl_checks:
+                    print(el_checks[el_check][1])
+                    if el_check not in sl_checks:
+                        print('Not in PV')
+                    if el_check not in fl_checks:
+                        print('Not in Finish')
 
 
             
