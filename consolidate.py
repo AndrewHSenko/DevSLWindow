@@ -1,5 +1,5 @@
-# import ReadQSRSoS as qsr
-# import ReadSquirrelSoS as squirrel
+import ReadQSRSoS as qsr
+import ReadSquirrelSoS as squirrel
 import overlay
 import get_pu_window as pu
 import make_sheet
@@ -13,22 +13,22 @@ from decimal import Decimal
 import ast
 
 # HEADERS #
-MONTH_H = '10_25_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Oct_25_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '10_31_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Oct_31_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 4
-SHEET_NUM = 5
-DATE = '20251025'
+WEEK_NUM = 5
+SHEET_NUM = 4
+DATE = '20251031'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
 # DIR_NAME = "G:/Window Data/" + time.strftime('%m_%Y')
 # DEV TERMINAL #
-# DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
+DIR_NAME = 'C:/Users/Squirrel/Desktop/Window Data'
 # OFFICE #
 # DIR_NAME = "/Users/andrew.senkowski/Documents/DevSLWindow"
 # LAPTOP #
-DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
+# DIR_NAME = "/Users/andrewsenkowski/Documents/Coding Projects/DevSLWindow/Results"
 
 DEST_PATH = f'{DIR_NAME}/{MONTH_H}/'
 
@@ -361,10 +361,6 @@ def tabulate(active_checks):
     for ivl, qty in qtys.items():
         check_qtys[ivl] = qty[0]
         item_qtys[ivl] = qty[1]
-
-    return
-
-
     pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
     create_sheets(station_sums[0], item_qtys, pu_window, pu_actual, station_sums[1], station_sums[2], station_sums[3], station_sums[4])
 
