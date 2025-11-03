@@ -415,8 +415,6 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
-    encode(active_checks)
-    return True
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True

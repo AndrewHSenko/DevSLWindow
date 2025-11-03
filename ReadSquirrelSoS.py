@@ -163,6 +163,8 @@ def get_check_data(start, end):
                 pv_qty += qty
                 has_PV = True
         if latke:
+            has_start = True
+            has_finish = True
             while latke > 4:
                 latke -= 4
                 check_qty += 1
@@ -170,6 +172,7 @@ def get_check_data(start, end):
             check_qty += 1
             bl_qty += 1
         if knish:
+            has_PV = True
             while knish > 4:
                 knish -= 4
                 check_qty += 1
