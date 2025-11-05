@@ -78,7 +78,7 @@ def get_weekly_sheet_id(week):
         # First, get the folder ID by querying by mimeType and name
         while True: # Will change to not be a loop
             page_token = None
-            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"{time.strftime("%B")} {time.strftime("%Y")[-2:]}\"'
+            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"October {time.strftime("%Y")[-2:]}\"' # {time.strftime("%B")
             month_folder_result = drive.files().list(
                 q = month_folder_req,
                 spaces="drive",
