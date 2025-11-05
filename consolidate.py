@@ -13,12 +13,12 @@ from decimal import Decimal
 import ast
 
 # HEADERS #
-MONTH_H = '11_02_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Nov_02_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '11_01_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Nov_01_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 5
-SHEET_NUM = 6
-DATE = '20251102'
+SHEET_NUM = 5
+DATE = '20251101'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -410,6 +410,8 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
+    encode(active_checks)
+    return
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True
