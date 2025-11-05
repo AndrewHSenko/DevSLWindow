@@ -13,12 +13,12 @@ from decimal import Decimal
 import ast
 
 # HEADERS #
-MONTH_H = '10_31_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Oct_31_2025' # time.strftime('%b_%d_%Y')
-NO_DAY = 'Oct_2025' # time.strftime('%b_%Y')
+MONTH_H = '11_02_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Nov_02_2025' # time.strftime('%b_%d_%Y')
+NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 5
-SHEET_NUM = 4
-DATE = '20251031'
+SHEET_NUM = 6
+DATE = '20251102'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -266,9 +266,6 @@ def tabulate(active_checks):
     f_window = {}
     pv_window = {}
     fpv_window = {}
-    f_items = []
-    p_items = []
-    fpv_items = []
     entered = {}
     missing_anchor_bumps = []
     # Collect data #
@@ -290,9 +287,8 @@ def tabulate(active_checks):
             if not anchor: 
                 if active_checks[check] not in missing_anchor_bumps:
                     missing_anchor_bumps.append(active_checks[check])
-                    print(active_checks[check])
                     with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
-                        print(active_checks[check]['Name'], active_checks[check]['Qty'])
+                        print(active_checks[check]['Name'], check, active_checks[check]['Qty'])
                         # badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
                 continue
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
@@ -414,8 +410,6 @@ def find_production():
             start_time += 40
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
-    encode(active_checks)
-    return
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True

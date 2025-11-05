@@ -6,7 +6,8 @@ from datetime import datetime
 load_dotenv()
 
 backline_ids = {
-    10065 : 'SOM OCT',
+    # 10065 : 'SOM OCT',
+    10121 : 'SOM NOV',
     1146 : 'CUSTOM',
     353 : '#1',
     379 : '#2',
