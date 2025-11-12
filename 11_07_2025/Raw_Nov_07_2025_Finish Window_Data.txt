@@ -1,0 +1,3521 @@
+Raw Finish Window Data
+---------
+||| 10:00 - 10:05 |||
+[ Total: 0 ]
+
+||| 10:05 - 10:10 |||
+[ Total: 0 ]
+
+||| 10:10 - 10:15 |||
++ 10:08:50 (STAFF ED): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 10:11:44 (K): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 10:12:27 (H): 1
+   Backline Items:
+   - #14
+   PV Items:
+   - None
++ 10:12:44 (L): 1
+   Backline Items:
+   - Latke
+   PV Items:
+   - None
++ 10:13:05 (L): 1
+   Backline Items:
+   - #272
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 10:15 - 10:20 |||
+[ Total: 0 ]
+
+||| 10:20 - 10:25 |||
+[ Total: 0 ]
+
+||| 10:25 - 10:30 |||
+[ Total: 0 ]
+
+||| 10:30 - 10:35 |||
+[ Total: 0 ]
+
+||| 10:35 - 10:40 |||
+[ Total: 0 ]
+
+||| 10:40 - 10:45 |||
++ 10:38:04 (3005 BOARDWALK): 8
+   Backline Items:
+   - #81.5
+   - #81.5
+   - #81.5
+   - #81.5
+   - #27
+   - #81
+   - #14
+   - #14
+   PV Items:
+   - None
++ 10:39:00 (CECE): 3
+   Backline Items:
+   - #2
+   - #34
+   - #18
+   PV Items:
+   - None
++ 10:40:55 (1500 E MED): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
++ 10:40:56 (JANE K): 3
+   Backline Items:
+   - #81
+   - #81.5
+   - #84
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 10:45 - 10:50 |||
++ 10:41:03 (3900 RESEARCH): 4
+   Backline Items:
+   - #97
+   - #97
+   - #88
+   - #1000
+   PV Items:
+   - None
++ 10:42:04 (ALEX O): 4
+   Backline Items:
+   - #2
+   - #18
+   - #73
+   - #73
+   PV Items:
+   - None
++ 10:44:40 (1540 EISENHOWER): 5
+   Backline Items:
+   - #73
+   - #18
+   - #4
+   - #2
+   - #66
+   PV Items:
+   - #616
+[ Total: 13 ]
+
+||| 10:50 - 10:55 |||
+[ Total: 0 ]
+
+||| 10:55 - 11:00 |||
++ 10:51:13 (AJ): 2
+   Backline Items:
+   - #75
+   - #36
+   PV Items:
+   - None
++ 10:52:05 (HELEN T): 3
+   Backline Items:
+   - #2
+   - #2
+   - #22
+   PV Items:
+   - None
++ 10:56:24 (315 E EISENHOWER): 4
+   Backline Items:
+   - #13
+   - #74
+   - #1000
+   - #66
+   PV Items:
+   - #600
+[ Total: 9 ]
+
+||| 11:00 - 11:05 |||
++ 11:01:55 (KATHY M): 2
+   Backline Items:
+   - #22
+   - #18
+   PV Items:
+   - None
+[ Total: 2 ]
+
+||| 11:05 - 11:10 |||
++ 11:02:40 (YARA): 3
+   Backline Items:
+   - #82
+   - #2
+   - Latke
+   PV Items:
+   - None
++ 11:05:30 (KYLE): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 11:10 - 11:15 |||
++ 11:06:08 (ERIN J): 4
+   Backline Items:
+   - #2
+   - #73
+   - #66
+   - #55
+   PV Items:
+   - None
++ 11:08:50 (GIDEON): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 11:09:28 (JOHN A): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 11:10:04 (DAVID B): 1
+   Backline Items:
+   - #23
+   PV Items:
+   - None
++ 11:12:44 (OLIVER J): 2
+   Backline Items:
+   - #40
+   - #23
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 11:15 - 11:20 |||
++ 11:14:09 (JACOB): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:15:08 (SCOTT): 4
+   Backline Items:
+   - #2
+   - #2
+   - #1000
+   - #48
+   PV Items:
+   - None
++ 11:16:39 (1011 N UNI): 2
+   Backline Items:
+   - SOM NOV
+   - SOM NOV
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 11:20 - 11:25 |||
++ 11:17:10 (KEVIN): 3
+   Backline Items:
+   - #2
+   - #48
+   - #73
+   PV Items:
+   - None
++ 11:17:32 (PHIL): 4
+   Backline Items:
+   - #2
+   - #4
+   - #48
+   - #82
+   PV Items:
+   - None
++ 11:18:33 (CHERYL): 2
+   Backline Items:
+   - #81
+   - #64
+   PV Items:
+   - None
++ 11:18:51 (JODIE): 1
+   Backline Items:
+   - #246
+   PV Items:
+   - None
++ 11:19:05 (LINDA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:19:09 (NICK): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:19:41 (GREGG K): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 11:20:07 (KATE L): 2
+   Backline Items:
+   - #51
+   - #54
+   PV Items:
+   - None
++ 11:20:52 (KAREN M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:22:30 (MICHELLE P): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:22:49 (SASHA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 18 ]
+
+||| 11:25 - 11:30 |||
++ 11:23:32 (LAUREN W): 1
+   Backline Items:
+   - #85
+   PV Items:
+   - None
++ 11:23:58 (AMY): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 11:24:27 (NICOLE F): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
++ 11:25:32 (SAM C): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 11:30 - 11:35 |||
++ 11:27:10 (1540 E HOSPITAL): 6
+   Backline Items:
+   - #2
+   - #18
+   - #73
+   - #54
+   - #74
+   - #14
+   PV Items:
+   - None
++ 11:27:47 (BLOOMFIELD1/2): 7
+   Backline Items:
+   - #23
+   - #23
+   - #23
+   - #18
+   - #2
+   - #48
+   - #48
+   PV Items:
+   - None
++ 11:28:37 (BARBARA): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 11:28:45 (JONATHAN): 2
+   Backline Items:
+   - #2
+   - #73
+   PV Items:
+   - None
++ 11:29:05 (RALPH): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:29:38 (MATTHEW): 3
+   Backline Items:
+   - #22
+   - #73
+   - #23
+   PV Items:
+   - None
+[ Total: 20 ]
+
+||| 11:35 - 11:40 |||
++ 11:29:55 (BLOOMFIELD1/2): 6
+   Backline Items:
+   - #23
+   - #48
+   - #18
+   - #55
+   - #55
+   - #55
+   PV Items:
+   - None
++ 11:30:00 (JULIANNE B): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 11:30:17 (BEN): 2
+   Backline Items:
+   - #27
+   - #27
+   PV Items:
+   - None
++ 11:30:34 (112431): 2
+   Backline Items:
+   - #84
+   - #1000
+   PV Items:
+   - None
++ 11:30:43 (JERRY): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 11:31:04 (NATE C): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 11:31:09 (RACHEL W): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 11:31:58 (CHARLIE): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 11:40 - 11:45 |||
++ 11:32:38 (CARTER): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:32:40 (JAMES): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
++ 11:33:08 (JOSEPH H): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 11:34:24 (CHRISTINE): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 11:36:17 (OMAR A): 2
+   Backline Items:
+   - #97
+   - #236
+   PV Items:
+   - None
++ 11:36:47 (DEBRA): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 11:38:01 (KAYLA C): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - Knish Heated
++ 11:40:30 (CHRIS S): 2
+   Backline Items:
+   - #123
+   - #18
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 11:45 - 11:50 |||
++ 11:42:01 (SUE B): 3
+   Backline Items:
+   - CUSTOM
+   - #2
+   - KG
+   PV Items:
+   - None
++ 11:42:37 (LAUREN K): 8
+   Backline Items:
+   - #82
+   - #18
+   - #14
+   - #81.5
+   - KG
+   - KG
+   - KG
+   - KG
+   PV Items:
+   - None
++ 11:43:26 (CHRISTOPHER W): 2
+   Backline Items:
+   - #73
+   - #85
+   PV Items:
+   - None
++ 11:44:34 (701 TAPPAN): 2
+   Backline Items:
+   - #2
+   - #236
+   PV Items:
+   - None
++ 11:44:49 (KATHY): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
+[ Total: 16 ]
+
+||| 11:50 - 11:55 |||
++ 11:45:54 (STAFF ROAN): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 11:46:05 (DUSTIN M): 2
+   Backline Items:
+   - #13
+   - #4
+   PV Items:
+   - None
++ 11:46:23 (DAN M): 1
+   Backline Items:
+   - #85
+   PV Items:
+   - None
++ 11:46:29 (JAY S): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 11:46:58 (KIRK): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 11:48:04 (NICK M): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 11:48:40 (RICH): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 11:50:42 (DIANE): 6
+   Backline Items:
+   - #1
+   - #48
+   - #48
+   - #1000
+   - #234
+   - #27
+   PV Items:
+   - None
+[ Total: 14 ]
+
+||| 11:55 - 12:00 |||
++ 11:50:47 (101 N MAIN): 4
+   Backline Items:
+   - #79
+   - #18
+   - #88
+   - #74
+   PV Items:
+   - None
++ 11:52:34 (TURNER B): 2
+   Backline Items:
+   - #48
+   - #73
+   PV Items:
+   - None
++ 11:53:13 (KYLEE M): 4
+   Backline Items:
+   - #73
+   - #54
+   - #74
+   - #66
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 12:00 - 12:05 |||
++ 11:53:49 (JARED): 3
+   Backline Items:
+   - #2
+   - #82
+   - #74
+   PV Items:
+   - None
++ 11:55:05 (KURT): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - #616
++ 11:55:14 (PAUL): 2
+   Backline Items:
+   - #22
+   - #26
+   PV Items:
+   - None
++ 11:56:01 (AV): 8
+   Backline Items:
+   - #2
+   - #13
+   - #272
+   - #18
+   - #84
+   - #74
+   - #1000
+   - #1000
+   PV Items:
+   - None
++ 11:56:11 (WILL): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 11:57:20 (STAFF SNOW): 1
+   Backline Items:
+   - Latke
+   PV Items:
+   - None
++ 11:58:10 (ERIN S): 1
+   Backline Items:
+   - #23
+   PV Items:
+   - None
++ 11:58:11 (CHARLEY): 2
+   Backline Items:
+   - #73
+   - #23
+   PV Items:
+   - None
++ 11:58:35 (RYAN): 2
+   Backline Items:
+   - #73
+   - #73
+   PV Items:
+   - None
++ 11:58:54 (KIM N): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 22 ]
+
+||| 12:05 - 12:10 |||
++ 11:59:04 (JANIS): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 11:59:33 (DOM): 2
+   Backline Items:
+   - #123
+   - #234
+   PV Items:
+   - None
++ 12:01:44 (VICTORIA E): 4
+   Backline Items:
+   - #81
+   - #23
+   - #1000
+   - Latke
+   PV Items:
+   - None
++ 12:03:18 (RICHARD E): 3
+   Backline Items:
+   - #2
+   - #48
+   - #73
+   PV Items:
+   - None
++ 12:03:22 (STAFF XANDER): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:04:03 (NO NAME): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 12:04:08 (SUSAN): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 12:04:38 (PETER W): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:04:39 (ZS): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 12:10 - 12:15 |||
++ 12:05:05 (CHENY): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 12:05:18 (REECE M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:06:08 (BAKER): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:06:50 (TEDDY): 2
+   Backline Items:
+   - #123
+   - KG
+   PV Items:
+   - None
++ 12:07:23 (DAN O): 2
+   Backline Items:
+   - #27
+   - #51
+   PV Items:
+   - None
++ 12:07:52 (ANDY): 1
+   Backline Items:
+   - #66
+   PV Items:
+   - None
++ 12:08:03 (PAIGE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:09:08 (JOHN L): 2
+   Backline Items:
+   - #234
+   - #234
+   PV Items:
+   - None
++ 12:09:19 (STAFF PAYTON): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
+[ Total: 12 ]
+
+||| 12:15 - 12:20 |||
++ 12:03:48 (ANITA S): 4
+   Backline Items:
+   - #73
+   - #51
+   - #75
+   - #75
+   PV Items:
+   - None
++ 12:08:47 (STAFF ROXANNE): 1
+   Backline Items:
+   - #14
+   PV Items:
+   - None
++ 12:09:20 (JING): 5
+   Backline Items:
+   - #2
+   - #2
+   - #2
+   - #2
+   - #48
+   PV Items:
+   - None
++ 12:09:35 (SAM M): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 12:09:52 (STAFF ISAAC): 1
+   Backline Items:
+   - #123
+   PV Items:
+   - None
++ 12:10:32 (CASEY): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
++ 12:11:19 (ANDY): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 12:11:23 (NICOLE A): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:11:50 (GRANT): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 16 ]
+
+||| 12:20 - 12:25 |||
++ 12:12:00 (MATTHEW S): 2
+   Backline Items:
+   - #88
+   - #51
+   PV Items:
+   - None
++ 12:12:21 (CHARLIE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:13:01 (JACK): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:13:46 (MATEO): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:13:56 (ALI R): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:14:50 (MICHAEL): 1
+   Backline Items:
+   - #123
+   PV Items:
+   - None
++ 12:15:00 (SAM C): 2
+   Backline Items:
+   - #48
+   - #18
+   PV Items:
+   - None
++ 12:16:09 (GP): 1
+   Backline Items:
+   - #246
+   PV Items:
+   - None
++ 12:17:46 (DANIEL): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 12:18:53 (ASHLEY): 2
+   Backline Items:
+   - #64
+   - #18
+   PV Items:
+   - #606
++ 12:19:37 (ABRA): 2
+   Backline Items:
+   - #236
+   - #2
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 12:25 - 12:30 |||
++ 12:20:04 (HALLIE J): 5
+   Backline Items:
+   - #73
+   - #73
+   - Latke
+   - #26
+   - #26
+   PV Items:
+   - None
++ 12:20:21 (STERLIN): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
++ 12:20:33 (ROY): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
++ 12:21:51 (PETER S): 2
+   Backline Items:
+   - #48
+   - #272
+   PV Items:
+   - Knish Heated
++ 12:22:03 (STAFF FELIX): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 12:22:13 (TJ): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
++ 12:22:16 (TYLER): 1
+   Backline Items:
+   - #66
+   PV Items:
+   - None
++ 12:23:19 (SAM): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 12:24:09 (ZACK): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 12:24:18 (JAKE): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 12:30 - 12:35 |||
++ 12:25:15 (SHERISE): 3
+   Backline Items:
+   - #18
+   - #54
+   - #2
+   PV Items:
+   - None
++ 12:25:21 (GAIL P): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:25:52 (ESTHER H): 3
+   Backline Items:
+   - #2
+   - #73
+   - #88
+   PV Items:
+   - None
++ 12:27:55 (KATHRYN N): 3
+   Backline Items:
+   - #81
+   - #18
+   - #84
+   PV Items:
+   - #616
+[ Total: 10 ]
+
+||| 12:35 - 12:40 |||
++ 12:29:58 (MIKEY): 2
+   Backline Items:
+   - #13
+   - #13
+   PV Items:
+   - None
++ 12:30:12 (RICHARD M): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - KD
++ 12:30:56 (AMY): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 12:32:26 (BOBBY T): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:32:52 (DAVID H): 2
+   Backline Items:
+   - #272
+   - SOM NOV
+   PV Items:
+   - None
++ 12:33:39 (JACOB K): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 12:34:00 (1838 VINEWOOD): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:34:53 (PATRIC): 1
+   Backline Items:
+   - #81
+   PV Items:
+   - None
++ 12:35:44 (AMANDA D): 2
+   Backline Items:
+   - #48
+   - #23
+   PV Items:
+   - None
++ 12:36:05 (MICHAEL): 1
+   Backline Items:
+   - #14
+   PV Items:
+   - None
+[ Total: 13 ]
+
+||| 12:40 - 12:45 |||
++ 12:35:17 (JULIENNE): 4
+   Backline Items:
+   - #2
+   - #22
+   - #74
+   - #55
+   PV Items:
+   - None
++ 12:36:34 (MITCHELL): 2
+   Backline Items:
+   - #97
+   - #84
+   PV Items:
+   - None
++ 12:37:23 (PATTI M): 4
+   Backline Items:
+   - #34
+   - #18
+   - #51
+   - #54
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 12:45 - 12:50 |||
++ 12:38:03 (JALYN): 6
+   Backline Items:
+   - #22
+   - #22
+   - #22
+   - #48
+   - #48
+   - #1000
+   PV Items:
+   - None
++ 12:38:17 (HOLLY): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:38:52 (TANYA C): 2
+   Backline Items:
+   - #26
+   - #26
+   PV Items:
+   - None
++ 12:38:59 (MARK R): 2
+   Backline Items:
+   - #97
+   - #81.5
+   PV Items:
+   - None
++ 12:39:30 (MICHELE G): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 12:39:42 (NEAL): 2
+   Backline Items:
+   - #2
+   - #81.5
+   PV Items:
+   - None
++ 12:39:48 (KAREN): 2
+   Backline Items:
+   - #23
+   - #2
+   PV Items:
+   - None
++ 12:40:58 (NORA): 2
+   Backline Items:
+   - #18
+   - #54
+   PV Items:
+   - None
++ 12:41:17 (BRENNAN M): 2
+   Backline Items:
+   - #2
+   - #73
+   PV Items:
+   - None
+[ Total: 20 ]
+
+||| 12:50 - 12:55 |||
++ 12:42:16 (MARTY G): 2
+   Backline Items:
+   - #88
+   - SOM NOV
+   PV Items:
+   - None
++ 12:42:35 (CRYSTAL): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 12:42:39 (AIDEN): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:42:40 (STAFF KATIE): 1
+   Backline Items:
+   - #236
+   PV Items:
+   - None
++ 12:43:48 (DON F): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 12:43:49 (GREEN): 2
+   Backline Items:
+   - #81.5
+   - #2
+   PV Items:
+   - None
++ 12:44:15 (ANTHONY): 2
+   Backline Items:
+   - #2
+   - #97
+   PV Items:
+   - None
++ 12:45:10 (LAURA): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - None
++ 12:45:29 (DAN): 2
+   Backline Items:
+   - #48
+   - #26
+   PV Items:
+   - None
++ 12:46:17 (MARK M): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 12:46:49 (WALLACE): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - KD
++ 12:46:57 (MO): 3
+   Backline Items:
+   - #51
+   - #1000
+   - Latke
+   PV Items:
+   - None
++ 12:47:23 (MARK): 1
+   Backline Items:
+   - #82
+   PV Items:
+   - None
+[ Total: 19 ]
+
+||| 12:55 - 1:00 |||
++ 12:47:36 (SUE M): 2
+   Backline Items:
+   - #27
+   - #74
+   PV Items:
+   - None
++ 12:48:14 (611 E UNI): 2
+   Backline Items:
+   - #73
+   - #75
+   PV Items:
+   - None
++ 12:49:00 (BARRY): 1
+   Backline Items:
+   - #22
+   PV Items:
+   - None
++ 12:49:37 (STAFV KEVIN): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:50:28 (KALI N): 4
+   Backline Items:
+   - #73
+   - #88
+   - #84
+   - Kid Turk
+   PV Items:
+   - #623
++ 12:50:34 (721 S FOREST): 3
+   Backline Items:
+   - #18
+   - #27
+   - Latke
+   - Latke
+   PV Items:
+   - None
++ 12:51:15 (SARAH N): 1
+   Backline Items:
+   - #81
+   PV Items:
+   - #420
+   - #420
++ 12:52:00 (LEAH F): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 1:00 - 1:05 |||
++ 12:53:09 (RON): 3
+   Backline Items:
+   - #123
+   - #18
+   - #18
+   PV Items:
+   - None
++ 12:53:13 (KATIE G): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:54:38 (ANNIE): 2
+   Backline Items:
+   - #81
+   - #2
+   PV Items:
+   - #30
++ 12:54:41 (ANDREW S): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 12:55:39 (BRENDA B): 2
+   Backline Items:
+   - #26
+   - #66
+   PV Items:
+   - None
++ 12:56:16 (JEFF): 2
+   Backline Items:
+   - #74
+   - #81.5
+   PV Items:
+   - Knish Heated
++ 12:56:24 (ANDREA): 3
+   Backline Items:
+   - #27
+   - #27
+   - #74
+   PV Items:
+   - None
++ 12:56:45 (DAVID): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 12:56:47 (VAIVA R): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - #30
++ 12:57:39 (CETAN C): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
+[ Total: 17 ]
+
+||| 1:05 - 1:10 |||
++ 12:57:22 (OWEN): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 12:58:07 (CATHY): 2
+   Backline Items:
+   - #2
+   - #1000
+   PV Items:
+   - None
++ 12:58:23 (CALLIE B): 2
+   Backline Items:
+   - #48
+   - Latke
+   PV Items:
+   - None
++ 12:58:40 (REYNOLDS): 2
+   Backline Items:
+   - #13
+   - #81
+   PV Items:
+   - None
++ 12:58:44 (FERNANDO): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 12:59:48 (JENNIFER): 1
+   Backline Items:
+   - Latke
+   PV Items:
+   - None
++ 12:59:59 (ANGELO I): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:01:07 (FRANCOIS): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 13:01:16 (STAFF EMILY): 1
+   Backline Items:
+   - KG
+   PV Items:
+   - None
++ 13:01:28 (JP): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
++ 13:01:29 (LOIC): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
++ 13:03:17 (JP): 2
+   Backline Items:
+   - #48
+   - #123
+   PV Items:
+   - None
++ 13:03:35 (IAN): 2
+   Backline Items:
+   - #54
+   - #1000
+   PV Items:
+   - None
+[ Total: 18 ]
+
+||| 1:10 - 1:15 |||
++ 13:05:32 (JOSH): 1
+   Backline Items:
+   - #14
+   PV Items:
+   - #607
++ 13:05:52 (NORA W): 2
+   Backline Items:
+   - #2
+   - #2
+   PV Items:
+   - None
++ 13:05:55 (RACHEL J): 2
+   Backline Items:
+   - #85
+   - #1000
+   PV Items:
+   - None
++ 13:06:49 (MEREDITH): 2
+   Backline Items:
+   - #82
+   - #82
+   PV Items:
+   - None
++ 13:07:05 (CAMERON K): 5
+   Backline Items:
+   - #2
+   - #73
+   - #73
+   - #74
+   - Latke
+   PV Items:
+   - None
++ 13:07:40 (IAN M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:08:02 (RYAN): 3
+   Backline Items:
+   - #81.5
+   - #74
+   - #2
+   PV Items:
+   - None
++ 13:08:16 (RAJIV R): 1
+   Backline Items:
+   - #36
+   PV Items:
+   - None
+[ Total: 17 ]
+
+||| 1:15 - 1:20 |||
++ 13:09:10 (CATHERINE R): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 13:09:34 (ROHAN M): 2
+   Backline Items:
+   - #22
+   - #84
+   PV Items:
+   - None
++ 13:10:05 (SARAH): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 13:10:06 (JOSHUA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:11:00 (CARA): 2
+   Backline Items:
+   - #73
+   - #27
+   PV Items:
+   - #100
++ 13:11:24 (WILLIAM B): 1
+   Backline Items:
+   - #36
+   PV Items:
+   - None
++ 13:11:45 (MARC M): 2
+   Backline Items:
+   - #73
+   - #73
+   PV Items:
+   - None
++ 13:11:51 (JEFF): 5
+   Backline Items:
+   - #81.5
+   - #123
+   - #272
+   - #272
+   - #14
+   PV Items:
+   - None
++ 13:11:57 (DUSTYN R): 2
+   Backline Items:
+   - #18
+   - #64
+   PV Items:
+   - None
+[ Total: 17 ]
+
+||| 1:20 - 1:25 |||
++ 13:12:25 (NICOLE H): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:12:48 (ZACHARY B): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:12:59 (CHADD S): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:13:14 (PAM W): 4
+   Backline Items:
+   - #74
+   - #74
+   - #85
+   - #73
+   PV Items:
+   - None
++ 13:13:17 (101 N MAIN): 2
+   Backline Items:
+   - #2
+   - #66
+   PV Items:
+   - #623
++ 13:13:29 (CHRISTINE F): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:13:53 (CLAUDIA): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 13:14:34 (DIANNE): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:14:36 (SAMID): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 13:15:45 (731 PACKARD ST): 1
+   Backline Items:
+   - #22
+   PV Items:
+   - None
+[ Total: 14 ]
+
+||| 1:25 - 1:30 |||
++ 13:15:50 (TARA): 2
+   Backline Items:
+   - #73
+   - #73
+   PV Items:
+   - None
++ 13:16:10 (JENNIFER M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:16:53 (JJ@): 1
+   Backline Items:
+   - #22
+   PV Items:
+   - None
++ 13:17:23 (HOWARD): 2
+   Backline Items:
+   - #22
+   - #73
+   PV Items:
+   - #606
++ 13:17:27 (BLAKE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:17:48 (SANDY B): 1
+   Backline Items:
+   - CUSTOM
+   PV Items:
+   - None
++ 13:18:04 (ENXI L): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:18:29 (RACHEL R): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 13:19:21 (J): 2
+   Backline Items:
+   - #2
+   - #234
+   PV Items:
+   - None
++ 13:19:42 (KAREN): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - #600
++ 13:20:07 (JAN): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 13:20:43 (SUSAN S): 3
+   Backline Items:
+   - #73
+   - #55
+   - #5
+   PV Items:
+   - None
+[ Total: 17 ]
+
+||| 1:30 - 1:35 |||
++ 13:24:32 (MELISSA K): 3
+   Backline Items:
+   - #73
+   - #73
+   - #73
+   PV Items:
+   - None
++ 13:25:03 (STEVEN): 3
+   Backline Items:
+   - #40
+   - #2
+   - Latke
+   PV Items:
+   - None
++ 13:25:11 (MICHELE): 2
+   Backline Items:
+   - #18
+   - #26
+   PV Items:
+   - None
++ 13:25:45 (MEGAN M): 2
+   Backline Items:
+   - #18
+   - #18
+   PV Items:
+   - None
++ 13:26:12 (LEEANNE K): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 13:26:15 (SHANNON L): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - Knish Heated
++ 13:27:18 (KAREN): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 13:27:35 (MARY): 2
+   Backline Items:
+   - #13
+   - #13
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 1:35 - 1:40 |||
++ 13:27:58 (RICH): 2
+   Backline Items:
+   - #73
+   - #26
+   PV Items:
+   - None
++ 13:28:33 (JERRY): 2
+   Backline Items:
+   - #64
+   - #73
+   PV Items:
+   - None
++ 13:28:36 (KAREN): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 13:30:30 (LAINE P): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 13:31:59 (GEORGE): 2
+   Backline Items:
+   - #27
+   - #23
+   PV Items:
+   - None
++ 13:32:05 (STAFF SUZANNE): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 13:32:24 (ANDY D): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:32:30 (MAUREEN): 2
+   Backline Items:
+   - #2
+   - #13
+   PV Items:
+   - None
++ 13:33:02 (RON M): 1
+   Backline Items:
+   - #14
+   PV Items:
+   - None
++ 13:33:34 (STAFF SHANNON): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 13:34:05 (VIKAS): 2
+   Backline Items:
+   - #48
+   - #1000
+   PV Items:
+   - None
++ 13:34:47 (BEN): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 17 ]
+
+||| 1:40 - 1:45 |||
++ 13:35:07 (ROSE): 2
+   Backline Items:
+   - #73
+   - #1000
+   PV Items:
+   - None
++ 13:35:12 (STAFF SAM F): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 13:35:50 (STEPHANIE): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 13:36:38 (RYAN B): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:38:16 (NATALIE): 2
+   Backline Items:
+   - #2
+   - #74
+   PV Items:
+   - None
++ 13:38:32 (STAFF RYAN): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 13:38:50 (SEAN): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 1:45 - 1:50 |||
++ 13:38:19 (SHANNON L): 4
+   Backline Items:
+   - #13
+   - #272
+   - #88
+   - #75
+   PV Items:
+   - Knish Heated
++ 13:39:39 (RICK): 2
+   Backline Items:
+   - #13
+   - #34
+   PV Items:
+   - None
++ 13:41:30 (KIM): 2
+   Backline Items:
+   - #18
+   - #73
+   PV Items:
+   - None
++ 13:43:06 (MIKE): 1
+   Backline Items:
+   - #81
+   PV Items:
+   - None
++ 13:44:38 (MICHAEL): 1
+   Backline Items:
+   - #123
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 1:50 - 1:55 |||
++ 13:45:41 (HALEY): 2
+   Backline Items:
+   - #13
+   - #1000
+   PV Items:
+   - None
++ 13:46:50 (MARY): 4
+   Backline Items:
+   - #34
+   - #64
+   - #18
+   - #84
+   PV Items:
+   - #30
++ 13:47:13 (BRAD): 2
+   Backline Items:
+   - #82
+   - #73
+   PV Items:
+   - None
++ 13:47:26 (TASHA): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 13:47:35 (KRIS): 2
+   Backline Items:
+   - #2
+   - #2
+   PV Items:
+   - None
++ 13:48:08 (AMANDA S): 2
+   Backline Items:
+   - #13
+   - #84
+   PV Items:
+   - None
++ 13:49:08 (HEIDI): 2
+   Backline Items:
+   - #1
+   - #14
+   PV Items:
+   - #616
+   - Knish 3 Pack
+[ Total: 15 ]
+
+||| 1:55 - 2:00 |||
++ 13:49:09 (STAFF ROBERT): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 13:49:44 (RAFAEL): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
++ 13:51:08 (STAFF DOM): 1
+   Backline Items:
+   - #51
+   PV Items:
+   - None
++ 13:51:33 (STEVE): 3
+   Backline Items:
+   - #2
+   - #2
+   - #2
+   PV Items:
+   - None
++ 13:52:32 (KEVIN): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:54:10 (JACOB): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 13:54:43 (LENNA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:55:06 (STAFF CHRIS): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:56:12 (GREG): 3
+   Backline Items:
+   - #73
+   - #84
+   - #81.5
+   PV Items:
+   - None
+[ Total: 13 ]
+
+||| 2:00 - 2:05 |||
++ 13:56:40 (SYDNEY): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
++ 13:57:41 (BROOKE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 13:58:18 (LISA): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 13:59:15 (FRANK): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
++ 14:00:34 (MEAGHAN): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 2:05 - 2:10 |||
++ 14:01:46 (GABEIELLE): 2
+   Backline Items:
+   - #2
+   - #2
+   PV Items:
+   - None
++ 14:03:36 (KELLY T): 4
+   Backline Items:
+   - #2
+   - #18
+   - #18
+   - #88
+   PV Items:
+   - None
++ 14:04:55 (OWEN W): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - Knish Heated
++ 14:05:26 (DOUGLAS S): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 2:10 - 2:15 |||
++ 14:07:35 (MAX): 2
+   Backline Items:
+   - #84
+   - #74
+   PV Items:
+   - None
++ 14:08:24 (ALEXANDER S): 1
+   Backline Items:
+   - #82
+   PV Items:
+   - None
++ 14:08:55 (DAVID): 4
+   Backline Items:
+   - #97
+   - SOM NOV
+   - #2
+   - #81.5
+   PV Items:
+   - None
++ 14:10:31 (ALEXIS): 2
+   Backline Items:
+   - #81.5
+   - #84
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 2:15 - 2:20 |||
++ 14:11:26 (CLAY): 2
+   Backline Items:
+   - SOM NOV
+   - #73
+   PV Items:
+   - None
++ 14:13:44 (STAFF SEAN): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 14:15:41 (DAVE P): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 2:20 - 2:25 |||
++ 14:21:16 (BEKIR): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
+[ Total: 1 ]
+
+||| 2:25 - 2:30 |||
++ 14:18:57 (NATHAN F): 3
+   Backline Items:
+   - #73
+   - #84
+   - #36
+   PV Items:
+   - None
++ 14:20:18 (NORMAN): 2
+   Backline Items:
+   - #40
+   - CUSTOM
+   PV Items:
+   - None
++ 14:22:02 (BEN P): 1
+   Backline Items:
+   - #82
+   PV Items:
+   - None
++ 14:24:00 (STAFF AMANDA): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 14:24:53 (STAFF ARON): 1
+   Backline Items:
+   - #51
+   PV Items:
+   - None
++ 14:25:11 (TONYA P): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 14:26:57 (BRIDGET): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 2:30 - 2:35 |||
++ 14:26:06 (STAFF FRANK): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 14:27:55 (STEPH): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 14:28:38 (LIZ): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 14:29:28 (JACKSON T): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - #606
++ 14:29:39 (TIM): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - None
++ 14:30:04 (KAYLA): 2
+   Backline Items:
+   - #54
+   - #84
+   PV Items:
+   - None
++ 14:30:10 (JUDGE M): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 2:35 - 2:40 |||
++ 14:26:09 (JIM): 1
+   Backline Items:
+   - #22
+   PV Items:
+   - None
++ 14:31:13 (INES): 1
+   Backline Items:
+   - #5
+   PV Items:
+   - None
++ 14:31:39 (TIM G97): 3
+   Backline Items:
+   - #74
+   - #84
+   - Latke
+   PV Items:
+   - None
++ 14:32:56 (CAM D): 1
+   Backline Items:
+   - #51
+   PV Items:
+   - None
++ 14:37:44 (LIZ): 2
+   Backline Items:
+   - #82
+   - Latke
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 2:40 - 2:45 |||
++ 14:34:24 (RUSS): 2
+   Backline Items:
+   - #2
+   - #81.5
+   PV Items:
+   - None
++ 14:35:04 (SANTI): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
++ 14:37:07 (BENJI S): 2
+   Backline Items:
+   - #48
+   - #97
+   PV Items:
+   - None
++ 14:38:29 (JEFF): 2
+   Backline Items:
+   - #81
+   - #82
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 2:45 - 2:50 |||
++ 14:39:43 (JACQUELINE B): 2
+   Backline Items:
+   - #73
+   - #18
+   PV Items:
+   - None
++ 14:39:50 (STAFF MATT): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 14:42:05 (LIZ): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 14:43:47 (JEN): 4
+   Backline Items:
+   - #84
+   - #84
+   - #23
+   - #23
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 2:50 - 2:55 |||
++ 14:44:30 (SHAWN): 2
+   Backline Items:
+   - #13
+   - #48
+   PV Items:
+   - None
++ 14:44:51 (JOHN M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 14:45:13 (MARA): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - None
++ 14:45:34 (STAFF COURT): 4
+   Backline Items:
+   - #51
+   - #51
+   - CUSTOM
+   - CUSTOM
+   PV Items:
+   - #100
+[ Total: 8 ]
+
+||| 2:55 - 3:00 |||
++ 14:46:29 (REGINA V): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - #30
++ 14:46:53 (STAFF CURTIS): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 14:47:34 (JULIA): 3
+   Backline Items:
+   - #2
+   - #81.5
+   - #246
+   PV Items:
+   - None
++ 14:52:00 (GREGORY): 1
+   Backline Items:
+   - #48
+   PV Items:
+   - #623
++ 14:53:46 (STAFF CHAD): 1
+   Backline Items:
+   - #34
+   PV Items:
+   - None
++ 14:56:37 (THOMAS): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 3:00 - 3:05 |||
++ 14:57:23 (ARIA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 14:58:11 (DOMINIC): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 14:58:18 (AP): 4
+   Backline Items:
+   - #2
+   - #2
+   - #18
+   - Latke
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 3:05 - 3:10 |||
++ 14:58:21 (DIANE): 4
+   Backline Items:
+   - #88
+   - #23
+   - Kid Ham
+   - Kid Turk MD
+   PV Items:
+   - #606
+   - #600
+   - #623
++ 14:58:50 (KATHERINE W): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 14:58:53 (ANGEL B): 1
+   Backline Items:
+   - #85
+   PV Items:
+   - None
++ 14:59:50 (JOE): 2
+   Backline Items:
+   - #97
+   - #2
+   PV Items:
+   - None
++ 14:59:56 (JAMES): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 3:10 - 3:15 |||
++ 15:02:30 (ALI F): 2
+   Backline Items:
+   - #1000
+   - SOM NOV
+   PV Items:
+   - None
+[ Total: 2 ]
+
+||| 3:15 - 3:20 |||
++ 15:09:05 (STAFF MILES): 1
+   Backline Items:
+   - Zing Taters
+   PV Items:
+   - None
++ 15:09:35 (SKY): 2
+   Backline Items:
+   - SOM NOV
+   - #2
+   PV Items:
+   - None
++ 15:10:57 (113074): 3
+   Backline Items:
+   - #234
+   - #73
+   - #1000
+   PV Items:
+   - None
++ 15:11:16 (CARA S): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 15:12:47 (ELISABETH): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 3:20 - 3:25 |||
++ 15:12:51 (TOM): 2
+   Backline Items:
+   - #81.5
+   - #22
+   PV Items:
+   - None
++ 15:15:46 (KELLY K): 2
+   Backline Items:
+   - #2
+   - SOM NOV
+   PV Items:
+   - None
++ 15:16:54 (SYDNEY F): 1
+   Backline Items:
+   - #82
+   PV Items:
+   - None
++ 15:17:37 (SYDNEY F): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 15:18:47 (YERG Z): 2
+   Backline Items:
+   - #97
+   - #123
+   PV Items:
+   - None
++ 15:18:50 (CARL S): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 3:25 - 3:30 |||
++ 15:18:06 (JAMIE B): 2
+   Backline Items:
+   - #48
+   - #2
+   PV Items:
+   - KD MD
++ 15:22:17 (CAROL): 2
+   Backline Items:
+   - #2
+   - #27
+   PV Items:
+   - None
++ 15:23:11 (ADRIEL N): 3
+   Backline Items:
+   - #85
+   - #85
+   - #51
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 3:30 - 3:35 |||
++ 15:26:57 (MAAYAN A): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
++ 15:27:32 (ALI R): 2
+   Backline Items:
+   - #14
+   - #14
+   PV Items:
+   - None
++ 15:28:51 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:30:22 (NANCY): 1
+   Backline Items:
+   - #81
+   PV Items:
+   - None
++ 15:41:41 (SKYLINE): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 16:00:42 (SKYLINE): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 16:16:17 (SKYLINE): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 16:21:43 (SKYLINE): 1
+   Backline Items:
+   - #272
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 3:35 - 3:40 |||
++ 15:30:18 (SKYLINE): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 15:31:03 (DORTHY Y): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 15:31:09 (SKYLINE): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 15:31:56 (SKYLINE): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 15:32:07 (DESIREE): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 15:34:08 (MICHELLE Y): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 15:34:40 (ZAITUN): 2
+   Backline Items:
+   - #73
+   - #2
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 3:40 - 3:45 |||
++ 15:32:35 (SKYLINE): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 15:35:59 (SKYLINE): 1
+   Backline Items:
+   - #88
+   PV Items:
+   - None
++ 15:36:23 (LUKA): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
+[ Total: 3 ]
+
+||| 3:45 - 3:50 |||
++ 15:36:47 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:39:00 (JORDAN S): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - None
++ 15:43:04 (JAMES): 1
+   Backline Items:
+   - #123
+   PV Items:
+   - None
+[ Total: 3 ]
+
+||| 3:50 - 3:55 |||
++ 15:42:30 (SKYLINE): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 15:43:23 (VALENTA K): 2
+   Backline Items:
+   - #123
+   - #272
+   PV Items:
+   - None
++ 15:46:38 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:47:08 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:47:41 (SKYLINE): 1
+   Backline Items:
+   - #85
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 3:55 - 4:00 |||
++ 15:48:34 (SETH G): 2
+   Backline Items:
+   - #22
+   - CUSTOM
+   PV Items:
+   - None
++ 15:50:32 (MIKE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:53:45 (916 HUTCHINS AVE): 2
+   Backline Items:
+   - #272
+   - #18
+   PV Items:
+   - None
++ 15:53:48 (JACK K): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 4:00 - 4:05 |||
++ 15:48:14 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 15:54:15 (CONNOR R): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 15:55:38 (TAYLOR B): 2
+   Backline Items:
+   - #2
+   - Latke
+   - Latke
+   PV Items:
+   - None
++ 15:56:31 (ETHAN): 3
+   Backline Items:
+   - #84
+   - #74
+   - #2
+   PV Items:
+   - None
++ 15:58:07 (EVAN B): 2
+   Backline Items:
+   - #234
+   - KG
+   PV Items:
+   - None
++ 15:58:51 (SKYLINE): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
++ 15:59:15 (SKYLINE): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 11 ]
+
+||| 4:05 - 4:10 |||
++ 15:59:41 (SKYLINE): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 16:00:12 (SKYLINE): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 16:00:45 (BRIAN): 2
+   Backline Items:
+   - #22
+   - #73
+   PV Items:
+   - None
++ 16:03:33 (MIKE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 4:10 - 4:15 |||
++ 16:04:23 (GINA): 2
+   Backline Items:
+   - #2
+   - #81
+   PV Items:
+   - None
++ 16:04:41 (MATT L): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
+[ Total: 3 ]
+
+||| 4:15 - 4:20 |||
++ 16:01:35 (SKYLINE): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
++ 16:11:49 (TAYLOR): 2
+   Backline Items:
+   - #26
+   - #2
+   PV Items:
+   - None
++ 16:11:50 (SHARI): 2
+   Backline Items:
+   - #13
+   - #73
+   PV Items:
+   - None
++ 16:13:54 (LISA): 1
+   Backline Items:
+   - Latke
+   PV Items:
+   - Knish Heated
++ 16:13:59 (SKYLINE): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
++ 16:14:31 (CRAIG): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 4:20 - 4:25 |||
++ 16:14:26 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 16:14:33 (DANIELLE T): 4
+   Backline Items:
+   - #2
+   - #18
+   - #73
+   - #73
+   PV Items:
+   - None
++ 16:14:49 (SKYLINE): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 16:15:34 (ALEX W): 2
+   Backline Items:
+   - #22
+   - #22
+   PV Items:
+   - None
++ 16:15:49 (JOHNPAUL L): 2
+   Backline Items:
+   - #2
+   - #48
+   PV Items:
+   - None
++ 16:16:07 (KEVIN L): 2
+   Backline Items:
+   - #2
+   - #13
+   PV Items:
+   - None
++ 16:17:37 (STACY): 3
+   Backline Items:
+   - #1000
+   - #236
+   - Latke
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 4:25 - 4:30 |||
++ 16:17:54 (BRANDON): 2
+   Backline Items:
+   - #82
+   - #2
+   PV Items:
+   - None
++ 16:21:18 (SKYLINE): 1
+   Backline Items:
+   - #272
+   PV Items:
+   - None
++ 16:23:08 (JANE J): 3
+   Backline Items:
+   - #18
+   - #82
+   - #2
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 4:30 - 4:35 |||
++ 16:25:37 (CATHY W): 4
+   Backline Items:
+   - SOM NOV
+   - #82
+   - #18
+   - #73
+   PV Items:
+   - None
++ 16:26:35 (LISA W): 2
+   Backline Items:
+   - #27
+   - #88
+   PV Items:
+   - None
++ 16:28:10 (XINYI L): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 4:35 - 4:40 |||
++ 16:28:09 (JUSTIN): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 16:29:07 (JAMES P): 2
+   Backline Items:
+   - #18
+   - #64
+   PV Items:
+   - None
++ 16:29:31 (GREYSON VANN): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
++ 16:30:11 (TREVOR): 1
+   Backline Items:
+   - #81
+   PV Items:
+   - None
++ 16:30:38 (STAFF ZACH): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 4:40 - 4:45 |||
++ 16:31:32 (JESSICA): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 16:32:43 (DENNIS): 2
+   Backline Items:
+   - #74
+   - #74
+   PV Items:
+   - None
++ 16:34:20 (403 VICK): 2
+   Backline Items:
+   - #2
+   - #40
+   PV Items:
+   - None
++ 16:35:01 (TREVOR): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 16:36:43 (VICTORIA W): 2
+   Backline Items:
+   - SOM NOV
+   - #27
+   PV Items:
+   - None
++ 16:36:53 (RUTH): 2
+   Backline Items:
+   - #2
+   - #40
+   PV Items:
+   - None
+[ Total: 10 ]
+
+||| 4:45 - 4:50 |||
++ 16:39:41 (MIKE H): 5
+   Backline Items:
+   - #84
+   - #88
+   - #73
+   - #13
+   - #74
+   PV Items:
+   - None
++ 16:40:35 (STAFF LEONARD): 1
+   Backline Items:
+   - #26
+   PV Items:
+   - None
++ 16:46:31 (RUSS H): 1
+   Backline Items:
+   - #85
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 4:50 - 4:55 |||
++ 16:48:06 (DANICA): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 16:49:24 (MAYMAY): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 16:50:08 (GARY L): 2
+   Backline Items:
+   - #13
+   - Latke
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 4:55 - 5:00 |||
++ 16:50:30 (WANDA): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 16:51:56 (MATT C): 2
+   Backline Items:
+   - #2
+   - #64
+   PV Items:
+   - None
++ 16:54:58 (JIMMY H): 1
+   Backline Items:
+   - #234
+   PV Items:
+   - None
++ 16:55:57 (STAFF JUSTIN): 1
+   Backline Items:
+   - #64
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 5:00 - 5:05 |||
++ 16:56:06 (BEATRICE): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - KD
++ 16:56:25 (KATY M): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 16:57:58 (DEBRA): 2
+   Backline Items:
+   - CUSTOM
+   - CUSTOM
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 5:05 - 5:10 |||
++ 16:59:16 (AUDREY S): 1
+   Backline Items:
+   - #55
+   PV Items:
+   - None
++ 17:00:04 (1540 E HOSPITAL): 2
+   Backline Items:
+   - #2
+   - #48
+   PV Items:
+   - None
++ 17:00:21 (RAMZI): 2
+   Backline Items:
+   - #55
+   - #14
+   PV Items:
+   - None
++ 17:01:20 (AMANDA): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 5:10 - 5:15 |||
++ 17:01:52 (MADELAINE F): 2
+   Backline Items:
+   - #2
+   - #73
+   PV Items:
+   - None
++ 17:02:46 (GUS): 4
+   Backline Items:
+   - #13
+   - #13
+   - #2
+   - #73
+   PV Items:
+   - None
++ 17:04:05 (OLIVIA): 1
+   Backline Items:
+   - Latke
+   PV Items:
+   - None
++ 17:05:04 (2311 ETON CT): 2
+   Backline Items:
+   - #85
+   - #1000
+   PV Items:
+   - None
++ 17:05:42 (MATT): 2
+   Backline Items:
+   - #73
+   - #66
+   PV Items:
+   - None
++ 17:09:38 (HATTIE): 1
+   Backline Items:
+   - #27
+   PV Items:
+   - None
+[ Total: 12 ]
+
+||| 5:15 - 5:20 |||
++ 17:08:21 (AMY A): 3
+   Backline Items:
+   - #18
+   - Zing Taters
+   - Zing Taters
+   PV Items:
+   - #420
+   - #600
+   - #606
++ 17:11:31 (MATTHEW B): 3
+   Backline Items:
+   - #2
+   - #26
+   - KG
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 5:20 - 5:25 |||
++ 17:10:42 (MATTHEW L): 3
+   Backline Items:
+   - #13
+   - #81.5
+   - #246
+   PV Items:
+   - #607
+   - KD
+   - KD
++ 17:12:06 (DANA Z): 2
+   Backline Items:
+   - #18
+   - #18
+   PV Items:
+   - None
++ 17:12:13 (JENNY): 1
+   Backline Items:
+   - #23
+   PV Items:
+   - #623
++ 17:12:39 (MAYA): 2
+   Backline Items:
+   - #81
+   - #18
+   PV Items:
+   - None
++ 17:13:58 (MARTY): 3
+   Backline Items:
+   - #73
+   - #74
+   - Latke
+   PV Items:
+   - None
+[ Total: 11 ]
+
+||| 5:25 - 5:30 |||
++ 17:14:54 (DEAN): 6
+   Backline Items:
+   - #81
+   - #81
+   - #81
+   - #81
+   - #81
+   - #13
+   PV Items:
+   - None
++ 17:15:58 (MAROCHELLE M): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 17:16:24 (JEFF L): 2
+   Backline Items:
+   - #1
+   - #36
+   PV Items:
+   - #420
++ 17:17:23 (MATT W): 3
+   Backline Items:
+   - #272
+   - #97
+   - #73
+   PV Items:
+   - None
+[ Total: 12 ]
+
+||| 5:30 - 5:35 |||
++ 17:18:45 (JULES C): 2
+   Backline Items:
+   - SOM NOV
+   - #2
+   PV Items:
+   - None
++ 17:20:25 (ROBERT): 4
+   Backline Items:
+   - #55
+   - #48
+   - KG
+   - KG
+   PV Items:
+   - None
++ 17:22:27 (TREVOR): 2
+   Backline Items:
+   - #22
+   - #64
+   PV Items:
+   - None
++ 17:22:56 (MARK): 1
+   Backline Items:
+   - #36
+   PV Items:
+   - None
++ 17:28:06 (THOMAS R): 2
+   Backline Items:
+   - #48
+   - #236
+   PV Items:
+   - None
+[ Total: 11 ]
+
+||| 5:35 - 5:40 |||
++ 17:23:25 (MARK P): 4
+   Backline Items:
+   - #2
+   - #2
+   - #18
+   - #54
+   PV Items:
+   - None
++ 17:27:46 (PETE): 4
+   Backline Items:
+   - #13
+   - #27
+   - #51
+   - #85
+   PV Items:
+   - None
++ 17:28:35 (DIEGO): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - None
++ 17:30:17 (1701 TUDOR DR): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - #608
++ 17:31:51 (PEDRO): 3
+   Backline Items:
+   - #4
+   - #2
+   - #13
+   PV Items:
+   - None
+[ Total: 13 ]
+
+||| 5:40 - 5:45 |||
++ 17:32:05 (MYLES): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 17:33:34 (CHRIS F): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 17:34:08 (DYLAN G): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 17:34:40 (TIM): 3
+   Backline Items:
+   - #18
+   - #23
+   - #64
+   PV Items:
+   - None
+[ Total: 6 ]
+
+||| 5:45 - 5:50 |||
++ 17:37:09 (KATHLEEN): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 17:38:44 (MICHAEL L): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 17:40:35 (MATT D): 4
+   Backline Items:
+   - #18
+   - #18
+   - #55
+   - #23
+   PV Items:
+   - #607
++ 17:44:25 (JEFF L): 2
+   Backline Items:
+   - #23
+   - #84
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 5:50 - 5:55 |||
++ 17:45:22 (KEVIN H): 2
+   Backline Items:
+   - #2
+   - SOM NOV
+   PV Items:
+   - None
++ 17:46:01 (DAVID A): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 17:47:16 (PAM): 1
+   Backline Items:
+   - #54
+   PV Items:
+   - None
++ 17:47:39 (GEORGIOS T): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 5:55 - 6:00 |||
++ 17:47:57 (CATHERINE): 4
+   Backline Items:
+   - #1000
+   - #1000
+   - #73
+   - #18
+   PV Items:
+   - None
++ 17:49:26 (CLAIRE P): 2
+   Backline Items:
+   - #75
+   - #236
+   PV Items:
+   - None
++ 17:50:10 (ALEX): 2
+   Backline Items:
+   - #73
+   - #1000
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 6:00 - 6:05 |||
++ 17:53:45 (DESMOND H): 2
+   Backline Items:
+   - #84
+   - #27
+   PV Items:
+   - None
++ 17:54:13 (STAFF PAUL): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
++ 17:54:52 (DAVID S): 3
+   Backline Items:
+   - #18
+   - #55
+   - Latke
+   PV Items:
+   - None
++ 17:56:46 (CATHY A): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 17:58:14 (MARK): 1
+   Backline Items:
+   - #81.5
+   PV Items:
+   - KD
+[ Total: 8 ]
+
+||| 6:05 - 6:10 |||
++ 17:55:23 (DANIEL K): 2
+   Backline Items:
+   - #85
+   - #85
+   PV Items:
+   - None
++ 17:55:40 (RYAN S): 2
+   Backline Items:
+   - #2
+   - #234
+   PV Items:
+   - None
++ 17:56:07 (HEATHER P): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 17:57:34 (PARKER): 2
+   Backline Items:
+   - #82
+   - Latke
+   PV Items:
+   - None
++ 17:58:09 (MATTHEW): 3
+   Backline Items:
+   - #88
+   - #1000
+   - #75
+   PV Items:
+   - None
++ 17:58:54 (STAFF MIKE C): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
++ 17:59:58 (JOE): 2
+   Backline Items:
+   - #2
+   - #74
+   PV Items:
+   - None
++ 18:00:25 (MOE R): 2
+   Backline Items:
+   - #234
+   - #2
+   PV Items:
+   - None
+[ Total: 15 ]
+
+||| 6:10 - 6:15 |||
++ 18:01:40 (JON): 2
+   Backline Items:
+   - #48
+   - KG
+   PV Items:
+   - None
++ 18:04:08 (ANNIE): 3
+   Backline Items:
+   - #2
+   - #48
+   - #1000
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 6:15 - 6:20 |||
++ 18:09:23 (BOB): 2
+   Backline Items:
+   - #2
+   - #85
+   PV Items:
+   - None
++ 18:10:06 (YOON): 3
+   Backline Items:
+   - SOM NOV
+   - #73
+   - Latke
+   PV Items:
+   - None
++ 18:10:32 (JUSTIN): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 18:10:42 (495 N WAGNER RD): 2
+   Backline Items:
+   - #88
+   - #84
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 6:20 - 6:25 |||
++ 18:11:12 (CHRISTIN): 3
+   Backline Items:
+   - #51
+   - #84
+   - #236
+   PV Items:
+   - None
++ 18:12:08 (JANEL): 1
+   Backline Items:
+   - #18
+   PV Items:
+   - None
++ 18:13:06 (ANDREW A): 2
+   Backline Items:
+   - #73
+   - #74
+   PV Items:
+   - None
++ 18:15:09 (CHRISTIAN M): 1
+   Backline Items:
+   - #97
+   PV Items:
+   - None
++ 18:17:30 (LEO): 1
+   Backline Items:
+   - #1000
+   PV Items:
+   - None
+[ Total: 8 ]
+
+||| 6:25 - 6:30 |||
++ 18:12:37 (DESRAE): 2
+   Backline Items:
+   - #51
+   - KG
+   PV Items:
+   - None
++ 18:12:46 (OMAR F): 2
+   Backline Items:
+   - #85
+   - #36
+   PV Items:
+   - None
++ 18:16:25 (OWEN M): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 18:19:26 (CHRIS F): 2
+   Backline Items:
+   - #81.5
+   - #234
+   PV Items:
+   - KD MD
++ 18:19:44 (300 BRIARCREST D): 5
+   Backline Items:
+   - #13
+   - #18
+   - #18
+   - #18
+   - #27
+   PV Items:
+   - None
++ 18:21:53 (BEN): 1
+   Backline Items:
+   - #272
+   PV Items:
+   - #616
+[ Total: 13 ]
+
+||| 6:30 - 6:35 |||
++ 18:22:26 (JOE): 1
+   Backline Items:
+   - #82
+   PV Items:
+   - None
++ 18:24:38 (JEFFERY K): 1
+   Backline Items:
+   - #75
+   PV Items:
+   - None
++ 18:28:42 (DANIEL D): 3
+   Backline Items:
+   - #18
+   - #13
+   - Latke
+   PV Items:
+   - None
++ 18:29:26 (JENNA E): 1
+   Backline Items:
+   - #73
+   PV Items:
+   - None
++ 18:30:32 (JUSTIN G): 1
+   Backline Items:
+   - #74
+   PV Items:
+   - None
+[ Total: 7 ]
+
+||| 6:35 - 6:40 |||
++ 18:31:19 (TOM M): 4
+   Backline Items:
+   - #48
+   - #18
+   - #88
+   - #2
+   PV Items:
+   - None
++ 18:31:26 (NO P): 1
+   Backline Items:
+   - #2
+   PV Items:
+   - None
+[ Total: 5 ]
+
+||| 6:40 - 6:45 |||
++ 18:31:48 (RUSSELL G): 2
+   Backline Items:
+   - #2
+   - #75
+   PV Items:
+   - #608
++ 18:32:09 (MELISSA P): 1
+   Backline Items:
+   - #84
+   PV Items:
+   - None
++ 18:33:10 (APRIL): 2
+   Backline Items:
+   - #81
+   - #2
+   PV Items:
+   - None
++ 18:33:34 (STEVE): 1
+   Backline Items:
+   - #13
+   PV Items:
+   - None
++ 18:35:29 (HOLLY): 2
+   Backline Items:
+   - #2
+   - #18
+   PV Items:
+   - None
++ 18:35:43 (XABRIEL C): 2
+   Backline Items:
+   - #2
+   - #22
+   PV Items:
+   - KD
+[ Total: 10 ]
+
+||| 6:45 - 6:50 |||
++ 18:40:51 (JIMMY): 4
+   Backline Items:
+   - #2
+   - #2
+   - #18
+   - #18
+   PV Items:
+   - None
+[ Total: 4 ]
+
+||| 6:50 - 6:55 |||
++ 18:41:06 (RICK): 4
+   Backline Items:
+   - #2
+   - #18
+   - #81.5
+   - KG MD
+   PV Items:
+   - None
++ 18:41:46 (THOMAS P): 1
+   Backline Items:
+   - SOM NOV
+   PV Items:
+   - None
++ 18:48:59 (JIM): 2
+   Backline Items:
+   - #84
+   - #13
+   PV Items:
+   - None
++ 18:49:14 (DAN): 2
+   Backline Items:
+   - #2
+   - #23
+   PV Items:
+   - None
+[ Total: 9 ]
+
+||| 6:55 - 7:00 |||
+[ Total: 0 ]
+
+||| 7:00 - 7:05 |||
+[ Total: 0 ]
+
+||| 7:05 - 7:10 |||
+[ Total: 0 ]
+
+||| 7:10 - 7:15 |||
+[ Total: 0 ]

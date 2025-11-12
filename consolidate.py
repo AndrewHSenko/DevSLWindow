@@ -11,14 +11,15 @@ from os import mkdir
 
 from decimal import Decimal
 import ast
+from copy import deepcopy
 
 # HEADERS #
-MONTH_H = '11_01_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Nov_01_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '11_09_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Nov_09_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 5
-SHEET_NUM = 5
-DATE = '20251101'
+WEEK_NUM = 1
+SHEET_NUM = 6
+DATE = '20251109'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -224,8 +225,8 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
     # Will add return statement with try/catch blocks #
 
 def encode(ac):
-    rawchecks = ac
-    with open('oct_17_data.txt', 'w') as wfile:
+    rawchecks = deepcopy(ac)
+    with open(f'{MONTH_H}_Raw_Checks.txt', 'w') as wfile:
         for saletime in rawchecks:
             curr_check = rawchecks[saletime]
             curr_check['Qty'] = str(curr_check['Qty'])
@@ -411,7 +412,6 @@ def find_production():
     end = time.time()
     print('Time taken:', end, '-', start, '=', end - start)
     encode(active_checks)
-    return
     find_bad_checks(active_checks)
     tabulate(active_checks)
     return True
