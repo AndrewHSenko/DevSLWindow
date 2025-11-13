@@ -1,0 +1,1041 @@
+FoH Entries
+-----------
+||| 10:00 - 10:05 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:05 - 10:10 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:10 - 10:15 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:15 - 10:20 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:20 - 10:25 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:25 - 10:30 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:30 - 10:35 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:35 - 10:40 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:40 - 10:45 |||
+Checks: 0
+Item Qty: 0
+
+||| 10:45 - 10:50 |||
++ BETZ K: 10:49:40
+Checks: 1
+Item Qty: 2
+
+||| 10:50 - 10:55 |||
++ IVAN M: 10:51:29
++ MICHAEL: 10:53:21
+Checks: 2
+Item Qty: 2
+
+||| 10:55 - 11:00 |||
+Checks: 0
+Item Qty: 0
+
+||| 11:00 - 11:05 |||
++ BRIAN U: 11:00:44
++ SARAH D: 11:01:16
+Checks: 2
+Item Qty: 4
+
+||| 11:05 - 11:10 |||
++ DAVID: 11:05:12
++ KINNERI: 11:08:38
++ KATE: 11:09:09
++ SHARI: 11:09:10
++ EVERETT: 11:09:27
+Checks: 5
+Item Qty: 14
+
+||| 11:10 - 11:15 |||
++ CYNTHIA: 11:11:27
++ DAVID M: 11:12:02
++ KAI: 11:12:54
++ HAM: 11:13:48
++ 1540 E HOSITAL: 11:14:21
+Checks: 5
+Item Qty: 13
+
+||| 11:15 - 11:20 |||
++ AVA: 11:16:16
++ DTRIRERWEILER: 11:17:13
++ 600 E MADISON: 11:17:23
++ HANNAH: 11:18:08
++ SOFIA F: 11:19:05
++ DTIRERWEILER ADD: 11:19:42
+Checks: 6
+Item Qty: 9
+
+||| 11:20 - 11:25 |||
++ JILL: 11:20:37
++ STAFF ASHBY: 11:22:06
++ DAWN: 11:24:56
+Checks: 3
+Item Qty: 3
+
+||| 11:25 - 11:30 |||
++ TERESE: 11:25:57
++ 209 WILDWOOD: 11:27:40
++ 1540 E HOSPITAL: 11:29:02
+Checks: 3
+Item Qty: 12
+
+||| 11:30 - 11:35 |||
++ CHRISTINA F: 11:30:18
++ WILL: 11:30:53
++ PETER K: 11:31:11
++ DARRYL: 11:31:37
++ ORDER 11: 11:31:57
++ JASON: 11:32:29
++ SAMUEL: 11:33:55
+Checks: 7
+Item Qty: 11
+
+||| 11:35 - 11:40 |||
++ LAUREN: 11:35:03
++ HARRY: 11:36:33
++ 1931 DUFFIELD DR: 11:37:33
++ TOM: 11:37:58
++ ERIC: 11:38:18
++ MARY O: 11:39:41
++ FAITH: 11:39:43
+Checks: 7
+Item Qty: 12
+
+||| 11:40 - 11:45 |||
++ MONEKA G: 11:40:26
++ ALLIE: 11:40:30
++ EVAN: 11:40:53
++ NAOMI K: 11:40:59
++ GARY H: 11:41:28
++ ETHAN: 11:41:53
++ DAFNA: 11:41:56
++ MARK: 11:42:06
++ JEREMY: 11:42:35
++ TARA N: 11:43:21
++ 209 WILDWOOD AVE: 11:43:50
++ JIM: 11:43:53
++ YUBIN: 11:44:41
++ JORDON: 11:44:42
+Checks: 14
+Item Qty: 24
+
+||| 11:45 - 11:50 |||
++ ZACHARY: 11:45:05
++ NIC H: 11:45:49
++ ETHAN: 11:45:53
++ MAITRI S: 11:46:11
++ KELLY: 11:46:13
++ KARINA: 11:46:38
++ NINA: 11:46:41
++ HARRISON: 11:47:29
++ BODHI: 11:48:38
++ WILSON: 11:48:53
++ STAFF HOWARD: 11:48:54
+Checks: 11
+Item Qty: 14
+
+||| 11:50 - 11:55 |||
++ JOHN: 11:52:56
++ FRANK T: 11:52:58
++ KAY F: 11:53:45
++ STAFF WENDELL: 11:54:36
+Checks: 4
+Item Qty: 5
+
+||| 11:55 - 12:00 |||
++ JOEY: 11:55:42
++ WYATT N: 11:55:47
++ DRAKE: 11:56:16
++ TIM: 11:56:51
++ STAFF JAMES: 11:57:19
++ NICK: 11:57:25
++ AVA: 11:57:32
++ MEGAN: 11:58:10
++ SOPHIA C: 11:58:18
++ MEGAN H: 11:58:30
+Checks: 10
+Item Qty: 21
+
+||| 12:00 - 12:05 |||
++ JEAN H: 12:00:33
++ RONI K: 12:00:46
++ JOON: 12:01:28
++ STAFF FRANK: 12:01:32
++ CODY L: 12:02:17
++ AMANDA L: 12:02:49
++ ANNELISE M: 12:03:16
++ DAVID E: 12:04:41
+Checks: 8
+Item Qty: 32
+
+||| 12:05 - 12:10 |||
++ STAFF ARIEL: 12:05:20
++ TORI: 12:05:28
++ ZACH: 12:05:54
++ ALIX: 12:05:57
++ FINN: 12:07:45
++ ERIC: 12:08:22
+Checks: 6
+Item Qty: 10
+
+||| 12:10 - 12:15 |||
++ IAN: 12:10:09
++ LAURA V: 12:10:34
++ MELISSA H: 12:11:33
++ JOHN D: 12:14:21
++ AMANDA P: 12:14:41
+Checks: 5
+Item Qty: 18
+
+||| 12:15 - 12:20 |||
++ LEAH: 12:15:24
++ MARISA C: 12:15:44
++ BILL M: 12:16:17
++ JAY: 12:17:31
++ COREY: 12:18:21
++ BENJAMIN: 12:19:47
+Checks: 6
+Item Qty: 12
+
+||| 12:20 - 12:25 |||
++ BEN: 12:20:36
++ EMMA S: 12:20:50
++ NOAH: 12:21:08
++ DAVIS: 12:21:09
++ ZACH: 12:21:48
++ MARY: 12:21:54
++ KAYLEE E: 12:21:56
++ TARA G: 12:23:12
++ DANIUS G: 12:23:49
++ SHUBH: 12:24:28
++ CONNOR L: 12:24:33
++ NAT: 12:24:50
+Checks: 12
+Item Qty: 25
+
+||| 12:25 - 12:30 |||
++ MARK: 12:25:22
++ JESSE: 12:25:54
++ LUCY: 12:26:05
++ MO: 12:26:34
++ TIM S: 12:27:03
++ ASHOK S: 12:27:57
++ CLAIRE: 12:28:34
++ ZHANETA G: 12:29:13
+Checks: 8
+Item Qty: 12
+
+||| 12:30 - 12:35 |||
++ RANDY C: 12:31:59
++ KRISTEN A: 12:32:00
++ REGINA: 12:32:03
++ JOHN E: 12:32:46
++ MONICA W: 12:33:01
++ HARRISON: 12:34:02
++ MIRANDA: 12:34:21
+Checks: 7
+Item Qty: 11
+
+||| 12:35 - 12:40 |||
++ DIANNE: 12:35:51
++ RYAN E: 12:36:23
++ JACOB M: 12:38:40
++ JAKE C: 12:39:32
+Checks: 4
+Item Qty: 11
+
+||| 12:40 - 12:45 |||
++ JACOB S: 12:40:05
++ RAPHAEL: 12:40:59
++ NAOMI K: 12:41:13
++ DIANE D: 12:41:58
++ COLIN: 12:42:28
++ KAY B: 12:42:33
++ ASHLEY B: 12:42:58
++ ELLA T: 12:43:10
++ WILL: 12:43:56
++ MARY C: 12:44:05
+Checks: 10
+Item Qty: 22
+
+||| 12:45 - 12:50 |||
++ ANDREW T: 12:46:13
++ MICHAEL C: 12:47:30
++ ALIVIA: 12:47:38
++ CORI: 12:47:49
++ HO: 12:47:58
++ ANDREW D: 12:48:01
++ ZANE: 12:48:24
++ ABHINAV S: 12:48:31
++ MIKE A: 12:48:58
++ NICOLAS A: 12:49:06
++ ADITYA: 12:49:27
++ MARIE: 12:49:41
+Checks: 12
+Item Qty: 20
+
+||| 12:50 - 12:55 |||
++ OWEN: 12:50:03
++ RISHI: 12:50:13
++ BILL R: 12:50:52
++ JIM P: 12:50:56
++ LARZ: 12:51:50
++ ADITYA V: 12:51:51
++ BECCA: 12:52:05
++ LARRY: 12:52:30
++ LAUREN B: 12:53:11
++ ANNA: 12:53:51
++ SHAGUUN P: 12:54:01
++ TREVOR: 12:54:23
+Checks: 12
+Item Qty: 19
+
+||| 12:55 - 1:00 |||
++ ARI: 12:55:02
++ MATT: 12:55:57
++ JESSE: 12:56:32
++ LUKE: 12:56:44
++ BRIAN: 12:57:18
++ ALEX: 12:57:43
++ ETHAN M: 12:58:11
++ MARTHA: 12:58:40
++ JEN 240: 12:58:48
++ PATRICK L: 12:58:51
+Checks: 10
+Item Qty: 21
+
+||| 1:00 - 1:05 |||
++ AMY: 13:00:20
++ STEVEN: 13:00:34
++ DAL: 13:01:53
++ ANDY F: 13:02:51
++ BRETT: 13:03:14
++ RALPH B: 13:03:15
++ BRIAN: 13:04:04
++ DAVID C: 13:04:35
+Checks: 8
+Item Qty: 13
+
+||| 1:05 - 1:10 |||
++ ANGELA H: 13:05:13
++ VASH: 13:05:18
++ AJSHAY: 13:05:56
++ KIA D: 13:06:39
++ LOUISE W: 13:06:45
++ BEN: 13:07:28
++ LAUREN H: 13:08:01
++ LARRY W: 13:08:22
++ CORY G: 13:09:21
++ JENNIFER C: 13:09:33
++ ANDREW: 13:09:55
+Checks: 11
+Item Qty: 28
+
+||| 1:10 - 1:15 |||
++ BLAKECD: 13:10:35
++ GABI B: 13:11:08
++ IAN: 13:12:22
++ LAILA: 13:13:14
+Checks: 4
+Item Qty: 8
+
+||| 1:15 - 1:20 |||
++ NIC: 13:17:15
++ CHRIS: 13:19:03
++ CAT: 13:19:20
++ LESLIE: 13:20:00
+Checks: 4
+Item Qty: 11
+
+||| 1:20 - 1:25 |||
++ COLETTE: 13:20:26
++ 1730 DAVID CT: 13:20:44
++ STAFF AMANDa: 13:22:04
++ ANDREW: 13:22:14
++ DAVID H: 13:22:42
++ YAN K: 13:23:02
++ TRACI: 13:23:15
++ CINDY: 13:23:48
++ LAYNE S: 13:24:55
++ BEN: 13:24:59
+Checks: 10
+Item Qty: 18
+
+||| 1:25 - 1:30 |||
++ KEVIN N: 13:26:46
++ STAFF NIYA: 13:28:05
++ ALDEB: 13:28:25
++ STAFF JOBY: 13:29:54
+Checks: 4
+Item Qty: 5
+
+||| 1:30 - 1:35 |||
++ NICK: 13:30:06
++ GABRIELLA: 13:30:13
++ IRENE L: 13:30:25
++ JOY M: 13:32:01
++ VIV: 13:32:07
++ ERI: 13:32:28
++ LUE P: 13:33:02
++ GEORGIA: 13:33:17
++ NO PHONE: 13:34:31
++ ANDRIELLE: 13:34:44
++ TANVI K: 13:34:57
+Checks: 11
+Item Qty: 19
+
+||| 1:35 - 1:40 |||
++ VITORIA: 13:35:02
++ ERIC: 13:35:23
++ TOM E: 13:36:27
++ BRENT: 13:36:35
++ MATT: 13:36:57
++ LIBBY: 13:37:16
++ KEVIN: 13:37:41
++ JASON: 13:38:24
++ MICHAEL F: 13:38:30
+Checks: 9
+Item Qty: 11
+
+||| 1:40 - 1:45 |||
++ DAN: 13:40:13
++ LIZ: 13:40:28
++ KEVIN: 13:43:33
++ JUDY: 13:43:55
++ STAFF EMILY: 13:44:38
+Checks: 5
+Item Qty: 8
+
+||| 1:45 - 1:50 |||
++ MEGAN: 13:45:05
++ ANDREA D: 13:45:16
++ RYAN: 13:45:31
++ ISAIAH: 13:46:11
++ CONNOR: 13:48:58
+Checks: 5
+Item Qty: 7
+
+||| 1:50 - 1:55 |||
++ BROOKE M: 13:51:24
++ JORDYN H: 13:51:33
++ MARYLOUISE O: 13:54:03
++ MIKE H: 13:54:44
+Checks: 4
+Item Qty: 11
+
+||| 1:55 - 2:00 |||
++ MITCHELL: 13:55:30
++ STAFF FELIX: 13:56:04
++ JAKE: 13:57:38
++ BECCA C: 13:58:08
++ TIONA: 13:58:43
++ STAFF CHRIS: 13:58:47
++ CARLA H 2/2: 13:59:30
+Checks: 7
+Item Qty: 15
+
+||| 2:00 - 2:05 |||
++ BELLA B: 14:00:19
++ RASTI: 14:01:09
++ STAFF ELIJAH: 14:01:40
++ CARLA H 2/2: 14:01:42
++ ARI: 14:01:49
++ RICH C: 14:02:07
++ JESSICA F: 14:02:30
++ MATT: 14:04:53
+Checks: 8
+Item Qty: 20
+
+||| 2:05 - 2:10 |||
++ SARAH A: 14:05:30
++ BRITT: 14:06:50
++ ERIC: 14:08:46
++ SARAH A: 14:08:57
+Checks: 4
+Item Qty: 9
+
+||| 2:10 - 2:15 |||
++ STAFF FIONA: 14:10:15
++ ELOISE: 14:13:31
++ MICHELLE N: 14:13:34
+Checks: 3
+Item Qty: 8
+
+||| 2:15 - 2:20 |||
++ JESSICA: 14:15:42
++ RYAN: 14:16:15
++ STAFF ELLERY: 14:17:01
++ ERIC W: 14:18:12
++ MATT: 14:18:34
+Checks: 5
+Item Qty: 12
+
+||| 2:20 - 2:25 |||
++ LESLEY: 14:20:27
++ JESSICA H: 14:21:17
++ MICHELLE: 14:21:28
++ EMILY: 14:21:36
++ IRA D: 14:22:32
++ DAWN: 14:23:09
++ KIM: 14:23:15
++ AL M: 14:23:56
++ RICHARD: 14:24:30
++ MIKE: 14:25:00
+Checks: 10
+Item Qty: 24
+
+||| 2:25 - 2:30 |||
++ WILL: 14:25:06
++ EVA: 14:27:22
++ SHELBY: 14:27:29
++ STACIE: 14:28:35
++ BRANDI: 14:29:06
++ NANCY: 14:29:13
++ HANNAH A: 14:29:42
+Checks: 7
+Item Qty: 16
+
+||| 2:30 - 2:35 |||
++ CHELSEA: 14:30:07
++ SANDY: 14:30:42
++ LOREN: 14:30:52
++ KEN: 14:32:46
++ 1107 S UNI: 14:33:29
++ LH: 14:33:57
++ MASON N: 14:33:58
++ STAFF LILIANA: 14:34:21
+Checks: 8
+Item Qty: 13
+
+||| 2:35 - 2:40 |||
++ MATT: 14:35:02
++ MAX: 14:35:54
++ JAKE: 14:36:46
++ HARRY S: 14:37:26
++ JILL P: 14:38:05
++ 624 CHURCH ST: 14:39:02
++ GREGG: 14:39:03
++ 116152: 14:39:44
+Checks: 8
+Item Qty: 16
+
+||| 2:40 - 2:45 |||
++ STAFF GABBY: 14:40:49
++ GIADA A: 14:41:17
++ REUBEN: 14:42:07
++ LLH: 14:43:02
+Checks: 4
+Item Qty: 6
+
+||| 2:45 - 2:50 |||
++ FRED P: 14:45:51
++ JEFFREY H: 14:46:40
++ STAFF BOB: 14:47:11
++ WADE: 14:47:42
++ NAVYA K: 14:48:12
++ PATIENCE W: 14:48:28
+Checks: 6
+Item Qty: 11
+
+||| 2:50 - 2:55 |||
++ THOMAS L: 14:50:29
++ BRIAN: 14:50:44
++ STAFF FIONA: 14:53:49
+Checks: 3
+Item Qty: 7
+
+||| 2:55 - 3:00 |||
++ GRANT: 14:56:55
++ HEATHER H: 14:57:59
++ ZACH: 14:58:17
+Checks: 3
+Item Qty: 4
+
+||| 3:00 - 3:05 |||
++ ALI: 15:00:25
++ HISBERG: 15:02:03
++ DAVID E: 15:03:10
++ SAIF: 15:04:41
+Checks: 4
+Item Qty: 8
+
+||| 3:05 - 3:10 |||
++ SORCHA: 15:05:11
++ CHRIS: 15:05:38
++ CYNTHIA: 15:06:17
++ KARL M: 15:07:05
++ STEPHANIE: 15:09:11
++ NOAH B: 15:09:43
++ STAFF SHANNON: 15:09:54
+Checks: 7
+Item Qty: 12
+
+||| 3:10 - 3:15 |||
++ PETER S: 15:12:53
++ STAFF LILA: 15:13:40
++ NATHAN B: 15:14:03
+Checks: 3
+Item Qty: 6
+
+||| 3:15 - 3:20 |||
++ TERRY: 15:17:27
++ STAFF LEONARD: 15:17:34
++ ASH M: 15:18:58
+Checks: 3
+Item Qty: 6
+
+||| 3:20 - 3:25 |||
++ JAMES J: 15:22:08
+Checks: 1
+Item Qty: 2
+
+||| 3:25 - 3:30 |||
+Checks: 0
+Item Qty: 0
+
+||| 3:30 - 3:35 |||
++ DAVID E: 15:30:13
++ MATT: 15:32:29
++ JESSICA: 15:32:33
++ STAFF OTIS: 15:34:06
++ PATRICK K: 15:34:36
++ MICHAEL: 15:35:00
+Checks: 6
+Item Qty: 12
+
+||| 3:35 - 3:40 |||
++ JACOB S: 15:37:23
++ LEO C: 15:37:53
++ 2064 LIBERTY: 15:38:08
++ RUSTY: 15:38:59
++ RALF: 15:39:13
+Checks: 5
+Item Qty: 13
+
+||| 3:40 - 3:45 |||
++ MO: 15:40:03
++ KEVIN W: 15:42:26
++ ADAM: 15:42:35
+Checks: 3
+Item Qty: 8
+
+||| 3:45 - 3:50 |||
++ MITCH: 15:46:16
++ MATHHEW K: 15:48:05
+Checks: 2
+Item Qty: 3
+
+||| 3:50 - 3:55 |||
++ FORD: 15:50:57
++ MASON: 15:51:20
++ HOPE T: 15:52:47
++ DAR: 15:52:51
++ JUSTIN B: 15:54:57
+Checks: 5
+Item Qty: 7
+
+||| 3:55 - 4:00 |||
++ HALLIE M: 15:56:52
++ STAFF SCOTT E: 15:58:03
++ 1540  HOSPITAL D: 15:59:53
++ TODD: 16:00:00
+Checks: 4
+Item Qty: 6
+
+||| 4:00 - 4:05 |||
++ LARA: 16:00:50
++ JAMES: 16:01:19
++ STAFF PRESTON: 16:02:04
++ JESSICA E: 16:02:34
+Checks: 4
+Item Qty: 10
+
+||| 4:05 - 4:10 |||
++ MATTHEW D: 16:07:12
++ SPENCER S: 16:07:40
++ MARSHA: 16:08:33
++ IRENE R: 16:09:38
+Checks: 4
+Item Qty: 12
+
+||| 4:10 - 4:15 |||
++ EMILY: 16:10:52
++ CASEY M: 16:10:54
++ KAYLEY: 16:12:57
+Checks: 3
+Item Qty: 3
+
+||| 4:15 - 4:20 |||
++ SEAN: 16:16:46
+Checks: 1
+Item Qty: 2
+
+||| 4:20 - 4:25 |||
++ LILY MCKINNEY: 16:21:02
++ BEN: 16:23:05
++ JUDY: 16:23:31
+Checks: 3
+Item Qty: 6
+
+||| 4:25 - 4:30 |||
++ ERIC S: 16:25:46
++ LIZ: 16:27:42
++ ABHI: 16:28:20
+Checks: 3
+Item Qty: 7
+
+||| 4:30 - 4:35 |||
++ BLAISE: 16:30:04
++ PAVEL: 16:32:21
++ MARYCLARE O: 16:32:28
++ FANG: 16:34:51
+Checks: 4
+Item Qty: 10
+
+||| 4:35 - 4:40 |||
+Checks: 0
+Item Qty: 0
+
+||| 4:40 - 4:45 |||
++ TONY O: 16:40:06
++ MATT C: 16:40:33
+Checks: 2
+Item Qty: 7
+
+||| 4:45 - 4:50 |||
++ JAMES M: 16:47:13
++ 2869 S MAIN: 16:47:56
+Checks: 2
+Item Qty: 2
+
+||| 4:50 - 4:55 |||
++ PARKER: 16:50:38
++ STAFF MICHAEL: 16:50:39
++ STAFF MIKE C: 16:50:54
++ JACOB S: 16:53:50
+Checks: 4
+Item Qty: 4
+
+||| 4:55 - 5:00 |||
++ 201 GLEN AVE: 16:55:27
++ BECCA F: 16:55:32
++ PAIGE S: 16:57:10
+Checks: 3
+Item Qty: 5
+
+||| 5:00 - 5:05 |||
++ STAFF TREVOR: 17:02:40
++ KARIN: 17:03:05
++ NICOLAS O: 17:03:14
+Checks: 3
+Item Qty: 6
+
+||| 5:05 - 5:10 |||
++ 909 HEATHER WAY: 17:07:38
++ KATHERINE: 17:09:28
+Checks: 2
+Item Qty: 5
+
+||| 5:10 - 5:15 |||
++ EVONNE T: 17:11:19
++ KATE: 17:12:20
+Checks: 2
+Item Qty: 6
+
+||| 5:15 - 5:20 |||
++ COLE B: 17:16:00
+Checks: 1
+Item Qty: 1
+
+||| 5:20 - 5:25 |||
++ WAYNE: 17:21:37
++ SIMON: 17:25:00
+Checks: 2
+Item Qty: 12
+
+||| 5:25 - 5:30 |||
++ ALEXA: 17:25:21
++ CHRIS: 17:26:40
++ CHRIS G73: 17:27:57
++ SAM C: 17:28:19
++ DYLAN G: 17:28:45
+Checks: 5
+Item Qty: 12
+
+||| 5:30 - 5:35 |||
++ PATRICIA F: 17:30:02
++ PAUL R: 17:30:09
++ CAM C: 17:30:54
++ VICKY: 17:31:16
++ DYLAN B: 17:31:30
++ STAFF DT: 17:34:53
+Checks: 6
+Item Qty: 7
+
+||| 5:35 - 5:40 |||
++ MELODY W: 17:35:22
++ YUCHEN S: 17:38:15
++ KURT: 17:38:41
++ EVAN M: 17:39:31
++ MILES: 17:39:56
+Checks: 5
+Item Qty: 6
+
+||| 5:40 - 5:45 |||
++ NANCY G: 17:40:06
++ NANCY G: 17:40:09
++ STAFF WALLO: 17:41:54
++ AUDRIE: 17:42:49
++ JAY A: 17:43:51
+Checks: 5
+Item Qty: 9
+
+||| 5:45 - 5:50 |||
++ TAYLOR B: 17:45:36
++ STAFF ROAN: 17:48:05
++ PARKER J: 17:48:34
++ LADENA W: 17:49:08
+Checks: 4
+Item Qty: 5
+
+||| 5:50 - 5:55 |||
+Checks: 0
+Item Qty: 0
+
+||| 5:55 - 6:00 |||
++ 1417 GRANGER: 17:55:21
++ HAYES M: 17:58:27
++ EVAN H: 17:58:54
++ JIM H: 17:59:21
+Checks: 4
+Item Qty: 7
+
+||| 6:00 - 6:05 |||
++ ASHEE: 18:00:51
++ WILL C: 18:02:29
++ BEN S: 18:03:04
++ DEMITRA: 18:04:07
+Checks: 4
+Item Qty: 5
+
+||| 6:05 - 6:10 |||
++ DEANA: 18:06:16
++ MARC M: 18:08:19
++ SANYA S: 18:08:24
+Checks: 3
+Item Qty: 3
+
+||| 6:10 - 6:15 |||
++ SYDNEY G: 18:10:58
++ KIMBERLY S: 18:10:59
++ C: 18:14:18
+Checks: 3
+Item Qty: 3
+
+||| 6:15 - 6:20 |||
++ AVA: 18:18:57
++ BOU: 18:19:27
+Checks: 2
+Item Qty: 4
+
+||| 6:20 - 6:25 |||
++ STAFF ROBERT: 18:20:27
++ LEXI: 18:22:15
++ YUKSEL: 18:24:33
++ RHEA: 18:24:57
+Checks: 4
+Item Qty: 4
+
+||| 6:25 - 6:30 |||
++ ELLE: 18:25:08
++ ALINA: 18:25:22
++ EBRU G: 18:26:30
++ 409 MONTGOMERY: 18:28:05
++ DANIELLE C: 18:28:40
++ COOP: 18:29:04
++ JOSH: 18:29:20
++ DIM: 18:29:46
+Checks: 8
+Item Qty: 11
+
+||| 6:30 - 6:35 |||
++ STAFF SILKE NC: 18:30:02
++ KARA: 18:30:49
++ LUCAS: 18:31:16
++ SAVVY B: 18:32:30
+Checks: 4
+Item Qty: 8
+
+||| 6:35 - 6:40 |||
++ JJ N: 18:35:38
++ NYLE: 18:35:43
++ Z: 18:36:29
++ GARY G: 18:36:38
++ SAM: 18:38:32
+Checks: 5
+Item Qty: 7
+
+||| 6:40 - 6:45 |||
++ CLARE: 18:41:17
++ MARY L: 18:41:44
+Checks: 2
+Item Qty: 3
+
+||| 6:45 - 6:50 |||
++ BRANDI: 18:45:51
+Checks: 1
+Item Qty: 2
+
+||| 6:50 - 6:55 |||
+Checks: 0
+Item Qty: 0
+
+||| 6:55 - 7:00 |||
+Checks: 0
+Item Qty: 0
+
+||| 7:00 - 7:05 |||
+Checks: 0
+Item Qty: 0
+
+||| 7:05 - 7:10 |||
+Checks: 0
+Item Qty: 0
+
+||| 7:10 - 7:15 |||
+Checks: 0
+Item Qty: 0
+
+SUMMARY
+-------
+|10:00 - 10:05| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:05 - 10:10| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:10 - 10:15| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:15 - 10:20| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:20 - 10:25| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:25 - 10:30| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:30 - 10:35| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:35 - 10:40| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:40 - 10:45| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|10:45 - 10:50| TOTAL CHECKS: 1 / TOTAL QTY: 2
+|10:50 - 10:55| TOTAL CHECKS: 2 / TOTAL QTY: 2
+|10:55 - 11:00| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|11:00 - 11:05| TOTAL CHECKS: 2 / TOTAL QTY: 4
+|11:05 - 11:10| TOTAL CHECKS: 5 / TOTAL QTY: 14
+|11:10 - 11:15| TOTAL CHECKS: 5 / TOTAL QTY: 13
+|11:15 - 11:20| TOTAL CHECKS: 6 / TOTAL QTY: 9
+|11:20 - 11:25| TOTAL CHECKS: 3 / TOTAL QTY: 3
+|11:25 - 11:30| TOTAL CHECKS: 3 / TOTAL QTY: 12
+|11:30 - 11:35| TOTAL CHECKS: 7 / TOTAL QTY: 11
+|11:35 - 11:40| TOTAL CHECKS: 7 / TOTAL QTY: 12
+|11:40 - 11:45| TOTAL CHECKS: 14 / TOTAL QTY: 24
+|11:45 - 11:50| TOTAL CHECKS: 11 / TOTAL QTY: 14
+|11:50 - 11:55| TOTAL CHECKS: 4 / TOTAL QTY: 5
+|11:55 - 12:00| TOTAL CHECKS: 10 / TOTAL QTY: 21
+|12:00 - 12:05| TOTAL CHECKS: 8 / TOTAL QTY: 32
+|12:05 - 12:10| TOTAL CHECKS: 6 / TOTAL QTY: 10
+|12:10 - 12:15| TOTAL CHECKS: 5 / TOTAL QTY: 18
+|12:15 - 12:20| TOTAL CHECKS: 6 / TOTAL QTY: 12
+|12:20 - 12:25| TOTAL CHECKS: 12 / TOTAL QTY: 25
+|12:25 - 12:30| TOTAL CHECKS: 8 / TOTAL QTY: 12
+|12:30 - 12:35| TOTAL CHECKS: 7 / TOTAL QTY: 11
+|12:35 - 12:40| TOTAL CHECKS: 4 / TOTAL QTY: 11
+|12:40 - 12:45| TOTAL CHECKS: 10 / TOTAL QTY: 22
+|12:45 - 12:50| TOTAL CHECKS: 12 / TOTAL QTY: 20
+|12:50 - 12:55| TOTAL CHECKS: 12 / TOTAL QTY: 19
+|12:55 - 1:00| TOTAL CHECKS: 10 / TOTAL QTY: 21
+|1:00 - 1:05| TOTAL CHECKS: 8 / TOTAL QTY: 13
+|1:05 - 1:10| TOTAL CHECKS: 11 / TOTAL QTY: 28
+|1:10 - 1:15| TOTAL CHECKS: 4 / TOTAL QTY: 8
+|1:15 - 1:20| TOTAL CHECKS: 4 / TOTAL QTY: 11
+|1:20 - 1:25| TOTAL CHECKS: 10 / TOTAL QTY: 18
+|1:25 - 1:30| TOTAL CHECKS: 4 / TOTAL QTY: 5
+|1:30 - 1:35| TOTAL CHECKS: 11 / TOTAL QTY: 19
+|1:35 - 1:40| TOTAL CHECKS: 9 / TOTAL QTY: 11
+|1:40 - 1:45| TOTAL CHECKS: 5 / TOTAL QTY: 8
+|1:45 - 1:50| TOTAL CHECKS: 5 / TOTAL QTY: 7
+|1:50 - 1:55| TOTAL CHECKS: 4 / TOTAL QTY: 11
+|1:55 - 2:00| TOTAL CHECKS: 7 / TOTAL QTY: 15
+|2:00 - 2:05| TOTAL CHECKS: 8 / TOTAL QTY: 20
+|2:05 - 2:10| TOTAL CHECKS: 4 / TOTAL QTY: 9
+|2:10 - 2:15| TOTAL CHECKS: 3 / TOTAL QTY: 8
+|2:15 - 2:20| TOTAL CHECKS: 5 / TOTAL QTY: 12
+|2:20 - 2:25| TOTAL CHECKS: 10 / TOTAL QTY: 24
+|2:25 - 2:30| TOTAL CHECKS: 7 / TOTAL QTY: 16
+|2:30 - 2:35| TOTAL CHECKS: 8 / TOTAL QTY: 13
+|2:35 - 2:40| TOTAL CHECKS: 8 / TOTAL QTY: 16
+|2:40 - 2:45| TOTAL CHECKS: 4 / TOTAL QTY: 6
+|2:45 - 2:50| TOTAL CHECKS: 6 / TOTAL QTY: 11
+|2:50 - 2:55| TOTAL CHECKS: 3 / TOTAL QTY: 7
+|2:55 - 3:00| TOTAL CHECKS: 3 / TOTAL QTY: 4
+|3:00 - 3:05| TOTAL CHECKS: 4 / TOTAL QTY: 8
+|3:05 - 3:10| TOTAL CHECKS: 7 / TOTAL QTY: 12
+|3:10 - 3:15| TOTAL CHECKS: 3 / TOTAL QTY: 6
+|3:15 - 3:20| TOTAL CHECKS: 3 / TOTAL QTY: 6
+|3:20 - 3:25| TOTAL CHECKS: 1 / TOTAL QTY: 2
+|3:25 - 3:30| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|3:30 - 3:35| TOTAL CHECKS: 6 / TOTAL QTY: 12
+|3:35 - 3:40| TOTAL CHECKS: 5 / TOTAL QTY: 13
+|3:40 - 3:45| TOTAL CHECKS: 3 / TOTAL QTY: 8
+|3:45 - 3:50| TOTAL CHECKS: 2 / TOTAL QTY: 3
+|3:50 - 3:55| TOTAL CHECKS: 5 / TOTAL QTY: 7
+|3:55 - 4:00| TOTAL CHECKS: 4 / TOTAL QTY: 6
+|4:00 - 4:05| TOTAL CHECKS: 4 / TOTAL QTY: 10
+|4:05 - 4:10| TOTAL CHECKS: 4 / TOTAL QTY: 12
+|4:10 - 4:15| TOTAL CHECKS: 3 / TOTAL QTY: 3
+|4:15 - 4:20| TOTAL CHECKS: 1 / TOTAL QTY: 2
+|4:20 - 4:25| TOTAL CHECKS: 3 / TOTAL QTY: 6
+|4:25 - 4:30| TOTAL CHECKS: 3 / TOTAL QTY: 7
+|4:30 - 4:35| TOTAL CHECKS: 4 / TOTAL QTY: 10
+|4:35 - 4:40| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|4:40 - 4:45| TOTAL CHECKS: 2 / TOTAL QTY: 7
+|4:45 - 4:50| TOTAL CHECKS: 2 / TOTAL QTY: 2
+|4:50 - 4:55| TOTAL CHECKS: 4 / TOTAL QTY: 4
+|4:55 - 5:00| TOTAL CHECKS: 3 / TOTAL QTY: 5
+|5:00 - 5:05| TOTAL CHECKS: 3 / TOTAL QTY: 6
+|5:05 - 5:10| TOTAL CHECKS: 2 / TOTAL QTY: 5
+|5:10 - 5:15| TOTAL CHECKS: 2 / TOTAL QTY: 6
+|5:15 - 5:20| TOTAL CHECKS: 1 / TOTAL QTY: 1
+|5:20 - 5:25| TOTAL CHECKS: 2 / TOTAL QTY: 12
+|5:25 - 5:30| TOTAL CHECKS: 5 / TOTAL QTY: 12
+|5:30 - 5:35| TOTAL CHECKS: 6 / TOTAL QTY: 7
+|5:35 - 5:40| TOTAL CHECKS: 5 / TOTAL QTY: 6
+|5:40 - 5:45| TOTAL CHECKS: 5 / TOTAL QTY: 9
+|5:45 - 5:50| TOTAL CHECKS: 4 / TOTAL QTY: 5
+|5:50 - 5:55| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|5:55 - 6:00| TOTAL CHECKS: 4 / TOTAL QTY: 7
+|6:00 - 6:05| TOTAL CHECKS: 4 / TOTAL QTY: 5
+|6:05 - 6:10| TOTAL CHECKS: 3 / TOTAL QTY: 3
+|6:10 - 6:15| TOTAL CHECKS: 3 / TOTAL QTY: 3
+|6:15 - 6:20| TOTAL CHECKS: 2 / TOTAL QTY: 4
+|6:20 - 6:25| TOTAL CHECKS: 4 / TOTAL QTY: 4
+|6:25 - 6:30| TOTAL CHECKS: 8 / TOTAL QTY: 11
+|6:30 - 6:35| TOTAL CHECKS: 4 / TOTAL QTY: 8
+|6:35 - 6:40| TOTAL CHECKS: 5 / TOTAL QTY: 7
+|6:40 - 6:45| TOTAL CHECKS: 2 / TOTAL QTY: 3
+|6:45 - 6:50| TOTAL CHECKS: 1 / TOTAL QTY: 2
+|6:50 - 6:55| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|6:55 - 7:00| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|7:00 - 7:05| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|7:05 - 7:10| TOTAL CHECKS: 0 / TOTAL QTY: 0
+|7:10 - 7:15| TOTAL CHECKS: 0 / TOTAL QTY: 0
