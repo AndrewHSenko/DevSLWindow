@@ -118,7 +118,7 @@ def get_check_data(start, end):
         for check in rows:
             sale_time = check[2]
             if not check[1]: # No name
-                print(check[0])
+                print('MISSING NAME:', check[0])
                 continue
             if sale_time not in checks: 
                 checks[sale_time] = {'check_no' : check[0], 'check_name' : check[1].strip(), 'menu_ids' : {check[3] : int(check[4])}}
