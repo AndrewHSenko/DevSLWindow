@@ -14,12 +14,12 @@ import ast
 from copy import deepcopy
 
 # HEADERS #
-MONTH_H = '11_09_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Nov_09_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '11_07_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Nov_07_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 1
-SHEET_NUM = 6
-DATE = '20251109'
+SHEET_NUM = 4
+DATE = '20251107'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -214,9 +214,8 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         ratio = overlay.ratio(sums, foh_items)
         make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
         make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
-        if ssums and fsums and pvsums:
-            overlay.create_overlay(daily_station_wb_name, ssums, fsums, pvsums, None, f'{MONTH_H} Stations', f'{MONTH_H} Stations')
         if sums and fpvsums:
+            overlay.create_overlay(daily_station_wb_name, fpvsums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
             overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo')
         overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
         overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
