@@ -105,7 +105,7 @@ def get_weekly_sheet_id(week):
             spreadsheet_id_req = f'mimeType = "application/vnd.google-apps.spreadsheet" and trashed=false and "{month_folder_id}" in parents'
             spreadsheet_id_result = drive.files().list(
                 q = spreadsheet_id_req,
-                orderBy = "createdTime",
+                orderBy = "name_natural",
                 spaces="drive",
                 pageSize=7, # Max is 5 weeks for the fiscal month, plus extra cushion
                 fields="nextPageToken, files(id, name)",

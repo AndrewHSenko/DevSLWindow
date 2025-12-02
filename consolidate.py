@@ -71,7 +71,6 @@ def create_raw_text(window, file_name):
         window_file.write('---------')
         for intvl, data in window.items():
             window_file.write(f'\n||| {intvl} |||\n')
-            # TO DO: Should add which menu items were ordered #
             for d in data[:-1]:
                 saletime = d[0]
                 name = d[1]
@@ -159,7 +158,6 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         for i in range(len(smoothed)):
             smoothed_sums[i] = smoothed[i]
         print('On Sums')
-        start = time.time()
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
@@ -288,8 +286,7 @@ def tabulate(active_checks):
                 if active_checks[check] not in missing_anchor_bumps:
                     missing_anchor_bumps.append(active_checks[check])
                     with open(DEST_PATH + M_NAME_H + '_Missing_Bumps.txt', 'a') as badchecks_file:
-                        print(active_checks[check]['Name'], check, active_checks[check]['Qty'])
-                        # badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
+                        badchecks_file.write(f'Missing Anchor bump for:\n| {active_checks[check]['Name']} | Qty: {active_checks[check]['Qty']}\n')
                 continue
             check_saletime = f'{check[-6:-4]}:{check[-4:-2]}:{check[-2:]}'
             if int(window_start) < int(check) <= int(window_end): # FoH Entries
@@ -408,8 +405,6 @@ def find_production():
         start_time += 5
         if str(start_time)[-2:] == '60':
             start_time += 40
-    end = time.time()
-    print('Time taken:', end, '-', start, '=', end - start)
     encode(active_checks)
     find_bad_checks(active_checks)
     tabulate(active_checks)
@@ -443,45 +438,3 @@ if __name__ == '__main__':
         with open('dir_creation_failed.txt', 'a') as dir_err_file:
                 dir_err_file.write(f'An error occurred creating daily dictionary: {e}\n')
     find_production()
-    
-
-'''
-def clean_checks(curr_hour):
-    delete_checks = []
-    target_hr = int(curr_hour) - 2
-    for saletime in active_checks:
-        if int(saletime[8:10]) == target_hr and active_checks[saletime]['HOT START'] and active_checks[saletime]['HOT FINISH'] and active_checks[saletime]['PLATESVILLE'] and active_checks[saletime]['ANCHOR']:
-            delete_checks.append(saletime)
-    checks_delete = len(delete_checks)
-    for check in delete_checks:
-        del active_checks[check]
-    return checks_delete
-'''
-
-'''
-    for check_num in checks:
-        date_time = checks[check_num]['entered']
-        saletime = datetime.strptime(date_time, '%Y%m%d%H%M%S')
-        active_checks = squirrel.get_active_checks(check_num, saletime)
-        if active_checks:
-            active_checks = active_checks[check_num]
-            five_min_prod += active_checks[-1] # Gets item count
-        else:
-            print(check_num)
-    start_time, end_time, five_min_prod = str(start_time), str(end_time), str(five_min_prod)
-    # Do something with the five_min_prod #
-    if len(five_min_prod) == 1:
-        five_min_prod = '0' + five_min_prod
-    top_border = '-'*20 # Amount of dashes matches entry length
-    entry = f'| {start_time[:2]}:{start_time[2:]}-{end_time[:2]}:{end_time[2:]} | {five_min_prod} |'
-    with open('window.txt', 'a') as window:
-        if start_time[2:] == '00':
-            window.write('-'*12 + '\n')
-            hour = start_time[:2]
-            meridian = 'PM' if int(start_time[:2]) >= 12 else 'AM'
-            # hour = time.strftime('%I') # For readability
-            # meridian = time.strftime('%p')
-            window.write(f'| {hour}:00 {meridian} |')
-            window.write('-'*12 + '\n')
-        window.write(top_border + '\n')
-        window.write(entry + '\n')'''
