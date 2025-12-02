@@ -118,7 +118,7 @@ def get_check_data(start, end):
         for check in rows:
             sale_time = check[2]
             if not check[1]: # No name
-                print('MISSING NAME:', check[0])
+                print(check[0])
                 continue
             if sale_time not in checks: 
                 checks[sale_time] = {'check_no' : check[0], 'check_name' : check[1].strip(), 'menu_ids' : {check[3] : int(check[4])}}
@@ -128,6 +128,7 @@ def get_check_data(start, end):
                 else:
                     checks[sale_time]['menu_ids'][check[3]] = check[4]
     # Now checks is filled with every check entered between start and end #
+    no_make_id = [595, 8291]
     checks_data = {}
     for check, check_data in checks.items():
         has_start = False
@@ -163,6 +164,15 @@ def get_check_data(start, end):
                 check_qty += qty
                 pv_qty += qty
                 has_PV = True
+            elif menu_id in no_make_id: # Accounts for tickets rung in as no makes
+                print('Hit a no make!')
+                print(check_data['check_no'])
+                check_qty = 0
+                has_start = has_finish = has_pv = False
+                latke = knish = 0
+                bl_items = pv_items = [] # Same mem loc I think, but irrelevant to this program
+                bl_qty = pv_qty = 0
+                break
         if latke:
             has_start = True
             has_finish = True
