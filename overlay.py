@@ -19,7 +19,7 @@ def ratio(sl_prods, foh_prods): # assumes sl_prods and foh_prods have the same i
         i += 1
     return ratios
 
-def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name, ylimit=40):
+def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name, first_data_name, sec_data_name, ylimit=40):
     try:
         WORKBOOK = load_workbook(filename=wbook)
     #    WS = WORKBOOK[time.strftime('%m_%d_%Y')]
@@ -84,8 +84,8 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
             if foh_actual:
                 row[4].value = foh_a[fives_index]
             fives_index += 1
-        WS['B1'] = 'SL Production (QSR/Squirrel)'
-        WS['C1'] = 'FoH Entries (Squirrel)'
+        WS['B1'] = first_data_name
+        WS['C1'] = sec_data_name
         WS['D1'] = 'FoH Planned (Window)'
         WS['E1'] = 'FoH Actual (Window)'
         # For the SL production from the KDS and FoH entries in Squirrel

@@ -164,15 +164,15 @@ def get_check_data(start, end):
                 check_qty += qty
                 pv_qty += qty
                 has_PV = True
-            elif menu_id in no_make_id: # Accounts for tickets rung in as no makes
-                print('Hit a no make!')
-                print(check_data['check_no'])
-                check_qty = 0
-                has_start = has_finish = has_pv = False
-                latke = knish = 0
-                bl_items = pv_items = [] # Same mem loc I think, but irrelevant to this program
-                bl_qty = pv_qty = 0
-                break
+            # elif menu_id in no_make_id: # Accounts for tickets rung in as no makes
+            #     with open('nomakes.txt', 'a') as nm:
+            #         nm.write(str(check_data['check_no']) + ' ' + str(check_data['check_name']) + '\n')
+            #     check_qty = 0
+            #     has_start = has_finish = has_pv = False
+            #     latke = knish = 0
+            #     bl_items = pv_items = [] # Same mem loc I think, but irrelevant to this program
+            #     bl_qty = pv_qty = 0
+            #     break
         if latke:
             has_start = True
             has_finish = True
