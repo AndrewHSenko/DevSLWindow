@@ -14,12 +14,12 @@ import ast
 from copy import deepcopy
 
 # HEADERS #
-MONTH_H = '11_16_2025' # time.strftime('%m_%d_%Y')
-M_NAME_H = 'Nov_16_2025' # time.strftime('%b_%d_%Y')
+MONTH_H = '11_29_2025' # time.strftime('%m_%d_%Y')
+M_NAME_H = 'Nov_29_2025' # time.strftime('%b_%d_%Y')
 NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
-WEEK_NUM = 2
-SHEET_NUM = 6
-DATE = '20251116'
+WEEK_NUM = 4
+SHEET_NUM = 5
+DATE = '20251129'
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
