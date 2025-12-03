@@ -153,8 +153,8 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
     # Window Data #
     if sums:
         smoothed_sums = {}
-        desired_intvls = np.linspace(0.5, 109.5, 110, endpoint=True)
-        smoothed = np.interp(desired_intvls, np.linspace(0, 110, 111, endpoint=True), [int(float(x)) for x in sums.values()])
+        desired_intvls = np.linspace(0.5, 121.5, 122, endpoint=True)
+        smoothed = np.interp(desired_intvls, np.linspace(0, 122, 123, endpoint=True), [int(float(x)) for x in sums.values()])
         for i in range(len(smoothed)):
             smoothed_sums[i] = smoothed[i]
         print('On Sums')

@@ -61,7 +61,7 @@ def create_sheet(workbook_name, s_name, data):
                 continue
         adj_width = (max_len + 4) # Based on font size 16
         SHEET.column_dimensions[col_letter].width = adj_width
-    SHEET['B13'].font = Font(name = 'Arial', size = 16, bold = True)
+    SHEET['B13'].font = Font(name = 'Arial', size = 16, bold = True) # Changed for 9am start
     if 'Button_Data' not in workbook_name: # daily output file
         if 'Summary' in WORKBOOK.sheetnames:
             WORKBOOK.remove(WORKBOOK['Summary'])
