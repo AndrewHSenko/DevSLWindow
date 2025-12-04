@@ -270,7 +270,8 @@ def tabulate(active_checks):
     start_time = 900 # Changed for 9am start #
     while start_time != 1915:
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
-        window_start, window_end = f'{DATE}{start_time}00', f'{DATE}{end_time}00'
+        window_start = f'{DATE}{start_time}00' if start_time >= 1000 else f'{DATE}0{start_time}00'
+        window_end = f'{DATE}{end_time}00' if end_time >= 1000 else f'{DATE}0{end_time}00'
         easier_win_start = start_time if start_time < 1300 else start_time - 1200
         easier_win_end = end_time if end_time < 1300 else end_time - 1200
         intvl = str(easier_win_start)[:-2]+ ':' + str(easier_win_start)[-2:] + ' - ' + str(easier_win_end)[:-2] + ':' + str(easier_win_end)[-2:]
@@ -366,7 +367,9 @@ def find_production():
     while start_time != 1915:
         print('On:', start_time)
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
-        sq_checks = squirrel.get_check_data(f'{DATE}{start_time}00', f'{DATE}{end_time}00')
+        check_start = f'{DATE}{start_time}00' if start_time >= 1000 else f'{DATE}0{start_time}00'
+        check_end = f'{DATE}{end_time}00'if end_time >= 1000 else f'{DATE}0{end_time}00'
+        sq_checks = squirrel.get_check_data(check_start, check_end)
         # sq_checks now has all checks within 5 minute window that have SL items
         # sq_checks key: saletime
         # sq_checks values: check_no, check_name, qty #
