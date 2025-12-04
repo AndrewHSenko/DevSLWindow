@@ -59,7 +59,7 @@ def create_sheet(workbook_name, s_name, data):
                 max_len = len(str(cell.value))
             else:
                 continue
-        adj_width = (max_len + 4) # Based on font size 16
+        adj_width = (max_len + 6) # Based on font size 16
         SHEET.column_dimensions[col_letter].width = adj_width
     SHEET['B12'].font = Font(name = 'Arial', size = 16, bold = True)
     if 'Button_Data' not in workbook_name: # daily output file

@@ -161,32 +161,32 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
         make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, MONTH_H)
-        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', MONTH_H, smooth_it=True)
+        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, 'Expo Items/5 mins', MONTH_H)
+        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', 'Expo Items/5 mins', MONTH_H, smooth_it=True)
     # Start Data #
     if ssums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, ssums, monthly_wb, finish_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, ssums, finish_name)
         make_sheet.generate_daily_sheet(daily_station_wb_name, ssums, True, start_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, ssums, start_name, MONTH_H)
+        make_graph.make_daily_prod(daily_station_wb_name, ssums, start_name, 'Start Items/5 mins', MONTH_H)
     # Finish Data #
     if fsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
         make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, False, finish_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, MONTH_H)
+        make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, 'Finish Items/5 mins', MONTH_H)
     # PV Data #
     if pvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
         make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, False, pv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, MONTH_H)
+        make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, 'PV Items/5 mins', MONTH_H)
     # FPV Data #
     if fpvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
         make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, False, fpv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, MONTH_H)
+        make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, 'Finish & PV Items/5 mins', MONTH_H)
     # FoH Data #
     # Checks (retired) #
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
@@ -204,7 +204,7 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         # make_sheet.generate_daily_sheet(monthly_foh_wb_name, foh_items, monthly_wb, foh_items_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_foh_wb_name, foh_items, foh_items_name)
         make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, MONTH_H)
+        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, 'FoH Entries/5 mins', MONTH_H)
     daily_pending_wb_name = f'{DEST_PATH}{MONTH_H}_Pending.xlsx'
     pending_items_name = f'{MONTH_H}_Pending'
     if sums and foh_items and pu_window and pu_actual:
@@ -213,12 +213,12 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
         make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 100)
         if sums and fpvsums:
-            overlay.create_overlay(daily_station_wb_name, fpvsums, None, pu_window, pu_actual, MONTH_H, f'{MONTH_H} Finish/PV') # GO HERE TO TOGGLE PU WINDOW #
-            overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo')
-        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 100)
-        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H) # GO HERE TO TOGGLE PU WINDOW #
-        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed')
-        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H)
+            overlay.create_overlay(daily_station_wb_name, fpvsums, None, pu_window, pu_actual, MONTH_H, f'{MONTH_H} Finish/PV', 'Finish & PV', '') # GO HERE TO TOGGLE PU WINDOW #
+            overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo', 'Expo', 'Finish & PV')
+        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 'Pending Items', '', 100)
+        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H, 'Expo', '') # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed', 'Expo (Smoothed)', '')
+        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H, '', 'FoH Entries')
     # Will add return statement with try/catch blocks #
 
 def encode(ac):
