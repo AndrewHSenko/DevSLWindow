@@ -19,7 +19,7 @@ def ratio(sl_prods, foh_prods): # assumes sl_prods and foh_prods have the same i
         i += 1
     return ratios
 
-def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name, first_data_name, sec_data_name, ylimit=40):
+def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_name, graph_name, first_data_name, sec_data_name, start_hour, ylimit=40):
     try:
         WORKBOOK = load_workbook(filename=wbook)
     #    WS = WORKBOOK[time.strftime('%m_%d_%Y')]
@@ -50,8 +50,7 @@ def create_overlay(wbook, sl_prods, foh_prods, foh_window, foh_actual, sheet_nam
             for i in range(10):
                 foh_a.append(0)
         WS.insert_cols(idx = 1, amount=4)
-        hr_start = 10
-        hr_end = 10
+        hr_start = hr_end = start_hour
         min_start = 0
         min_end = 5
         WS.insert_rows(idx = 1, amount = LENGTH + 10)

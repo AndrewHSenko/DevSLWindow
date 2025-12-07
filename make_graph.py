@@ -3,7 +3,7 @@ from openpyxl.chart import (LineChart, Reference)
 from openpyxl.chart.axis import ChartLines
 import time
 
-def make_daily_prod(wbook, prods, sheet_name, graph_name, legend_name, ylimit=40, smooth_it=False):
+def make_daily_prod(wbook, prods, sheet_name, graph_name, legend_name, start_hour, ylimit=40, smooth_it=False):
     WORKBOOK = load_workbook(filename=wbook)
 #    WS = WORKBOOK[time.strftime('%m_%d_%Y')]
     day = sheet_name + ' Graph'
@@ -14,8 +14,7 @@ def make_daily_prod(wbook, prods, sheet_name, graph_name, legend_name, ylimit=40
     for _ in range(10):
         fives_data.append(0)
     WS.insert_cols(idx = 1)
-    hr_start = 10
-    hr_end = 10
+    hr_start = hr_end = start_hour
     min_start = 0
     min_end = 5 if not smooth_it else 10 # intervals of 10 mins for smoothed
     WS.insert_rows(idx = 1, amount = len(fives_data) + 10)

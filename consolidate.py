@@ -20,6 +20,12 @@ NO_DAY = 'Nov_2025' # time.strftime('%b_%Y')
 WEEK_NUM = 4
 SHEET_NUM = 6
 DATE = '20251130'
+WINDOW_START = 'M5'
+WINDOW_END = 'M125' # M135
+ACTUAL_START = 'O5'
+ACTUAL_END = 'O125' # O135
+NUM_ROWS = 12 # 13
+START_HOUR = 10 # 9
 # DATE = time.strftime('%Y%m%d')
 
 # PROD TERMINAL #
@@ -160,33 +166,33 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         print('On Sums')
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, window_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, window_name)
-        make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, 'Expo Items/5 mins', MONTH_H)
-        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', 'Expo Items/5 mins', MONTH_H, smooth_it=True)
+        make_sheet.generate_daily_sheet(daily_window_wb_name, sums, True, window_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_window_wb_name, sums, window_name, 'Expo Items/5 mins', MONTH_H, START_HOUR)
+        make_graph.make_daily_prod(daily_window_wb_name, smoothed_sums, f'{window_name} Smoothed', 'Expo Items/5 mins', MONTH_H, START_HOUR, smooth_it=True)
     # Start Data #
     if ssums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, ssums, monthly_wb, finish_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, ssums, finish_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, ssums, True, start_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, ssums, start_name, 'Start Items/5 mins', MONTH_H)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, ssums, True, start_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, ssums, start_name, 'Start Items/5 mins', MONTH_H, START_HOUR)
     # Finish Data #
     if fsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, finish_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, finish_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, False, finish_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, 'Finish Items/5 mins', MONTH_H)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fsums, False, finish_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, fsums, finish_name, 'Finish Items/5 mins', MONTH_H, START_HOUR)
     # PV Data #
     if pvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, False, pv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, 'PV Items/5 mins', MONTH_H)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, pvsums, False, pv_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, pvsums, pv_name, 'PV Items/5 mins', MONTH_H, START_HOUR)
     # FPV Data #
     if fpvsums:
         # make_sheet.generate_daily_sheet(monthly_window_wb_name, sums, monthly_wb, pv_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_window_wb_name, sums, pv_name)
-        make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, False, fpv_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, 'Finish & PV Items/5 mins', MONTH_H)
+        make_sheet.generate_daily_sheet(daily_station_wb_name, fpvsums, False, fpv_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_station_wb_name, fpvsums, fpv_name, 'Finish & PV Items/5 mins', MONTH_H, START_HOUR)
     # FoH Data #
     # Checks (retired) #
     # monthly_foh_wb_name = f'{DIR_NAME}/{NO_DAY}_FoH_Data.xlsx'
@@ -203,22 +209,22 @@ def create_sheets(sums=None, foh_items=None, pu_window=None, pu_actual=None, ssu
         print('On FoH Items')
         # make_sheet.generate_daily_sheet(monthly_foh_wb_name, foh_items, monthly_wb, foh_items_name) # To add to monthly workbook
         # make_graph.make_daily_prod(monthly_foh_wb_name, foh_items, foh_items_name)
-        make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name) # To add to daily workbook
-        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, 'FoH Entries/5 mins', MONTH_H)
+        make_sheet.generate_daily_sheet(daily_foh_wb_name, foh_items, True, foh_items_name, NUM_ROWS, START_HOUR) # To add to daily workbook
+        make_graph.make_daily_prod(daily_foh_wb_name, foh_items, foh_items_name, 'FoH Entries/5 mins', MONTH_H, START_HOUR)
     daily_pending_wb_name = f'{DEST_PATH}{MONTH_H}_Pending.xlsx'
     pending_items_name = f'{MONTH_H}_Pending'
     if sums and foh_items and pu_window and pu_actual:
         print('On Overlays')
         ratio = overlay.ratio(sums, foh_items)
-        make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name)
-        make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 'Pending Items', 150)
+        make_sheet.generate_daily_sheet(daily_pending_wb_name, ratio, True, pending_items_name, NUM_ROWS, START_HOUR)
+        make_graph.make_daily_prod(daily_pending_wb_name, ratio, pending_items_name, pending_items_name, 'Pending Items', START_HOUR, ylimit=150)
         if sums and fpvsums:
-            overlay.create_overlay(daily_station_wb_name, fpvsums, None, pu_window, pu_actual, MONTH_H, f'{MONTH_H} Finish/PV', 'Finish & PV', '') # GO HERE TO TOGGLE PU WINDOW #
-            overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo', 'Expo', 'Finish & PV')
-        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 'Pending Items', '', 100)
-        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H, 'Expo', '') # GO HERE TO TOGGLE PU WINDOW #
-        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed', 'Expo (Smoothed)', '')
-        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H, '', 'FoH Entries')
+            overlay.create_overlay(daily_station_wb_name, fpvsums, None, pu_window, pu_actual, MONTH_H, f'{MONTH_H} Finish/PV', 'Finish & PV', '', START_HOUR) # GO HERE TO TOGGLE PU WINDOW #
+            overlay.create_overlay(daily_station_wb_name, sums, fpvsums, None, None, f'{MONTH_H} Finish_Expo', f'{MONTH_H} Finish_Expo', 'Expo', 'Finish & PV', START_HOUR)
+        overlay.create_overlay(daily_pending_wb_name, ratio, None, pu_window, pu_actual, pending_items_name, pending_items_name, 'Pending Items', '', START_HOUR, ylimit=100)
+        overlay.create_overlay(daily_window_wb_name, sums, None, pu_window, pu_actual, MONTH_H, MONTH_H, 'Expo', '', START_HOUR) # GO HERE TO TOGGLE PU WINDOW #
+        overlay.create_overlay(daily_window_wb_name, smoothed_sums, None, pu_window, pu_actual, f'{MONTH_H} Smoothed', f'{MONTH_H} Smoothed', 'Expo (Smoothed)', '', START_HOUR)
+        overlay.create_overlay(daily_foh_wb_name, None, foh_items, pu_window, pu_actual, MONTH_H, MONTH_H, '', 'FoH Entries', START_HOUR)
     # Will add return statement with try/catch blocks #
 
 def encode(ac):
@@ -267,7 +273,7 @@ def tabulate(active_checks):
     entered = {}
     missing_anchor_bumps = []
     # Collect data #
-    start_time = 1000
+    start_time = int(f'{START_HOUR}00')
     while start_time != 1915:
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
         window_start, window_end = f'{DATE}{start_time}00', f'{DATE}{end_time}00'
@@ -354,7 +360,7 @@ def tabulate(active_checks):
     for ivl, qty in qtys.items():
         check_qtys[ivl] = qty[0]
         item_qtys[ivl] = qty[1]
-    pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM)
+    pu_window, pu_actual = pu.get_data(WEEK_NUM, SHEET_NUM, WINDOW_START, WINDOW_END, ACTUAL_START, ACTUAL_END)
     create_sheets(station_sums[0], item_qtys, pu_window, pu_actual, station_sums[1], station_sums[2], station_sums[3], station_sums[4])
 
 def find_production():
@@ -362,11 +368,13 @@ def find_production():
     active_checks = {}
     # Collect data #
     start = time.time()
-    start_time = 1000 # Not using %I to make it easier to handle AM to PM hour change
+    start_time = int(f'{START_HOUR}00') # Not using %I to make it easier to handle AM to PM hour change
     while start_time != 1915:
         print('On:', start_time)
         end_time = start_time + 5 if str(start_time)[-2:] != '55' else start_time + 45 # To fix xx:60 situations
-        sq_checks = squirrel.get_check_data(f'{DATE}{start_time}00', f'{DATE}{end_time}00')
+        check_start = f'{DATE}{start_time}00' if start_time >= 1000 else f'{DATE}0{start_time}00'
+        check_end = f'{DATE}{end_time}00'if end_time >= 1000 else f'{DATE}0{end_time}00'
+        sq_checks = squirrel.get_check_data(check_start, check_end)
         # sq_checks now has all checks within 5 minute window that have SL items
         # sq_checks key: saletime
         # sq_checks values: check_no, check_name, qty #

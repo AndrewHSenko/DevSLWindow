@@ -12,8 +12,6 @@ from googleapiclient.errors import HttpError
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/drive']
 # SPREADSHEET_ID = '11RDkPuupd7lq8TnkAagahZSBuOfzXGGLOhZGvdroOp4' # Should be dynamic # Dev Change #
 # RAW_RANGE = 'D5:L126' # Trims surrounding empty rows
-TOTAL_RANGE = 'M5:M125' # Should be 10:00am - 8:00pm, 120 total entries
-WINDOW_RANGE = 'O5:O125'
 DEFAULT = 'M1'
 DEFAULT_VAL = '18'
 
@@ -124,7 +122,7 @@ def get_weekly_sheet_id(week):
             puf.write(str(time.time()) + ':' + str(e) + '\n')
     
 
-def get_data(week_num, sheet_num):
+def get_data(week_num, sheet_num, window_start, window_end, actual_start, actual_end): # CHANGED 12/5
     days = [
         'MON',
         'TUE',
@@ -157,13 +155,13 @@ def get_data(week_num, sheet_num):
         if not is_day:
             return False
         # sheet_id = sheet.get('properties', {}).get('sheetId', 0)
-        window_range_name = f'{title}!{WINDOW_RANGE}'
-        total_range_name = f'{title}!{TOTAL_RANGE}'
+        window_range_name = f'{title}!{window_start}:{window_end}'
+        actual_range_name = f'{title}!{actual_start}:{actual_end}'
         default = aggregate(spreadsheet, spreadsheet_id, DEFAULT)
         if not default[0].isnumeric():
             default[0] = DEFAULT_VAL # 18
         planned = aggregate(spreadsheet, spreadsheet_id, window_range_name)
-        actual = aggregate(spreadsheet, spreadsheet_id, total_range_name)
+        actual = aggregate(spreadsheet, spreadsheet_id, actual_range_name)
         total = len(actual)
         if len(planned) < total:
             for i in range(len(planned), total): # Will replace trailing blanks (normally ommitted) with the correct default window setting
