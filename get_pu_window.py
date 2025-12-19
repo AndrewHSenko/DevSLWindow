@@ -76,7 +76,7 @@ def get_weekly_sheet_id(week):
         # First, get the folder ID by querying by mimeType and name
         while True: # Will change to not be a loop
             page_token = None
-            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"November {time.strftime("%Y")[-2:]}\"' # {time.strftime("%B")}
+            month_folder_req = f'mimeType = "application/vnd.google-apps.folder" and trashed=false and name = \"{time.strftime("%B")} {time.strftime("%Y")[-2:]}\"'
             month_folder_result = drive.files().list(
                 q = month_folder_req,
                 spaces="drive",
@@ -157,6 +157,7 @@ def get_data(week_num, sheet_num, window_start, window_end, actual_start, actual
         # sheet_id = sheet.get('properties', {}).get('sheetId', 0)
         window_range_name = f'{title}!{window_start}:{window_end}'
         actual_range_name = f'{title}!{actual_start}:{actual_end}'
+        print(window_range_name, actual_range_name)
         default = aggregate(spreadsheet, spreadsheet_id, DEFAULT)
         if not default[0].isnumeric():
             default[0] = DEFAULT_VAL # 18

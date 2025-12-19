@@ -1,0 +1,5 @@
+could not convert string to float: '#VALUE!'
+could not convert string to float: '#VALUE!'
+could not convert string to float: '#VALUE!'
+could not convert string to float: '#VALUE!'
+could not convert string to float: '#VALUE!'
