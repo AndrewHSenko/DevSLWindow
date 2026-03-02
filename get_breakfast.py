@@ -41,9 +41,9 @@ def get_check_data(start, end):
             return
         for check in rows:
             sale_time = check[2]
-            # if not check[1]: # No name
-            #     print(check[0])
-            #     continue
+            if not check[1]: # No name
+                # print(check[0])
+                continue
             if sale_time not in checks: 
                 checks[sale_time] = {'check_no' : check[0], 'check_name' : check[1].strip(), 'menu_ids' : {check[3] : int(check[4])}}
             else:
@@ -61,18 +61,16 @@ def get_check_data(start, end):
                     breakfast_items[breakfast_ids[menu_id]].append(sale_time)
     return breakfast_items
 
-DATE = '20260123'
-# Key: Breakfast item names
-# Values: Sale time
-daily_breakfast_data = get_check_data(f'{DATE}0700', f'{DATE}1900')
-b_date = f'{DATE[4:6]}_{DATE[6:]}_{DATE[2:4]}'
-with open(f'{b_date}_Breakfast.txt', 'w') as b_file:
-    b_file.write(f'{b_date}:\n')
-    for item, saletimes in daily_breakfast_data.items():
-        b_file.write(f'| {item} |\n')
-        qty = 0
-        for saletime in saletimes:
-            b_file.write(f'   +{saletime}\n')
-            qty += 1
-        b_file.write(f'TOTAL SOLD: {qty}\n\n')
+def make_breakfast_text_file(b_date, b_data):
+    # Key: Breakfast item names
+    # Values: Sale time
+    with open(f'{b_date}_Breakfast.txt', 'w') as b_file:
+        b_file.write(f'{b_date}:\n')
+        for item, saletimes in b_data.items():
+            b_file.write(f'| {item} |\n')
+            qty = 0
+            for saletime in saletimes:
+                b_file.write(f'   +{saletime}\n')
+                qty += 1
+            b_file.write(f'TOTAL SOLD: {qty}\n\n')
 
