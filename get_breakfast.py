@@ -8,7 +8,10 @@ breakfast_ids = {
     8002 : 'Meat Burrito',
     9673 : 'CB Hash Burrito',
     9595 : 'Breakfast Sandwich',
-    10299 : 'Bacon Side'
+    10299 : 'Bacon Side',
+    2587 : 'Irish Oatmeal 1/2',
+    562 : 'Oatmeal',
+    9543 : 'Vanilla Yogurt'
 }
 
 def get_check(start, end):
@@ -48,23 +51,28 @@ def get_check_data(start, end):
                     checks[sale_time]['menu_ids'][check[3]] += check[4]
                 else:
                     checks[sale_time]['menu_ids'][check[3]] = check[4]
-    checks_data = {}
+    breakfast_items = {product : [] for product in breakfast_ids.values()}
     for check, check_data in checks.items():
-        check_qty = 0
-        breakfast_items = []
+        full_time = check.strftime('%Y%m%d%H%M%S')[-6:]
+        sale_time = f'{full_time[:2]}:{full_time[2:4]}:{full_time[4:]}'
         for menu_id, qty in check_data['menu_ids'].items():
             if menu_id in breakfast_ids:
                 for i in range(int(qty)):
-                    breakfast_items.append(breakfast_ids[menu_id])
-                    check_qty += qty
-        if check_qty == 0: # Skip checks that don't have SL items
-            continue
-        sale_time = check.strftime('%Y%m%d%H%M%S')
-        checks_data[sale_time] = [check_data['check_no'], check_data['check_name'], check_qty, breakfast_items]
-    return checks_data
-
+                    breakfast_items[breakfast_ids[menu_id]].append(sale_time)
+    return breakfast_items
 
 DATE = '20260123'
-# Key: Saletime
-# Values: Check #, Check Name, Qty, List of Items
-daily_breakfast_data = get_check_data(f'{DATE}0700', f'{DATE}1400')
+# Key: Breakfast item names
+# Values: Sale time
+daily_breakfast_data = get_check_data(f'{DATE}0700', f'{DATE}1900')
+b_date = f'{DATE[4:6]}_{DATE[6:]}_{DATE[2:4]}'
+with open(f'{b_date}_Breakfast.txt', 'w') as b_file:
+    b_file.write(f'{b_date}:\n')
+    for item, saletimes in daily_breakfast_data.items():
+        b_file.write(f'| {item} |\n')
+        qty = 0
+        for saletime in saletimes:
+            b_file.write(f'   +{saletime}\n')
+            qty += 1
+        b_file.write(f'TOTAL SOLD: {qty}\n\n')
+
