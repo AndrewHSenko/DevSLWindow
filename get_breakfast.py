@@ -2,6 +2,7 @@ import pyodbc
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+import get_cancelled_checks as cc
 
 breakfast_ids = {
     8001 : 'Cheese Burrito',
@@ -11,7 +12,7 @@ breakfast_ids = {
     10299 : 'Bacon Side',
     2587 : 'Irish Oatmeal 1/2',
     562 : 'Oatmeal',
-    9543 : 'Vanilla Yogurt'
+    # 9543 : 'Vanilla Yogurt'
 }
 
 def get_check(start, end):
@@ -31,14 +32,13 @@ def get_check_data(start, end):
     DATABASE = os.getenv('DB')
     connectionString = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;TrustServerCertificate=yes;'
     checks = {}
+    cancelled_checks = {}
     with pyodbc.connect(connectionString) as conn:
         cursor = conn.cursor()
         start_time = datetime.strptime(start, '%Y%m%d%H%M%S')
         end_time = datetime.strptime(end, '%Y%m%d%H%M%S')
         cursor.execute(get_check(start_time, end_time))
         rows = cursor.fetchall() # Could iterate using fetchone, but # of rows should never be too large
-        if rows == []: # Empty row
-            return
         for check in rows:
             sale_time = check[2]
             if not check[1]: # No name
@@ -51,21 +51,34 @@ def get_check_data(start, end):
                     checks[sale_time]['menu_ids'][check[3]] += check[4]
                 else:
                     checks[sale_time]['menu_ids'][check[3]] = check[4]
+        cursor.execute(cc.get_cancelled_checks(start_time, end_time))
+        cc_rows = cursor.fetchall()
+        for check in cc_rows:
+            check_no = check[1] # Key will be check_no for easier parsing
+            if check_no not in cancelled_checks: 
+                cancelled_checks[check_no] = {'sale_time' : check[0], 'check_id' : check[2], 'void_id' : check[3], 'menu_ids' : {check[4] : int(check[5])}}
+            else:
+                if check[4] in cancelled_checks[check_no]['menu_ids']:
+                    cancelled_checks[check_no]['menu_ids'][check[4]] += check[5]
+                else:
+                    cancelled_checks[check_no]['menu_ids'][check[4]] = check[5]
     breakfast_items = {product : [] for product in breakfast_ids.values()}
-    for check, check_data in checks.items():
+    for check, check_data in checks.items(): # check = sale_time, check_data = check_no/check_name/menu_ids
         full_time = check.strftime('%Y%m%d%H%M%S')[-6:]
         sale_time = f'{full_time[:2]}:{full_time[2:4]}:{full_time[4:]}' if int(full_time[:2]) <= 12 else f'{int(full_time[:2]) - 12}:{full_time[2:4]}:{full_time[4:]}'
         for menu_id, qty in check_data['menu_ids'].items():
             if menu_id in breakfast_ids:
+                if check_data['check_no'] in cancelled_checks: # Skip adding items from cancelled checks
+                    continue
                 for i in range(int(qty)):
                     breakfast_items[breakfast_ids[menu_id]].append(sale_time)
     return breakfast_items
 
-def make_breakfast_text_file(b_date, b_data):
+def make_breakfast_text_file(monthyear, b_date, b_data):
     # Key: Breakfast item names
     # Values: Sale time
-    breakfast_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/'
-    with open(f'{breakfast_path}{b_date}_Breakfast.txt', 'w') as b_file:
+    breakfast_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/{monthyear}'
+    with open(f'{breakfast_path}/{b_date}_Breakfast.txt', 'w') as b_file:
         b_file.write(f'{b_date}:\n')
         for item, saletimes in b_data.items():
             b_file.write(f'| {item} |\n')
@@ -74,4 +87,3 @@ def make_breakfast_text_file(b_date, b_data):
                 b_file.write(f'   +{saletime}\n')
                 qty += 1
             b_file.write(f'TOTAL SOLD: {qty}\n\n')
-

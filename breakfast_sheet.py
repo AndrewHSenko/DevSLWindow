@@ -1,7 +1,6 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font
 from pathlib import Path
-import time
 import get_breakfast
 
 def create_sheet(wb_name, sheet_name, b_data):
@@ -9,14 +8,14 @@ def create_sheet(wb_name, sheet_name, b_data):
     WORKBOOK.create_sheet(sheet_name)
     SHEET = WORKBOOK[sheet_name]
     NUM_ROWS = len(b_data) + 1 # To include header row
-    NUM_COLS = 13 # 7am - 7pm
+    NUM_COLS = max(len(x) for x in b_data.values())
     SHEET.insert_rows(idx = 1, amount = NUM_ROWS)
-    SHEET.insert_cols(idx = 1, amount = NUM_COLS)
+    SHEET.insert_cols(idx = 1, amount = NUM_COLS + 2) # to include breakfast item names and Total column
     # For column headers
-    SHEET['A1'] = '02_21_26' # time.strftime('%m_%d_%y')
+    SHEET['A1'] = sheet_name # time.strftime('%m_%d_%y')
     SHEET['A1'].font = Font(name = 'Arial', size = 14, bold = True)
     SHEET['B1'] = 'Total Sold'
-    hour = 7 # Start at 7am
+    # hour = 7 # Start at 7am
     # for col in SHEET.iter_cols(min_col=3, max_col=13):
     #     col[0].value = f'{hour}am' if hour < 12 else f'{hour - 1}pm'
     #     if hour == 12: # Exception
@@ -60,20 +59,26 @@ def create_workbook(wb):
     workbook = Workbook()
     workbook.active.title = 'Summary'
     workbook.save(filename=wb)
+    return True
 
-def generate_daily_sheet(month, date):
-    wb_name = f'{month}_Breakfast_Sale_Time.xlsx'
-    wb_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/{wb_name}'
+def create_monthly_folder(mf):
+    mf.mkdir(parents=True)
+    return True
+
+def generate_daily_sheet(monthyear, date):
+    wb_name = f'{monthyear}_Breakfast_Sale_Time.xlsx'
+    month_folder_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/{monthyear}'
+    m_path = Path(month_folder_path)
+    if not m_path.exists():
+        create_monthly_folder(m_path)
+    wb_path = f'{month_folder_path}/{wb_name}'
     b_path = Path(wb_path)
     if not b_path.exists():
         create_workbook(wb_path)
     b_date = f'{date[4:6]}_{date[6:]}_{date[2:4]}'
-    b_data = get_breakfast.get_check_data(f'{date}0700', f'{date}1900')
+    b_data = get_breakfast.get_check_data(f'{date}0600', f'{date}2000')
     # b_data #
     # Key: Breakfast item names
     # Values: Sale times
-    get_breakfast.make_breakfast_text_file(b_date, b_data)
+    get_breakfast.make_breakfast_text_file(monthyear, b_date, b_data)
     create_sheet(wb_path, f'{date[4:6]}_{date[6:]}_{date[:4]}', b_data)
-
-generate_daily_sheet('February', '20260221')
-
