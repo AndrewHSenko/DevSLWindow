@@ -1,6 +1,7 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font
 from pathlib import Path
+import time
 import get_breakfast
 
 def create_sheet(wb_name, sheet_name, b_data):
@@ -12,6 +13,8 @@ def create_sheet(wb_name, sheet_name, b_data):
     SHEET.insert_rows(idx = 1, amount = NUM_ROWS)
     SHEET.insert_cols(idx = 1, amount = NUM_COLS)
     # For column headers
+    SHEET['A1'] = '02_21_26' # time.strftime('%m_%d_%y')
+    SHEET['A1'].font = Font(name = 'Arial', size = 14, bold = True)
     SHEET['B1'] = 'Total Sold'
     hour = 7 # Start at 7am
     # for col in SHEET.iter_cols(min_col=3, max_col=13):
@@ -60,16 +63,17 @@ def create_workbook(wb):
 
 def generate_daily_sheet(month, date):
     wb_name = f'{month}_Breakfast_Sale_Time.xlsx'
-    b_path = Path(wb_name)
+    wb_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/{wb_name}'
+    b_path = Path(wb_path)
     if not b_path.exists():
-        create_workbook(wb_name)
+        create_workbook(wb_path)
     b_date = f'{date[4:6]}_{date[6:]}_{date[2:4]}'
     b_data = get_breakfast.get_check_data(f'{date}0700', f'{date}1900')
     # b_data #
     # Key: Breakfast item names
     # Values: Sale times
     get_breakfast.make_breakfast_text_file(b_date, b_data)
-    create_sheet(wb_name, f'{date[4:6]}_{date[6:]}_{date[:4]}', b_data)
+    create_sheet(wb_path, f'{date[4:6]}_{date[6:]}_{date[:4]}', b_data)
 
-generate_daily_sheet('January', '20260125')
+generate_daily_sheet('February', '20260221')
 

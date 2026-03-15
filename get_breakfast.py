@@ -54,7 +54,7 @@ def get_check_data(start, end):
     breakfast_items = {product : [] for product in breakfast_ids.values()}
     for check, check_data in checks.items():
         full_time = check.strftime('%Y%m%d%H%M%S')[-6:]
-        sale_time = f'{full_time[:2]}:{full_time[2:4]}:{full_time[4:]}'
+        sale_time = f'{full_time[:2]}:{full_time[2:4]}:{full_time[4:]}' if int(full_time[:2]) <= 12 else f'{int(full_time[:2]) - 12}:{full_time[2:4]}:{full_time[4:]}'
         for menu_id, qty in check_data['menu_ids'].items():
             if menu_id in breakfast_ids:
                 for i in range(int(qty)):
@@ -64,7 +64,8 @@ def get_check_data(start, end):
 def make_breakfast_text_file(b_date, b_data):
     # Key: Breakfast item names
     # Values: Sale time
-    with open(f'{b_date}_Breakfast.txt', 'w') as b_file:
+    breakfast_path = f'C:/Users/Squirrel/Desktop/BREAKFAST SALETIMES/'
+    with open(f'{breakfast_path}{b_date}_Breakfast.txt', 'w') as b_file:
         b_file.write(f'{b_date}:\n')
         for item, saletimes in b_data.items():
             b_file.write(f'| {item} |\n')
